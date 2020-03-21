@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Карты</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="cache-control" content="no-cache">
+
+<script type="text/javascript" language="JavaScript" src="../scripts/param1.js"></script>
+<script type="text/javascript" language="JavaScript" src="../scripts/browser.js"></script>
+
+<script language="javascript">
+var KopfHeight = "";
+var NaviWidth = "";
+var NaviHeight = "";
+var FormWidth = "";
+var FormHeight = "";
+var ToolHeight = "";
+
+
+KopfHeight = KopfHeight1;
+NaviWidth = NaviWidth1;
+NaviHeight = NaviHeight1;
+FormWidth = FormWidth1;
+FormHeight = FormHeight1;
+ToolHeight = ToolHeight1;
+
+
+
+</script>
+</head>
+
+<script language="javascript">
+if(isIE||isNav6){
+	document.writeln('<frameset rows="' + KopfHeight + ',*" frameborder="no" border="0" framespacing="0">');
+	document.writeln('          <frame name="SkriptFrame" src="' + htmlPfad + 'script_blank.html" scrolling="no">');
+	document.writeln('          <frameset cols="' + NaviWidth + ',*,' + FormWidth + '" frameborder="no" border="0" framespacing="0">');
+	document.writeln('				<frameset rows="'+NaviHeight+',*" frameborder="no" border="0" framespacing="0">');
+	document.writeln('                              <frame name="NaviFrame" src="' + htmlPfad + 'navi_blank.html" scrolling="no">');
+	document.writeln('								<frame name="LinkFrame" src ="' + htmlPfad + 'link_blank.html" scrolling="no">');
+	document.writeln('				</frameset>');
+	document.writeln('                    <frame name="MapFrame" src="' + htmlPfad + 'map_blank.html" scrolling="no">');
+	document.writeln('                    <frameset rows="' + FormHeight + ',' + ToolHeight + ',*" frameborder="no" border="0" framespacing="0">');
+	document.writeln('                              <frame name="FormFrame" src="' + htmlPfad + 'form_blank.html" scrolling="no">');
+	document.writeln(' 								<frame name="ToolFrame" src="' + htmlPfad + 'tool_blank.html" scrolling="no">');
+	document.writeln('                              <frame name="LegendFrame" src="' + htmlPfad + 'legend_blank.html" scrolling="yes">');
+	document.writeln('                    </frameset>');                  
+	document.writeln('            </frameset>');
+	document.writeln('</frameset>');
+	document.writeln('<noframes>');
+	document.writeln('<body>');
+	document.writeln('</body>');
+	document.writeln('</noframes>');
+}else{
+	document.writeln('<BODY>');
+	document.writeln('This Application is tested and working with IE 5.5 and higher, Netscape 6 and higher, Mozilla 1.4 and high and Mozilla Firefox 0.8<BR>');
+	document.writeln('If you\'re reading this, your Browser ist most likely not supportet. Sorry.');
+	document.writeln('</BODY');
+}
+
+	
+	</script>
+</html>

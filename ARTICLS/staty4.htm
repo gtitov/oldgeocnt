@@ -1,0 +1,201 @@
+<html>
+
+<head>
+<title>Инструментальное средство для разработки ГИС</title>
+<link rel="stylesheet" href="../CSS/zaglav.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" link="#0033FF" onLoad="MM_preloadImages('../HOME/button/but_n1_r1_c1_f3.gif','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif','../HOME/button/but_n1_r1_c2_f3.gif','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif','../HOME/button/but_n1_r1_c3_f3.gif','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif','../HOME/button/but_n1_r1_c4_f3.gif','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif','../HOME/button/but_n1_r1_c5_f3.gif','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif','../HOME/button/but_n1_r1_c6_f3.gif','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif','../HOME/button/but_n1_r1_c8_f3.gif','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif','../HOME/button/but_n1_r1_c9_f3.gif','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif','../HOME/button/but_n1_r1_c10_f3.gif','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif','../HOME/button/but_n1_r1_c11_f3.gif','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif','../HOME/button/but_n1_r1_c12_f3.gif','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif','../HOME/button/but_n1_r1_c13_f3.gif','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif')" text="#000000" vlink="#990066" alink="#990066">
+<a name="up"></a>
+
+  <tr>
+    <td>
+      
+    <table border="0" cellpadding="0" cellspacing="0" width="807">
+  <!-- fwtable fwsrc="but_n1.png" fwbase="but_n1.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+  <tr> 
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="1" border="0"></td>
+  </tr>
+  <tr> 
+    <td><a href="../HOME/home.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f3.gif',1)" ><img name="but_n1_r1_c1" src="../HOME/button/but_n1_r1_c1.gif" width="63" height="22" border="0" alt="Home"></a></td>
+    <td><a href="../NEWS/news.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f3.gif',1)" ><img name="but_n1_r1_c2" src="../HOME/button/but_n1_r1_c2.gif" width="63" height="22" border="0" alt="News"></a></td>
+    <td><a href="../NEWS/price.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f3.gif',1)" ><img name="but_n1_r1_c3" src="../HOME/button/but_n1_r1_c3.gif" width="57" height="22" border="0" alt="Price"></a></td>
+    <td><a href="../GEOCNT/soft.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f3.gif',1)" ><img name="but_n1_r1_c4" src="../HOME/button/but_n1_r1_c4.gif" width="69" height="22" border="0" alt="Programmy"></a></td>
+    <td><a href="../GEOCNT/supp.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f3.gif',1)" ><img name="but_n1_r1_c5" src="../HOME/button/but_n1_r1_c5.gif" width="57" height="22" border="0" alt="File"></a></td>
+    <td><a href="../GEOCNT/maps.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f3.gif',1)" ><img name="but_n1_r1_c6" src="../HOME/button/but_n1_r1_c6.gif" width="57" height="22" border="0" alt="Maps"></a></td>
+    <td><a href="../GEOCNT/snimki.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f2.gif','../HOME/button/but_n1_r1_c7_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f3.gif',1)" ><img name="but_n1_r1_c7" src="../HOME/button/but_n1_r1_c7.gif" width="57" height="22" border="0" alt="Snimki"></a></td>
+    <td><a href="../GEOCNT/proect.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f3.gif',1)" ><img name="but_n1_r1_c8" src="../HOME/button/but_n1_r1_c8.gif" width="63" height="22" border="0" alt="Proekty"></a></td>
+    <td><a href="../ARTICLS/articls.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f3.gif',1)" ><img name="but_n1_r1_c9" src="../HOME/button/but_n1_r1_c9.gif" width="57" height="22" border="0" alt="Stat`i"></a></td>
+    <td><a href="../GEOCNT/obuchen.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f3.gif',1)" ><img name="but_n1_r1_c10" src="../HOME/button/but_n1_r1_c10.gif" width="63" height="22" border="0" alt="Obuchenie"></a></td>
+    <td><a href="../GEOCNT/partner.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f3.gif',1)" ><img name="but_n1_r1_c11" src="../HOME/button/but_n1_r1_c11.gif" width="63" height="22" border="0" alt="Partnery"></a></td>
+    <td><a href="../QUEST/quest.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f3.gif',1)" ><img name="but_n1_r1_c12" src="../HOME/button/but_n1_r1_c12.gif" width="69" height="22" border="0" alt="Vopros-Otvet"></a></td>
+    <td><a href="../GEOCNT/kontakt.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f3.gif',1)" ><img name="but_n1_r1_c13" src="../HOME/button/but_n1_r1_c13.gif" width="69" height="22" border="0" alt="Kontakt"></a></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="22" border="0"></td>
+  </tr>
+</table>
+</td>
+  </tr>
+<div align="center">
+  <h3><span class="zaglav">GeoDraw/Географ/Геоконструктор<br>
+    Программное обеспечение ЦГИ ИГ РАН: опыт и перспективы разработки</span> </h3>
+</div>
+<div align="center"><font color="#003399">Статья для журнала &quot;ГИС-обозрение&quot;, 
+  &nbsp;&nbsp; 1,1999 </font> </div>
+
+<p><a href="staty1.htm"  target="_top">История 
+  развития и идеология выбора места на рынке ГИС.<br>
+  </a><a href="staty2.htm"  target="_top">Цифровые карты и планы в 
+  ГИС. GeoDraw.</a><br>
+  <a href="staty3.htm"  target="_top">Программное обеспечение для 
+  конечного пользователя. ГеоГраф.</a> <br>
+  <a href="staty5.htm"  target="_top">Перспективы развития.</a> </p>
+<p class="zaglav2">Инструментальное средство для разработки ГИС-приложений. ГеоКонструктор.</p>
+<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; В свое время мы
+отказались от создания собственной среды
+разработки приложений. Ни одна фирма-разработчик
+ГИС не в состоянии создать среду разработки,
+сопоставимую по развитости, эффективности и
+удобству с продукцией Microsoft или Borland. Созданное и
+развиваемое с 1995 г. инструментальное средство
+ГеоКонструктор является полнофункциональным
+ActiveX и предоставляет следующие возможности:</p>
+
+<ul>
+  <li><p >большая свобода в выборе среды
+    разработки. Вам не потребуется изучать новый
+    язык программирования, т.к. протоколы OCX/ActiveX
+    поддерживает большинство современных средств
+    визуальной разработки приложений - Microsoft Visual Basic,
+    Visual C++, Borland C++, Borland Delphi и другие;</p>
+  </li>
+  <li><p >создание ГИС-приложений, работающих с
+    широким спектром форматов данных. GeoConstructor
+    поддерживает работу с любыми цифровыми картами в
+    формате ГИС GeoDraw/GeoGraph и всеми иными форматами
+    других ГИС, читаемыми ГеоГраф или импортируемыми
+    в GeoDraw; </p>
+  </li>
+  <li><p >используя поставляемые с пакетами
+    Microsoft Visual Basic, Visual C++ или с Delphi драйверы для доступа
+    к базам данных ODBC или IDAPI, можно создать
+    ГИС-приложения, работающие с форматами dBase, Paradox,
+    Access, Oracle, Sybase, Informix, InterBase и другими форматами
+    атрибутивных данных;</p>
+  </li>
+  <li><p >создание тематических карт;</p>
+  </li>
+  <li><p >импорт&nbsp; картографических
+    композиций, созданных в системе GeoGraph;</p>
+  </li>
+  <li><p >поддержка редактирования
+    пространственных данных: создание новых и
+    редактирование существующих нетопологических
+    слоев;</p>
+  </li>
+  <li><p >редактирование отдельных вершин
+    полигонов и дуг, модификация границ объектов на
+    основе подобия фигур, а также стандартные
+    операции с буфером обмена Windows;</p>
+  </li>
+  <li><p >средства программного управления
+    композицией карты в создаваемом ГИС приложении;</p>
+  </li>
+  <li><p >встроенные инструменты управления
+    изображением карты и доступа к объектам, включая
+    достум к информации о координатах объектов;</p>
+  </li>
+  <li><p >построение&nbsp; произвольных и
+    условных выборок и фильтрация пространственных
+    объектов;</p>
+  </li>
+  <li><p >разнообразные способы управления
+    масштабом изображения;</p>
+  </li>
+  <li><p >поддержка географических проекций;</p>
+  </li>
+  <li><p >поддержка растровых слоев
+    большинства современных форматов (BMP, TIFF, GIF, PCX и
+    других форматов).&nbsp;&nbsp;&nbsp;&nbsp; </p>
+  </li>
+</ul>
+ 
+<p><img src="imag15.gif" width="789" height="218"></p>
+Благодаря простоте использования и бесплатному распространению в комплекте основного 
+пакета, ГеоКонструктор доступен для изучения и применения широким кругом пользователей 
+ГИС GeoDraw/ГеоГраф, которые хотели бы самостоятельно заняться созданием своих 
+собственных прикладных ГИС. Более того, если речь идет о создании полностью независимых 
+ГИС-приложений, то ГеоКонструктор позволяет создавать&nbsp; доступные по цене 
+продукты (пример - CD-ROM, выпущенный в Красноярске и включающий ГИС с гипертекстовой 
+базой и картой города, по цене всего 50 руб.).<a HREF="#up"> </a> 
+<p><a href="#up">К началу страницы</a></p>
+<p align="left"><img src="../IMG/line.gif" width="800" height="1"></p>
+<p class="adres"> <font size="-1">Центр Геоинформационных Исследований Института 
+  Географии РАН<br>
+  109107, Москва, Старомонетный пер., 29<br>
+  телефоны: (095) 959-0017, (095) 230-8170; факс: (095) 959-0017<br>
+  e-mail: <a HREF="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a></font></p>
+</body>
+</html>

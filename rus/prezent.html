@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ЦГИ ИГ РАН - Презентации</title>
+<link rel="stylesheet" href="../menu.css" type="text/css">
+<link rel="stylesheet" href="../body.css" type="text/css">
+<script language="javascript" src="../scripts/common.js"></script>
+<script language="javascript" src="scripts/header.js"></script>
+<script language="javascript" src="../scripts/header.js"></script>
+<script language="javascript" src="../scripts/menu.js"></script>
+<SCRIPT language="javascript">
+var Presentations=new Array();
+var DownloadLinkBase="ftp://geocnt.geonet.ru/pub/present/";
+var ImageFileBase="images/presentations/";
+Pres_Add("urbis00");
+Pres_Add("neft");
+Pres_Add("finance");
+Pres_Add("roads");
+Pres_Add("election");
+Pres_Add("orggaz");
+Pres_Add("dzerzinsk");
+Pres_Add("inventariz");
+
+function Pres_Add(PresName){
+  var i=Presentations.length;
+  Presentations[i]=new Object();
+  Presentations[i].DownloadLink=DownloadLinkBase+PresName+".zip";
+  Presentations[i].ImageFile=ImageFileBase+PresName+".gif";
+}
+var Hint="Загрузить презентацию";
+// формирование ячейки таблицы со ссылкой на i-ю презентацию
+function Pres_WriteHTML(i){
+  document.write('<td><A href="'+Presentations[i].DownloadLink+'">'+
+                    '<IMG src="'+Presentations[i].ImageFile+'" border="0" '+
+                        'title="'+Hint+'" alt="'+Hint+'"></A></td>');
+}
+// формирование таблицы со ссылками на презентации
+function Pres_BuildPage(){
+  document.write('<table width="90%" align="center" border="0"><tr>');
+  for(i=0; i<Presentations.length; i++){
+    if(i!=0 && i%3==0) document.write('</tr><tr>'); 
+    Pres_WriteHTML(i);
+  }
+  document.write('</tr></table>');
+}
+</SCRIPT>
+</head>
+
+<body onload="grcPageInit()">
+<script language="javascript">
+grcPageHeader("Презентации");
+grcMainMenu_Create();
+</script>
+<blockquote>
+<P>
+Для загрузки презентации на свой компьютер щелкните соответствующую картинку.<br>
+Все презентации запакованы в ZIP-архивы. 
+</P>
+</blockquote>
+<hr>
+<script>Pres_BuildPage();</script>
+
+<script language="javascript"> grcPageFooter(); </script>
+</body>
+</html>

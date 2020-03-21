@@ -1,0 +1,257 @@
+<html>
+
+<head>
+<title>Программное обеспечение для конечного
+пользователя</title>
+<link rel="stylesheet" href="../CSS/zaglav.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" link="#0033FF" onLoad="MM_preloadImages('../HOME/button/but_n1_r1_c1_f3.gif','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif','../HOME/button/but_n1_r1_c2_f3.gif','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif','../HOME/button/but_n1_r1_c3_f3.gif','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif','../HOME/button/but_n1_r1_c4_f3.gif','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif','../HOME/button/but_n1_r1_c5_f3.gif','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif','../HOME/button/but_n1_r1_c6_f3.gif','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif','../HOME/button/but_n1_r1_c8_f3.gif','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif','../HOME/button/but_n1_r1_c9_f3.gif','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif','../HOME/button/but_n1_r1_c10_f3.gif','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif','../HOME/button/but_n1_r1_c11_f3.gif','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif','../HOME/button/but_n1_r1_c12_f3.gif','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif','../HOME/button/but_n1_r1_c13_f3.gif','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif')">
+<a name="up"></a>
+<tr>
+    <td>
+      
+    <table border="0" cellpadding="0" cellspacing="0" width="807">
+  <!-- fwtable fwsrc="but_n1.png" fwbase="but_n1.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+  <tr> 
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="1" border="0"></td>
+  </tr>
+  <tr> 
+    <td><a href="../HOME/home.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f3.gif',1)" ><img name="but_n1_r1_c1" src="../HOME/button/but_n1_r1_c1.gif" width="63" height="22" border="0" alt="Home"></a></td>
+    <td><a href="../NEWS/news.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f3.gif',1)" ><img name="but_n1_r1_c2" src="../HOME/button/but_n1_r1_c2.gif" width="63" height="22" border="0" alt="News"></a></td>
+    <td><a href="../NEWS/price.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f3.gif',1)" ><img name="but_n1_r1_c3" src="../HOME/button/but_n1_r1_c3.gif" width="57" height="22" border="0" alt="Price"></a></td>
+    <td><a href="../GEOCNT/soft.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f3.gif',1)" ><img name="but_n1_r1_c4" src="../HOME/button/but_n1_r1_c4.gif" width="69" height="22" border="0" alt="Programmy"></a></td>
+    <td><a href="../GEOCNT/supp.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f3.gif',1)" ><img name="but_n1_r1_c5" src="../HOME/button/but_n1_r1_c5.gif" width="57" height="22" border="0" alt="File"></a></td>
+    <td><a href="../GEOCNT/maps.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f3.gif',1)" ><img name="but_n1_r1_c6" src="../HOME/button/but_n1_r1_c6.gif" width="57" height="22" border="0" alt="Maps"></a></td>
+    <td><a href="../GEOCNT/snimki.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f2.gif','../HOME/button/but_n1_r1_c7_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f3.gif',1)" ><img name="but_n1_r1_c7" src="../HOME/button/but_n1_r1_c7.gif" width="57" height="22" border="0" alt="Snimki"></a></td>
+    <td><a href="../GEOCNT/proect.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f3.gif',1)" ><img name="but_n1_r1_c8" src="../HOME/button/but_n1_r1_c8.gif" width="63" height="22" border="0" alt="Proekty"></a></td>
+    <td><a href="../ARTICLS/articls.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f3.gif',1)" ><img name="but_n1_r1_c9" src="../HOME/button/but_n1_r1_c9.gif" width="57" height="22" border="0" alt="Stat`i"></a></td>
+    <td><a href="../GEOCNT/obuchen.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f3.gif',1)" ><img name="but_n1_r1_c10" src="../HOME/button/but_n1_r1_c10.gif" width="63" height="22" border="0" alt="Obuchenie"></a></td>
+    <td><a href="../GEOCNT/partner.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f3.gif',1)" ><img name="but_n1_r1_c11" src="../HOME/button/but_n1_r1_c11.gif" width="63" height="22" border="0" alt="Partnery"></a></td>
+    <td><a href="../QUEST/quest.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f3.gif',1)" ><img name="but_n1_r1_c12" src="../HOME/button/but_n1_r1_c12.gif" width="69" height="22" border="0" alt="Vopros-Otvet"></a></td>
+    <td><a href="../GEOCNT/kontakt.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f3.gif',1)" ><img name="but_n1_r1_c13" src="../HOME/button/but_n1_r1_c13.gif" width="69" height="22" border="0" alt="Kontakt"></a></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="22" border="0"></td>
+  </tr>
+</table>
+</td>
+  </tr>
+<h3 align="center"><span class="zaglav">GeoDraw/Географ/Геоконструктор<br>
+  Программное обеспечение ЦГИ ИГ РАН: опыт и перспективы разработки</span></h3>
+  
+<div align="center"><font color="#000099">Статья для журнала &quot;ГИС-обозрение&quot;, 
+  &nbsp;&nbsp; 1,1999 </font> </div>
+<p><a href="staty1.htm"  target="_top">История развития и идеология 
+  выбора места на рынке ГИС.<br>
+  </a><a href="staty2.htm"  target="_top">Цифровые карты и планы в 
+  ГИС. GeoDraw. </a><br>
+  <a href="staty4.htm"  target="_top">Инструментальное средство для 
+  разработки ГИС-приложений. ГеоКонструктор.</a><br>
+  <a href="staty5.htm"  target="_top">Перспективы развития.</a> </p>
+<span class="zaglav2">Программное обеспечение для конечного пользователя. ГеоГраф.</span>
+<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ГеоГраф дает
+возможность пользователям реализовать большую
+часть из основного набора функций ГИС уровня
+конечного пользователя, имеющихся в наиболее
+известных зарубежных программных продуктах, и
+ряд дополнительных функций.&nbsp;&nbsp; </p>
+
+<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; В частности,<span class="vydelenie"> 
+  ГеоГраф позволяет:</span></p>
+
+<ul>
+  <li><p >создавать электронные карты и атласы
+    как композиции слоев цифровых карт, связанных с
+    ними таблиц атрибутивных данных, растровых
+    изображений. Система построена по принципу
+    драйверов форматов, что позволяет напрямую
+    работать с любыми векторными картами и
+    растровыми изображениями, форматы которых
+    открыты и описаны, а также с любыми базами
+    атрибутивных данных, для которых имеются
+    драйверы ODBC или IDAPI;</p>
+  </li>
+  <li><p >строить электронные тематические
+    карты по любым слоям и табличным данным путем
+    классификации данных и отображения объектов
+    любого класса с помощью графических переменных
+    (цвета и интенсивность заливок и штриховок,
+    толщины и формы линий, размер, форма и ориентация
+    точечных знаков), выбранных или созданных
+    пользователем;</p>
+  </li>
+  <li><p >создавать нетопологические слои
+    пространственных объектов (например,
+    оперативной обстановки) непосредственно в
+    системе конечного пользователя в виде, пригодном
+    для передачи по сети, радиоканалу и прочим
+    коммуникациям, редактировать их в режиме
+    многопользовательского доступа;</p>
+  </li>
+  <li><p >строить разнообразные запросы,
+    выборки как по табличной, так и по
+    пространственной информации или по их сочетанию,
+    привязывать к слоям или объектам разнообразные
+    макросы, включая загрузку пользовательских
+    программ, новых композиций карт, цифровой аудио и
+    видеоинформации, связанной с объектами карт,
+    редактировать таблицы, проводить в них
+    вычисления, строить и проигрывать QBE и SQL- запросы;
+    </p>
+  </li>
+  <li><p >проводить измерения по карте, в том
+    числе и с записью результатов в базу (площади,
+    расстояния, координаты объектов);</p>
+  </li>
+  <li><p >выполнять динамический оверлей слоев
+    (благоприятные или неблагоприятные зоны по
+    комплексу слоев, построение в реальном времени в
+    зависимости накладываемых условий и выбора
+    слоев). Выполнять пространственные селекции
+    (например, все коммуникации, проходящие через
+    выбранные участки);</p>
+  </li>
+  <li><p >реализовывать диспетчерские функции
+    (регенерация тематических карт по отслеживаемым
+    изменениям в базе атрибутивных данных и др.); </p>
+  </li>
+  <li><p >формировать композицию карты для
+    вывода на печать, включая любые фрагменты карты,
+    тексты, растровые изображения, графики, легенду,
+    формы справок, таблицы. Готовить цифровые карты
+    для передачи в издательские системы;</p>
+  </li>
+</ul>
+
+<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ГеоГраф позволяет включать в 
+  себя приложения, реализующие различные расчетно-аналитические и прикладные задачи, 
+  использующие интерфейс ГеоГраф и данные, отвечающие требованиям ГеоГраф (для 
+  их подготовки не нужны какие-то иные средства). В качестве примеров таковых 
+  можно назвать :</p>
+
+<p >
+
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ГеоФит</b> - комплекс
+алгоритмов и программ интерполяции на
+регулярную сеть и фильтрации случайных
+компонент самых различных характеристик,
+измеренных на нерегулярной сети наблюдений,
+универсальные относительно видов съемок, этапов
+их проведения, детальности и степени
+неоднородности исходной сети данных. Комплекс
+может быть использован при обработке
+геологических, геохимических, геофизических,
+экологических, географических и других видов
+наблюдений для получения значений по регулярной
+сети данных в целях построения карт, проведения
+тренд-анализа и дальнейших расчетов по
+усмотрению пользователя. В частности ГеоФит
+может быть использован для построения изолиний
+по результатам точечных измерений.</p>
+
+<p >&nbsp;<img src="imag11.gif" width="370" height="431" hspace="12"></p>
+
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ГеоБуф </b>- приложение для
+построения буферных зон вокруг точечных,
+линейных и площадных объектов.</p>
+
+<p><img SRC="../IMG/buff.gif" WIDTH="301" HEIGHT="195" HSPACE="12"> </p>
+<p>
+
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ГеоМаршрут</b> - приложение для
+расчета оптимальных путей движения по сети.
+Можно использовать для решения задачи
+оптимизации пути следования транспортных
+средств.</p>
+
+<p><img src="imag13.gif" width="413" height="340" hspace="12"></p>
+<p >
+
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ГеоДин</b> - приложение
+для решения задачи динамической сегментации -
+размещения точечных и линейных объектов вдоль
+линейных трасс - автодорог, инженерных
+коммуникаций и других линейных объектов, на
+основе фиксации расстояния от начальных точек
+участков трасс. </p>
+
+<p><img SRC="imag14.gif" WIDTH="569" HEIGHT="464" HSPACE="12"> </p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Подчеркиваем, что для
+реализации указанных приложений не требуются
+какие-то иные специальные и дорогостоящие
+программные средства подготовки для них данных. </p>
+
+<a HREF="#up"> </a> 
+<p><a href="#up">К началу страницы</a></p>
+<img src="../IMG/line.gif" width="800" height="1"> 
+<p class="adres"> <font size="-1">Центр Геоинформационных Исследований Института 
+  Географии РАН<br>
+  109107, Москва, Старомонетный пер., 29<br>
+  телефоны: (095) 959-0017, (095) 230-8170; факс: (095) 959-0017<br>
+  e-mail: <a HREF="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a></font></p>
+</body>
+</html>

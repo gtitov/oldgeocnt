@@ -1,0 +1,153 @@
+<html>
+
+<head>
+<title>ЦГИ ИГ РАН - Разрешение проблем при работе с ПО под Win98</title>
+<script language="JavaScript">
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link rel="stylesheet" href="../CSS/zaglav.css" type="text/css">
+</head>
+
+<body link="#0033FF" bgcolor="#FFFFFF" onLoad="MM_preloadImages('../HOME/button/but_n1_r1_c1_f3.gif','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif','../HOME/button/but_n1_r1_c2_f3.gif','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif','../HOME/button/but_n1_r1_c3_f3.gif','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif','../HOME/button/but_n1_r1_c4_f3.gif','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif','../HOME/button/but_n1_r1_c5_f3.gif','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif','../HOME/button/but_n1_r1_c6_f3.gif','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif','../HOME/button/but_n1_r1_c8_f3.gif','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif','../HOME/button/but_n1_r1_c9_f3.gif','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif','../HOME/button/but_n1_r1_c10_f3.gif','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif','../HOME/button/but_n1_r1_c11_f3.gif','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif','../HOME/button/but_n1_r1_c12_f3.gif','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif','../HOME/button/but_n1_r1_c13_f3.gif','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif')">
+
+  <tr>
+    <td>
+      
+    <table border="0" cellpadding="0" cellspacing="0" width="807">
+  <!-- fwtable fwsrc="but_n1.png" fwbase="but_n1.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+  <tr> 
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="1" border="0"></td>
+  </tr>
+  <tr> 
+    <td><a href="../HOME/home.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f3.gif',1)" ><img name="but_n1_r1_c1" src="../HOME/button/but_n1_r1_c1.gif" width="63" height="22" border="0" alt="Home"></a></td>
+    <td><a href="../NEWS/news.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f3.gif',1)" ><img name="but_n1_r1_c2" src="../HOME/button/but_n1_r1_c2.gif" width="63" height="22" border="0" alt="News"></a></td>
+    <td><a href="../NEWS/price.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f3.gif',1)" ><img name="but_n1_r1_c3" src="../HOME/button/but_n1_r1_c3.gif" width="57" height="22" border="0" alt="Price"></a></td>
+    <td><a href="../GEOCNT/soft.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f3.gif',1)" ><img name="but_n1_r1_c4" src="../HOME/button/but_n1_r1_c4.gif" width="69" height="22" border="0" alt="Programmy"></a></td>
+    <td><a href="../GEOCNT/supp.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f3.gif',1)" ><img name="but_n1_r1_c5" src="../HOME/button/but_n1_r1_c5.gif" width="57" height="22" border="0" alt="File"></a></td>
+    <td><a href="../GEOCNT/maps.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f3.gif',1)" ><img name="but_n1_r1_c6" src="../HOME/button/but_n1_r1_c6.gif" width="57" height="22" border="0" alt="Maps"></a></td>
+    <td><a href="../GEOCNT/snimki.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f2.gif','../HOME/button/but_n1_r1_c7_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f3.gif',1)" ><img name="but_n1_r1_c7" src="../HOME/button/but_n1_r1_c7.gif" width="57" height="22" border="0" alt="Snimki"></a></td>
+    <td><a href="../GEOCNT/proect.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f3.gif',1)" ><img name="but_n1_r1_c8" src="../HOME/button/but_n1_r1_c8.gif" width="63" height="22" border="0" alt="Proekty"></a></td>
+    <td><a href="../ARTICLS/articls.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f3.gif',1)" ><img name="but_n1_r1_c9" src="../HOME/button/but_n1_r1_c9.gif" width="57" height="22" border="0" alt="Stat`i"></a></td>
+    <td><a href="../GEOCNT/obuchen.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f3.gif',1)" ><img name="but_n1_r1_c10" src="../HOME/button/but_n1_r1_c10.gif" width="63" height="22" border="0" alt="Obuchenie"></a></td>
+    <td><a href="../GEOCNT/partner.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f3.gif',1)" ><img name="but_n1_r1_c11" src="../HOME/button/but_n1_r1_c11.gif" width="63" height="22" border="0" alt="Partnery"></a></td>
+    <td><a href="../QUEST/quest.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f3.gif',1)" ><img name="but_n1_r1_c12" src="../HOME/button/but_n1_r1_c12.gif" width="69" height="22" border="0" alt="Vopros-Otvet"></a></td>
+    <td><a href="../GEOCNT/kontakt.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f3.gif',1)" ><img name="but_n1_r1_c13" src="../HOME/button/but_n1_r1_c13.gif" width="69" height="22" border="0" alt="Kontakt"></a></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="22" border="0"></td>
+  </tr>
+</table>
+</td>
+  </tr>
+<h4 class="zaglav2">Разрешение проблем при работе с ПО под Windows 98 </h4>
+
+<p>Важная информация для тех, у кого установлен на компьютер Windows 98 (особенно 
+  версия 4.10.1998). Несмотря на то, что фирма Microsoft гарантирует корректную 
+  работу 16-разрядных приложений, тем не менее при открытии стандартного диалога 
+  выбора шрифта в 16-разрядных приложениях происходит ошибка и приложение &quot;сворачивается&quot; 
+  или зависает. 16-разрядные версии GeoDraw и ГеоГраф не являются исключением.</p>
+
+<p align="center"><img src="fontdlg.gif" width="468" height="264"></p>
+
+<p>Происходит это по вине библиотеки <b>commdlg.dll</b>, устанавливаемой вместе 
+  с Windows 98, и расположенной в установочном каталоге Windows 98 в подкаталоге 
+  SYSTEM , например: C:\WINDOWS\SYSTEM. Будем надеяться, что корпорация Microsoft 
+  в будущем исправит этот досадный промах. Пока предлагаем следующий вариант решения 
+  этой проблемы:</p>
+
+<p>1) <strong><a href="ftp://geocnt.geonet.ru/pub/ads/font98">Скачайте у нас</a> 
+  </strong>или раздобудьте где-нибудь еще одноименную библиотеку от Windows 3.1 
+  или 3.11</p>
+
+<p>2) Перезагрузите компьютер в режиме MS DOS.</p>
+
+<p>3)Замените имеющуюся в системе библиотеку в подкаталоге SYSTEM, а также в подкаталоге 
+SYSBCKUP. Если вы замените файл только в подкаталоге SYSTEM, то при загрузке Windows 98 
+система восстановит исходный файл из SYSBCKUP. Имейте в виду, что подкаталог SYSBCKUP 
+является скрытым, поэтому для доступа к нему включите возможность показа скрытых и системных 
+файлов.
+</p>
+
+<p>4) Перезагрузите компьютер обратно в Windows 98.&nbsp;</p>
+
+<p><font color="#FF0000"><strong>Важно !!! </strong></font>Несмотря на то, что 
+  мы тестировали работу Windows 98 с подмененной библиотекой, это не гарантирует 
+  от каких-то возможных ошибок в работе операционной системы.</p>
+
+<p><img src="../IMG/line.gif" width="800" height="1"
+alt="Colorbar.gif (4491 bytes)"></p>
+
+<p class="adres"><font size="-1">Центр Геоинформационных Исследований Института 
+  Географии РАН<br>
+  109107, Москва, Старомонетный пер., 29 <br>
+  телефоны: (095) 959-0017, (095) 230-8170; факс: (095) 959-0017<br>
+  e-mail: <a href="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a> </font></p>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<html>
+
+<head>
+<title>Области применения программных средств и ГИС-технологий</title>
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link rel="stylesheet" href="../CSS/zaglav.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" link="#0033FF" onLoad="MM_preloadImages('../HOME/button/but_n1_r1_c1_f3.gif','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif','../HOME/button/but_n1_r1_c2_f3.gif','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif','../HOME/button/but_n1_r1_c3_f3.gif','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif','../HOME/button/but_n1_r1_c4_f3.gif','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif','../HOME/button/but_n1_r1_c5_f3.gif','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif','../HOME/button/but_n1_r1_c6_f3.gif','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif','../HOME/button/but_n1_r1_c8_f3.gif','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif','../HOME/button/but_n1_r1_c9_f3.gif','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif','../HOME/button/but_n1_r1_c10_f3.gif','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif','../HOME/button/but_n1_r1_c11_f3.gif','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif','../HOME/button/but_n1_r1_c12_f3.gif','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif','../HOME/button/but_n1_r1_c13_f3.gif','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif')" text="#000000" vlink="#990066" alink="#990066">
+<a name="up"></a> 
+<tr>
+    <td>
+      
+    <table border="0" cellpadding="0" cellspacing="0" width="807">
+  <!-- fwtable fwsrc="but_n1.png" fwbase="but_n1.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+  <tr> 
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="1" border="0"></td>
+  </tr>
+  <tr> 
+    <td><a href="../HOME/home.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f3.gif',1)" ><img name="but_n1_r1_c1" src="../HOME/button/but_n1_r1_c1.gif" width="63" height="22" border="0" alt="Home"></a></td>
+    <td><a href="../NEWS/news.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f3.gif',1)" ><img name="but_n1_r1_c2" src="../HOME/button/but_n1_r1_c2.gif" width="63" height="22" border="0" alt="News"></a></td>
+    <td><a href="../NEWS/price.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f3.gif',1)" ><img name="but_n1_r1_c3" src="../HOME/button/but_n1_r1_c3.gif" width="57" height="22" border="0" alt="Price"></a></td>
+    <td><a href="../GEOCNT/soft.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f3.gif',1)" ><img name="but_n1_r1_c4" src="../HOME/button/but_n1_r1_c4.gif" width="69" height="22" border="0" alt="Programmy"></a></td>
+    <td><a href="../GEOCNT/supp.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f3.gif',1)" ><img name="but_n1_r1_c5" src="../HOME/button/but_n1_r1_c5.gif" width="57" height="22" border="0" alt="File"></a></td>
+    <td><a href="../GEOCNT/maps.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f3.gif',1)" ><img name="but_n1_r1_c6" src="../HOME/button/but_n1_r1_c6.gif" width="57" height="22" border="0" alt="Maps"></a></td>
+    <td><a href="../GEOCNT/snimki.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f2.gif','../HOME/button/but_n1_r1_c7_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f3.gif',1)" ><img name="but_n1_r1_c7" src="../HOME/button/but_n1_r1_c7.gif" width="57" height="22" border="0" alt="Snimki"></a></td>
+    <td><a href="../GEOCNT/proect.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f3.gif',1)" ><img name="but_n1_r1_c8" src="../HOME/button/but_n1_r1_c8.gif" width="63" height="22" border="0" alt="Proekty"></a></td>
+    <td><a href="../ARTICLS/articls.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f3.gif',1)" ><img name="but_n1_r1_c9" src="../HOME/button/but_n1_r1_c9.gif" width="57" height="22" border="0" alt="Stat`i"></a></td>
+    <td><a href="../GEOCNT/obuchen.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f3.gif',1)" ><img name="but_n1_r1_c10" src="../HOME/button/but_n1_r1_c10.gif" width="63" height="22" border="0" alt="Obuchenie"></a></td>
+    <td><a href="../GEOCNT/partner.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f3.gif',1)" ><img name="but_n1_r1_c11" src="../HOME/button/but_n1_r1_c11.gif" width="63" height="22" border="0" alt="Partnery"></a></td>
+    <td><a href="../QUEST/quest.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f3.gif',1)" ><img name="but_n1_r1_c12" src="../HOME/button/but_n1_r1_c12.gif" width="69" height="22" border="0" alt="Vopros-Otvet"></a></td>
+    <td><a href="../GEOCNT/kontakt.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f3.gif',1)" ><img name="but_n1_r1_c13" src="../HOME/button/but_n1_r1_c13.gif" width="69" height="22" border="0" alt="Kontakt"></a></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="22" border="0"></td>
+  </tr>
+</table>
+</td>
+  </tr>
+<div align="center"><span class="zaglav">Области применения программных средств 
+  и ГИС-технологий ЦГИ ИГ РАН</span><br>
+  <font color="#000099">М.Ю. Карасев, Н.Н. Казанцев, С.В. Хрупов, В.Б. Яровых</font> </div>
+<p>
+
+За период, прошедший с 1991 г., разработки
+нашего центра были выбраны и применялись в
+большинстве отраслей и регионов страны. Это
+более чем 2 тыс. рабочих мест на базе программного
+обеспечения GeoDraw/ГеоГраф/ГеоКонструктор, работы
+по подготовке и реализации ГИС-проектов,
+экспертно-консультационные услуги для
+организаций, находящихся на начальных или в
+чем-то критических стадиях внедрения
+ГИС-технологий. Комплексный территориальный
+кадастр региона. Работы по выполнению отраслевых
+ГИС-проектов убедительно показывают, что их
+реализация была бы более эффективна в рамках
+комплексных проектов по территории региона в
+целом. Именно в таком ключе проводятся работы с
+НТЦ АГИКС по территории Республики Коми, что
+позволяет более рационально решать задачи
+обеспечения цифровыми картами и их
+согласованного обновления с участием различных
+отраслей, использования материалов
+дистанционного зондирования, создания
+инфраструктуры для работы с приборами GPS в режиме
+реального времени, обучения специалистов,
+квалифицированной постановки задач и проработки
+механизмов их решения для разных отраслей. Этот
+подход является весьма эффективным в
+экспертно-консультативных работах по
+территориям других регионов, проводимых с нашим
+участием. </p>
+
+<p><span class="vydelenie">Муниципальные ГИС</span>. Проблемы, аналогичные комплексному 
+  кадастру регионов, но значительно более острые и сложные, стоят на уровне городов. 
+  В настоящее время один из комплексных проектов по созданию первой очереди МГИС 
+  реализуется нами в Тольятти совместно с фирмой - системным интегратором ЛАНИТ, 
+  НПП &quot;Геокосмос&quot; и рядом других организаций. На первом этапе проекта 
+  решаются вопросы, связанные с созданием городской инфраструктуры, включая реконструкцию 
+  геодезической сети, GPS-станций, работающих в режиме RTK, ввод технологий, обеспечивающих 
+  высококачественные измерения на местности в кадастровых, топографических, проектно-изыскательских 
+  и строительных работах с оперативным согласованием результатов в среде ГИС, 
+  созданием центра для ведения городского цифрового геофонда, координацией работы 
+  различных служб в городе, разработку нормативной базы и финансово-экономического 
+  плана функционирования МГИС. Как показывает практика, аналогичные вопросы стоят 
+  и решаются в большинстве других городов, мэрия Тольятти в этом отношении одна 
+  из немногих, решившихся на создание качественной основы МГИС и находящих на 
+  это ресурсы. </p>
+
+<p><span class="vydelenie">Геология и недропользование. </span>Региональные информационно-компьютерные 
+  центры и комитеты по геологии Министерства природных ресурсов (ранее Роскомнедра) 
+  являются одними из наиболее заслуженных пользователей наших программных продуктов 
+  уже 6 лет. Авиатуры ГИС'95,96,97 убедительно показали это, равно как и в целом 
+  более высокий уровень ГИС-разработок в геологических организациях. В этой отрасли 
+  наши программы в течение многих лет используются в сочетании с продуктами ESRI 
+  (ARC/INFO, ArcView и др.). Немало пользователей в нефтегазовых компаниях (ЮКОС, 
+  Сургутнефтегаз, Юганскнефтегаз, СеверНИПИгаз, Газпромгеофизика и др.), АЛРОСА 
+  и др. </p>
+
+<p><span class="vydelenie">Инженерные сети.</span> ЦГИ ИГ РАН активно помогает 
+  организациям топливно-энергетического комплекса Москвы - Управлению топливно-энергетического 
+  хозяйства, Мосгортепло, Мостеплоэнерго, Мосэнерго, Мосгорсвету и др. в освоении 
+  и эффективном использовании ГИС, программных средств и организации технологий 
+  информационного взаимодействия между ними и общегородскими службами (Мосгоргеотрест 
+  и др.). Наши программные продукты активно применяются предприятиями АО &quot;Электросвязь&quot; 
+  Московской области, жилищно-коммунального хозяйства и телефонной сети Красноярска 
+  и других городов. </p>
+
+<p><span class="vydelenie">Лесоустройство и лесное хозяйство</span>. В течение 
+  нескольких последних лет наше программное обеспечение ГИС и консультативная 
+  помощь используются лесоустроительными предприятиями на значительной части территории 
+  России. Это Вологодская, Архангельская области и Республика Коми, Центральный 
+  район, Средняя Волга, Восточная Сибирь и Дальний Восток. Накоплен положительный 
+  опыт работы с ГИС комитетами по лесу субъектов Федерации и на уровне лесхозов. 
+  В результате внедрения ГИС, по расчетам предприятий, повышена оперативность 
+  и качество работы, снижены затраты на ряд технологических операций, практически 
+  осуществлен переход к производству материалов лесоустройства и частично производных 
+  от них в системе географических координат, что позволяет интегрировать материалы 
+  лесоустройства в работы других отраслей и выполнять необходимые согласования 
+  на новом качественном уровне. </p>
+
+<p><span class="vydelenie">Дорожные комитеты.</span> С 1994 г. реализованы или 
+  находятся в процессе создания ГИС по автодорогам, связываемые с базами паспортов 
+  автодорог (Воронежская, Псковская, Пермская, Нижегородская, Ростовская, Орловская, 
+  Амурская области, Республика Коми), часть из которых велась совместно с фирмой 
+  &quot;Геограком&quot;. Цифровые карты автодорог непосредственно использовались 
+  из ГИС для издания автодорожных карт и атласов в ряде регионов, что позволило 
+  существенно сократить сроки и затраты на их издание и частично или полностью 
+  покрыть затраты на создание ГИС за счет реализации тиража. Разработаны приложения 
+  по использованию GPS-ГИС-технологий для съемок при проектировании, строительстве 
+  и эксплуатации дорог и определении зон земельного отвода. </p>
+
+<p><span class="vydelenie">Земельные комитеты.</span>Пользователями нашего программного 
+  обеспечения являются областные, городские районные земельные комитеты, землеустроительные 
+  предприятия в Московской, Оренбургской, Свердловской, Тюменской областях, Приморском 
+  крае, Республике Коми и др. В 1997 г. получен сертификат соответствия (16/97 
+  ВР ИЦ ФКЦ &quot;Земля&quot; Госкомзема РФ) программного обеспечения GeoDraw/ГеоГраф/ГеоКонструктор 
+  требованиям, предъявляемым к программным продуктам для ГАС ЗК<b>. </b></p>
+
+<p><span class="vydelenie">ГИС-GPS и цифровая картография.</span>Совместно с нашими 
+  партнерами НПП &quot;Геокосмос&quot;, ГНПП &quot;Аэрогеофизика&quot;, корпорацией 
+  &quot;ОЛТ&quot; создаются и реализуются прикладные ГИС-GPS-технологии для обеспечения 
+  работ по реконструкции местных геодезических сетей, топографических съемок, 
+  кадастровых работ, проектирования, строительства, эксплуатационно-ремонтных 
+  задач (по Ухте, Тольятти, Москве и др.). Имеются и эксплуатируются продукты 
+  для систем слежения за подвижными объектами (Центр гибких технологий безопасности, 
+  АО &quot;Грант&quot; и др.). Мы располагаем развитыми связями с профессиональными 
+  организациями, работающими в области геодезии и картографии, что позволяет сформировать 
+  в короткие сроки банк из имеющихся цифровых карт или выполнить их с требуемым 
+  качеством и по минимальным ценам с соблюдением всех формальных условий (лицензии 
+  и документы на выходную продукцию). Имеется лицензия Роскартографии (РК 10122) 
+  на широкий спектр работ в области ГИС и картографии. </p>
+
+<p><span class="vydelenie">Экология</span>. В городских и региональных экологических 
+  работах наше программное обеспечение используют Федеральный центр геоэкологических 
+  систем, Сургутский, Камчатский, Красноярский, Тульский, Московский, Мурманский, 
+  Вологодский, Нижегородский региональные комитеты и департаменты по экологии, 
+  Оренбургский центр аэрокосмического мониторинга, НИИПИ Генплана Москвы, ВНИИ 
+  охраны природы, Институт экологии города, ТОО &quot;Шанэко&quot;, национальный 
+  парк &quot;Мещера&quot;, отделения Всемирного фонда дикой природы. </p>
+
+<p><span class="vydelenie">Выборы.</span> Совместно с группой &quot;Меркатор&quot; 
+  разработаны и используются приложения ГИС, осуществляемые совместно с Центризбиркомом 
+  РФ и Федеральным центром информатизации (электронный электоральный атлас России, 
+  работающий с базами данных по выборам федерального и регионального уровней). 
+</p>
+
+<p><span class="vydelenie">Оборона.</span> В течение 2 лет ведется активная работа 
+  по программам внедрения ГИС совместно с рядом ведущих организаций Минобороны 
+  РФ. </p>
+
+<p><span class="vydelenie">Бизнес и массовая продукция.</span> ГИС ЦГИ ИГ РАН 
+  активно используются организациями в сфере бизнеса и рекламы, такими, как АО 
+  &quot;Стиморол&quot;, OTIS Ltd., фабрика &quot;Ударница&quot;, газета &quot;Центр-плюс&quot;, 
+  ряд рекламных агентств. С использованием ГИС ЦГИ ИГ РАН выпущены CD-ROM Красноярска 
+  тиражом 5 тыс. экземпляров, ряд карт и атласов по территории регионов и городов 
+  России тиражом до 50 тыс. экземпляров. </p>
+
+<p><span class="vydelenie">Образование.</span> Программные продукты ГИС ЦГИ ИГ 
+  РАН активно используются в десятках вузов страны от Калининграда до Владивостока, 
+  причем одновременно. По соглашению между Центром информатизации Минобразования 
+  РФ проводятся регулярные курсы по обучению, предоставляются со значительными 
+  скидками программы, оказывается помощь в реализации проектов ЦНИТам вузов. </p>
+
+<p><span class="vydelenie">Уровни применения.</span> Наше программное обеспечение 
+  работает на уровне Российской Федерации в целом, отдельных регионов и субъектов 
+  Федерации вплоть до сельских административных районов, лесхозов, геологических 
+  партий, малых предприятий. Оно профессионально обеспечивает реализацию следующих 
+  возможностей:- работу с сотнями тысяч и миллионами векторных объектов на слой;- 
+  полную поддержку топологии, используемых в России систем координат и проекций;- 
+  развитые функции для интеграции данных из разнородных источников и форматов, 
+  легкий обмен данными с другими ГИС;- работу с широким рядом СУБД от Paradox 
+  до Oracle;- работу с растрами больших размеров, космоснимками;- развитый набор 
+  функций ГИС уровня конечного пользователя;- инструментальные средства разработки 
+  ГИС-приложений в средах визуального программирования - Delphi, C++, Visual Basic 
+  и др.;- опыт использования в большом числе проектов и в ГИС-приложениях. Одновременно 
+  с этим программное обеспечение очень просто в освоении, по мнению большинства 
+  пользователей в России и за рубежом; общедоступно по ценам в связи с принятой 
+  нами и выдерживаемой в течение 6 лет линией на первоочередное создание ГИС-инфраструктуры 
+  и массовых рабочих мест в России и за рубежом (от 500 до 250 у.е. за одно рабочее 
+  место); гарантирует постоянную бесплатную высококвалифицированную поддержку 
+  и реакцию на пожелания пользователей. </p>
+
+<p><span class="vydelenie">Зарубежные разработки. </span>Ряд прикладных разработок 
+  в сумме на несколько сот инсталляций сделан для стран БеНиЛюкс (совместно с 
+  фирмой &quot;ГЕОДАН&quot;, Нидерланды), для Министерства геологии Польши (совместно 
+  с польским отделением &quot;ГЕОДАН&quot;), в начальной стадии реализации находится 
+  программа содействия развитию ГИС-технологий для Мексики (ГИС-Центр ВЦ Национального 
+  политехнического института). Имеется ряд пользователей в других странах (Германия, 
+  Франция, Великобритания, Австралия, США и др.), оказывается большое количество 
+  консультаций по ГИС зарубежным специалистам.</p>
+
+
+
+<p><b><font color="#000080">По вопросам, связанным с использованием наших программных 
+  продуктов в ГИС-технологиях, мы рекомендуем обращаться к следующим </font></b><a
+href="../geocnt/polz.htm" target="_top">специалистам и организациями в регионах</a> 
+ <font
+SIZE="3"> </font></p>
+<font
+SIZE="3"><p>Над выпуском работали М.Ю. Карасев, Н.Н.
+Казанцев, С.В. Хрупов, В.Б. Яровых</p></font>
+
+<p ><a href="#up">К началу страницы</a></p>
+
+<p><img src="../IMG/line.gif" width="800" height="1"
+alt="Colorbar.gif (4491 bytes)"></p>
+
+<p class="adres"><font size="-1">Центр Геоинформационных Исследований Института 
+  Географии РАН<br>
+  109107, Москва, Старомонетный пер., 29 <br>
+  телефоны: (095) 959-0017, (095) 230-8170; факс: (095) 959-0017<br>
+  e-mail:<a href="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a> </font> 
+</p>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<body bgcolor="#FFFFFF" link="#0033FF" background="geofon.gif">
+<FORM ACTION="http://geocnt.geonet.ru/cgi-bin/bom/7.cgi" METHOD=POST>
+<INPUT TYPE=hidden NAME="formname" VALUE="form test">
+Для подписки на <font size="+1" color="red">рассылку</font> Информационных сообщений <font size="+1" color="blue">ЦГИ ИГРАН</font>  заполните
+пожалуйста следующую форму.
+<TABLE BORDER=0 CELLPADDING=5>
+<TR><TD>
+<TABLE BORDER=0 CELLPADDING=5>
+<TR>
+<TD align=right>Название организации *<br>
+(для частных лиц укажите Частное лицо):</td>
+<td align=left><INPUT TYPE=text NAME=name VALUE="" SIZE=40></TD>
+</TR>
+<TR>
+<TD ALIGN=right>Город * :</td>
+<td align=left><INPUT TYPE=text NAME=adress VALUE="" SIZE=40></TD>
+</TR>
+<TR>
+<TD ALIGN=right>Адрес электронной почты (e-mail) * :</td>
+<td align=left><INPUT TYPE=text NAME=email VALUE="" SIZE=40></TD>
+</TR>
+<TR>
+<TD ALIGN=right><br>Контактное лицо</td>
+<td align=left></TD>
+</TR>
+<TR>
+<TD ALIGN=right>Фамилия * :</td>
+<td align=left><INPUT TYPE=text NAME=NAME1 VALUE="" SIZE=40></TD>
+</TR>
+<TR>
+<TD ALIGN=right>Имя * :</td>
+<td align=left><INPUT TYPE=text NAME=NAME2 VALUE="" SIZE=40></TD>
+</TR>
+<TR>
+<TD ALIGN=right>Отчество :</td>
+<td align=left><INPUT TYPE=text NAME=NAME3 VALUE="" SIZE=40></TD>
+</TR>
+
+<TR><TD ALIGN=right>Наша организация является пользователем программных продуктов ЦГИ ИГРАН *</td>
+<td align=left><select name="CLIENT">
+	<option value="" selected></option>
+	<option value="ДА">ДА</option>
+	<option value="НЕТ">НЕТ</option></select></td>
+</TR>
+<tr><td><br></tr></td>
+<TR><TD align=right valign=top>Дополнительная информация: </td>
+<td><textarea name="comments" rows=5 cols=40 value="Put your comments here"></textarea></td>
+</tr>
+<tr>
+<td></td>
+<td><center><INPUT TYPE=submit ONCLICK="JAVASCRIPT: THIS.CLIENT.VALUE=1111;" NAME=Submit border=0 VALUE="Отправить">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT TYPE=reset NAME=reset border=0 VALUE="Очистить"></center></td>
+</tr>
+</table>
+</TD></TR>
+</TABLE>
+</FORM>
+<center>Обратите внимание! Поля, отмеченные звездочкой (*) обязательны для заполнения!</center>
+</body>

@@ -1,0 +1,74 @@
+BODY
+{
+    BACKGROUND-IMAGE: url("images/geofon.gif");
+    MARGIN: 0px;
+    WIDTH: 100%;
+}
+P, UL, OL, TABLE, CAPTION, TR, TD, H3, H4
+{
+    FONT-FAMILY: Arial, Verdana,'MS Sans Serif';
+    FONT-SIZE: 10pt;
+}
+P
+{
+    MARGIN: 5px 5px 12pt;
+}
+H3
+{
+    FONT-WEIGHT: bold;
+    FONT-STYLE: italic;
+    FONT-SIZE: 100%;
+    COLOR: #FF2222;
+    TEXT-ALIGN: CENTER;
+    MARGIN-TOP: 20pt;
+}
+.PageTitleGRC
+{
+	PADDING: 0px 0px 0px 0px;
+	PADDING-LEFT: 0px;
+    FONT-FAMILY: Arial,Helvetica,sans-serif;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12px;
+    TEXT-ALIGN: LEFT;
+    COLOR: #dfcfdf;
+}
+.PageTitle, .PageTitleMain
+{
+	PADDING: 0px 0px 0px 0px;
+	PADDING-LEFT: 0px;
+    FONT-FAMILY: Arial,Helvetica,sans-serif;
+    FONT-WEIGHT: bold;
+    FONT-STYLE: italic;
+    FONT-SIZE: 20px;
+    TEXT-ALIGN: LEFT;
+    COLOR: #FFFFFF;
+}
+.PageTitleMain
+{
+    FONT-SIZE: 18px;
+}
+.PageFooter
+{
+	MARGIN-LEFT: 5px;
+	PADDING: 0px 0px 0px 0px;
+    FONT-FAMILY: Arial,Helvetica,sans-serif;
+    FONT-WEIGHT: normal;
+    COLOR: #006699;
+    MARGIN-BOTTOM: 0;
+    WIDTH: 100%;
+}
+.vydelenie
+{
+    FONT-WEIGHT: bold;
+    FONT-STYLE: italic;
+}
+.NewsDate
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12pt;
+    FONT-FAMILY: Arial, Verdana, Tahoma, 'MS Sans Serif';
+}
+
+
+
+

@@ -1,0 +1,456 @@
+<html>
+  <head>
+    <title>Bio</title>
+    <script src="http://maps.google.com/maps?file=api&v=2.85&key=ABQIAAAAyD2MDeW1LH0e7dzJ6eW2cBTVmMdYEaB5yh2JpXh7MSEZGswvnBQx-lx9PE1GzlcPUeUes7WfoVMwZA"
+      type="text/javascript"></script>
+    <script src="wms.js" type="text/javascript"></script>
+    <script src="../misc/jquery.js" type="text/javascript"></script>
+    <style type="text/css">
+      .menu {padding: 0 0 0 0; margin: 0 5px; list-style-type: none; width: 370px;}
+      .menu li {margin: 1px 5px;}
+      a {text-decoration: none; color: Black; cursor: pointer;}
+      .divAddNewPnt td {height: 17px; font-size: 14px;}
+      .divAddNewPnt input {height: 17px; font-size: 9px; vertical-align: top;}
+      .divAddNewPnt table,.divAddNewPnt tr,.divAddNewPnt td {border: 0px;}
+      tr, td {border: 1px solid grey;}
+      .clean {border: 0px;}
+      .check_hide {visibility: hidden;}
+      .check_show {visibility: visible;}
+    </style>
+    <script language="JavaScript" type="text/javascript">
+
+      location.replace("http://83.149.246.253/bio/");  
+
+      var map;
+      var layers = Array();
+      var fieldsName = ["Латинское название вида","Область, район, название точки","Описание местоположения","Экотоп","Дата находки","Количество","Индекс гербария","Библиографическая ссылка"];
+      var myoverlay;
+      var tool='info';
+      var oldtype='pointer';
+      var marker;
+      var saveState = true;
+      var usrSurname = "";
+      var usrName = "";
+      var usrPatronymic = "";
+      var usrWorkplace = "";
+      var usrEmail = "";
+      var cRight = new GCopyrightCollection('cgi');
+      var zoom = 5;
+      var centerPoint = new GLatLng(54.466, 38.75);
+      var f_open = new Image();
+      var f_close = new Image();
+      f_open.src="images/folderopen.gif";
+      f_close.src="images/folder.gif";
+function load() {
+	if (GBrowserIsCompatible()) {
+	 	map = new GMap2(document.getElementById("map"), {draggableCursor:"crosshair"}); //
+		map.setCenter(centerPoint, zoom);
+
+		var mt = map.getMapTypes();
+		for (var i=0; i<mt.length; i++) {
+			mt[i].getMinimumResolution = function() {return 4;}
+			mt[i].getMaximumResolution = function() {return 14;}
+		}
+		map.addControl(new GScaleControl());
+		map.addControl(new GSmallZoomControl());
+//		map.addControl(new GLargeMapControl());
+		map.addControl(new GMapTypeControl());
+
+                click_listen = GEvent.addListener(map, 'click', function(overlay,latlng) {
+		if (latlng){
+			switch (tool) {
+				case 'pan':{break;}
+				case 'info':{get_place(latlng); break;}
+				case 'pointer':{addNewPnt(latlng); break;}
+			}
+		}
+		});
+		var ovcontrol = new GOverviewMapControl(new GSize(165,165));
+		map.addControl(ovcontrol);
+		var ov_map = ovcontrol.getOverviewMap();
+		GEvent.addListener(map, 'maptypechanged', function(){
+			ov_map.setMapType(G_NORMAL_MAP);
+		});
+	restoreState();
+	radio=document.getElementsByName("checkLayer");
+	for (var i=0; i<radio.length;i++){
+		if (radio[i].value==layers[1]){
+			radio[i].checked=true;
+		}
+	}
+if (layers[0]) {
+	show(layers[0]+"Menu"); 
+}
+	Option_b(tool);
+	}
+checkTheme(layers[1]);
+}
+function addNewPnt(latlng) {
+            marker = new GMarker(latlng, {draggable:false});
+            GEvent.addListener(marker, "click", function() {
+              var html = "<div class='divAddNewPnt' style='width: 330px;'><small><table>" +
+                         "<tr><td>Латинское наименование вида</td> <td><input type='text' id='Name'/> </td> </tr>" +
+                         "<tr><td>Автор латинского наименования</td> <td><input type='text' id='Author'/> </td> </tr>" +
+                         "<tr><td><a title='ближайший населенный пункт'>Место находки <b>*</b></a></td> <td><input type='text' id='Place'/></td> </tr>" +
+                         "<tr><td>Административная область</td> <td><input type='text' id='District'/></td> </tr>" +
+                         "<tr><td>Административный район</td> <td><input type='text' id='Region'/></td> </tr>" +
+                         "<tr><td><a title='(например, в 2 км к северо-западу ... , железнодорожный вокзал ...)'>Описание местоположения находки <b>*</b></a></td> <td><input type='text' id='Description'/></td> </tr>" +
+                         "<tr><td>Дата находки</td> <td><input type='text' size='2' id='Date'/>/<input type='text' size='2' id='Month'/>/<input type='text' size='4' id='Year'/></td> </tr>" +						 						 						 
+                         "<tr><td>Экотоп</td> <td><input type='text' id='Ecotope'/></td> </tr>" +
+			 "<tr><td>Количество</td> <td><input type='text' id='Number'/></td> </tr>" +
+                         "<tr><td>Фенофаза</td> <td><input type='text' id=''/></td> </tr>" +
+                         "<tr><td><a title='фамилия, и.о.'>Автор(ы) находки <b>*</b></a></td> <td><input type='text' id=''/></td> </tr>" +
+                         "<tr><td><a title='указать в том случае, если данный экземпляр загербаризирован'>Наименование гербария <b>*</b></a></td> <td><input type='text' id='Herb'/></td> </tr>" +
+                         "<tr><td><a title='указать в том случае, если данный экземпляр загербаризирован'>Индекс гербария <b>*</b></a></td> <td><input type='text' id='HerbInd'/></td> </tr>" +	
+                         "<tr><td>Примечание</td> <td><input type='text' id=''/></td> </tr>" +
+                         "<tr><td colspan=2 align=center><input type='button' value='Save & Close' onclick='saveData()'/></td></tr>" +
+			 "</table></small></div>";
+              var html_about = "<div class='divAddNewPnt' style='width: 330px;'><small><table>" +
+                         "<tr><td>Фамилия</td> <td><input type='text' id='usrSurname' value='" + usrSurname + "'/> </td> </tr>" +
+                         "<tr><td>Имя</td> <td><input type='text' id='usrName' value='" + usrName + "'/> </td> </tr>" +
+                         "<tr><td>Отчество</td> <td><input type='text' id='usrPatronymic' value='" + usrPatronymic + "'/></td> </tr>" +
+                         "<tr><td>Место работы (учебы)</td> <td><input type='text' id='usrWorkplace' value='" + usrWorkplace + "'/></td> </tr>" +	
+                         "<tr><td>E-mail</td> <td><input type='text' id='usrEmail' value='" + usrEmail + "'/></td> </tr>" +
+			 "</table></small></div>";
+
+	var infoTabs = [
+	  new GInfoWindowTab("О находке", html),
+	  new GInfoWindowTab("О Вас", html_about)
+	];
+		marker.openInfoWindowTabsHtml(infoTabs);
+//              marker.openInfoWindow(html);
+            });
+            map.addOverlay(marker);
+          }
+
+function saveData() {
+      var name = $("#Name").val();
+      var place = $("#Place").val();
+      var description = $("#Description").val();
+      var region = $("#Region").val();
+      var district = $("#District").val();
+      var ecotope = $("#Ecotope").val();
+      var date = $("#Date").val();
+      var month = $("#Month").val();
+      var year = $("#Year").val();
+      var number = $("#Number").val();
+      var herb = $("#Herb").val();
+      var herbind = $("#HerbInd").val();
+      var latlng = marker.getPoint(); //getLatLng();
+      var lat = latlng.lat();
+      var lng = latlng.lng();
+      usrSurname = $("#usrSurname").val();
+      usrName = $("#usrName").val();
+      usrPatronymic = $("#usrPatronymic").val();
+      usrWorkplace = $("#usrWorkplace").val();
+      usrEmail = $("#usrEmail").val();
+      var url = "addNewPnt.php?name=" + name + "&place=" + place +
+                "&region=" + region + "&district=" + district + "&number=" + number +
+                "&herb=" + herb + "&herbind=" + herbind + "&ecotope=" + ecotope +
+                "&date=" + date + "&month=" + month + "&year=" + year +
+                "&description=" + description + "&lat=" + lat + "&lng=" + lng +
+		"&usrSurname=" + usrSurname + "&usrName=" + usrName + "&usrPatronymic=" + usrPatronymic +
+		"&usrWorkplace=" + usrWorkplace + "&usrEmail=" + usrEmail;
+      GDownloadUrl(url, function(data, responseCode) {
+        if (responseCode == 200 && data.length <= 1) {
+          marker.closeInfoWindow();
+		alert("Location added.");
+        }
+      });
+    }
+
+function createCustomLayer(minRes,maxRes,myLayers) {
+if(myLayers){
+	var tile = new GTileLayer(cRight,minRes,maxRes);
+        if (layers[3]){tile.myLayers=layers[3]+","}else{tile.myLayers=""};
+	tile.myLayers+=layers[2]+","+layers[0];
+	tile.mySqlStr=layers[1];
+	tile.mySqlStrLyr=layers[0];
+   	tile.getTileUrl=CustomGetTileUrl;
+   	tile.getOpacity = function() {return 0.7;}
+	myoverlay = new GTileLayerOverlay(tile);
+}
+}
+
+function toggleLayer(obj) {
+	var key = obj.value;
+	var id=obj.id;
+	if (obj.checked) {
+		layers[0]=id;
+		layers[1]=key;
+		layers[2]="flor_region";
+		layers[3]="";
+	}
+	else {
+		layers[0]="";
+		layers[1]="";
+		layers[2]="";
+		layers[3]="";
+	}
+checkTheme(key);
+redrawMap();
+}
+function checkTheme(key){
+el=$("#"+key.replace("+","_"));
+$("input[@type='checkbox']").removeClass("check_show").addClass("check_hide");
+$("input[@type='checkbox']").each(function(){this.checked = false;});
+el.addClass("check_show");
+}
+function toggleTheme(obj) {
+//if (obj.checked){ 
+//	layers[2]="obl_rus";}
+//else {
+//	layers[2]="flor_region";}
+if (obj.checked){ 
+	layers[3]="obl_rus";}
+else {
+	layers[3]="";}
+layers[2]="flor_region";
+redrawMap();
+}
+function redrawMap(){
+map.removeOverlay(myoverlay);
+addMyOverlay();
+}
+function addMyOverlay() {
+lyrs = layers[0];
+	if (rtrim(lyrs)) {
+	createCustomLayer(5,6,lyrs);
+	map.addOverlay(myoverlay);}
+}
+function get_place(latlng) {
+	var z = map.getZoom(); 
+        var proj = map.getCurrentMapType().getProjection();
+        var pt = proj.fromLatLngToPixel(latlng,z);
+
+        var tile_coord_x = Math.floor(pt.x/256);
+        var tile_coord_y = Math.floor(pt.y/256);
+        var a = new GPoint(tile_coord_x,tile_coord_y);
+        var local_x = pt.x % 256;
+        var local_y = pt.y % 256;
+
+        var coords = 'x='+local_x+'&y='+local_y; 
+	var  url = CustomGetTileUrlInfo(a,z,"",layers[0]);
+	var urlstr =  url + "&" + coords;
+//	var urlstr =  url + "&sql=LIKE%27" + layers[1] + "%27&" + coords;
+	GDownloadUrl(urlstr,function(doc) {
+		if (doc && rtrim(layers.join(" "))) {
+		var res=doc.split("<br>");
+		var text = "";
+		var j = 0;
+		for (i=0; i<res.length-1; i++){
+		if (j>7){j = 0};
+			text=text+fieldsName[j]+":"+res[i];
+			if (j<7) {text=text+"<br>";}
+		j++;
+		}
+		var info = '<div style="width: 400px;"><small>';
+		info += text;
+		info += '</small></div>';
+		map.openInfoWindow(latlng, info);
+		}
+	});
+}
+
+function show(id){
+	var el=$('#'+id);
+	el.toggle();
+	var el1=$('#'+id+'Folder');
+	el1.attr("src", (el1.src() == 'http://geocnt.geonet.ru/googlemap/images/folder.gif')?f_open.src:f_close.src);
+}
+
+function ToolOnOver(type){
+	if (type!= tool){
+	$("#"+type).attr("src","images/"+type+"_b.gif");}
+}
+function ToolOnOut(type){
+	if (type!= tool){
+	$("#"+type).attr("src","images/"+type+".gif");}
+}
+function Option_b(type) {
+if (type) {tool=type;}
+if (type != oldtype) {
+$("#"+oldtype).attr("src","images/"+oldtype+".gif");
+$("#"+type).attr("src","images/"+type+"_d.gif");}
+oldtype=type;
+return false;
+}
+function restoreState() {
+	var mapState = getMapState();
+	if (typeof(mapState) != 'undefined') {
+		if (mapState['lat'] && mapState['lon']) {
+			var center = new GLatLng(parseFloat(mapState['lat']), parseFloat(mapState['lon']));
+		} else {
+			var center = centerPoint;
+		}	
+		if (mapState['z']) {
+			var z = parseInt(mapState['z']);
+		} else {
+			var z = 5;
+		}
+		if (mapState['layers']) {
+			lyrsStr = mapState['layers'];
+			lyrsStr = lyrsStr.replace(/^\S/,"");
+			lyrsStr = lyrsStr.replace(/\S$/,"");
+			layers = lyrsStr.split(" ");
+			layers[2] = "flor_region";
+	                layers[3] = "";
+		} else {
+			layers = ["acer","Acer+negundo","flor_region"];
+		}
+		if (mapState['usrSurname']) {
+			usrSurname = mapState['usrSurname'];
+		}
+		if (mapState['usrName']) {
+			usrName = mapState['usrName'];
+		}
+		if (mapState['usrPatronymic']) {
+			usrPatronymic = mapState['usrPatronymic'];
+		}
+		if (mapState['usrWorkplace']) {
+			usrWorkplace = mapState['usrWorkplace'];
+		}
+		if (mapState['usrEmail']) {
+			usrEmail = mapState['usrEmail'];
+		}
+
+	}
+	
+		map.setCenter(center, z);
+		addMyOverlay();
+}
+function getMapState() {
+	var qString = window.location.search;
+	qString = qString.substring(1, qString.length);
+	var cValues = new Array();
+	var separator = '&';
+
+	if (!qString) {
+		qString = getCookie('mapState');
+		separator = ',';
+	}
+
+	if (qString) {
+		var nvPairs = qString.split(separator);
+
+		for (var n = 0 ; n < nvPairs.length ; n++ )	{
+			var nvPair = nvPairs[n];
+			var nv = nvPair.split('=');
+
+			cValues[nv[0]] = nv[1];
+			
+		}
+	}
+	return cValues;
+}
+
+
+
+
+function getCookie(cookieName) {
+	if (document.cookie.length > 0) {
+		var cIndex = document.cookie.indexOf(cookieName+"=");
+		if (cIndex != -1) {
+			cIndex += cookieName.length + 1;
+			var cLength = document.cookie.indexOf(";", cIndex);
+			if (cLength == -1) {
+				cLength = document.cookie.length;
+			}
+			return unescape(document.cookie.substring(cIndex, cLength)); 
+		}
+	}
+	return null;
+}
+
+
+
+function setCookie(cookieName, value, expiredays) {
+	var exp = "";
+	if (expiredays) {
+		var ExpireDate = new Date ();
+		ExpireDate.setTime(ExpireDate.getTime() + (expiredays * 24 * 3600 * 1000));
+		exp = ExpireDate.toGMTString();
+	}
+	document.cookie = cookieName + "=" + escape(value) + "; expires=" + exp + "; path=/";
+}
+
+
+
+function delCookie (cookieName) {
+	if (getCookie(cookieName)) {
+		document.cookie = cookieName + "=" + "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+	}
+}
+function unload() {
+	if (saveState) {
+		var cookieStr = '';
+		var center = map.getCenter();
+		cookieStr += 'lat=' + center.y + ',';
+		cookieStr += 'lon=' + center.x + ',';
+		cookieStr += 'z=' + map.getZoom() + ',';
+		cookieStr += 'layers=\'' + layers.join(" ") + '\',';
+		cookieStr += 'usrSurname=' + usrSurname + ',';
+		cookieStr += 'usrName=' + usrName + ',';
+		cookieStr += 'usrPatronymic=' + usrPatronymic + ',';
+		cookieStr += 'usrWorkplace=' + usrWorkplace + ',';
+		cookieStr += 'usrEmail=' + usrEmail + ',';
+		setCookie('mapState', cookieStr, 365);
+	}
+	GUnload();
+}
+function openWinInfo(url){ 
+	new_window = window.open(url, 'infoWin','scrollbars=yes,resizable=no,width=700,height=600');
+	new_window.focus(); 
+}
+  </script>
+  </head>
+  <body leftmargin=2 topmargin=2>
+    <table align="center" cellspacing="2" cellpadding="2">
+      <tr>
+        <td colspan=2>
+          <a onclick="Option_b('pointer');" title="Добавить находку" onmouseout="Javascript:ToolOnOut('pointer');" onmouseover="Javascript:ToolOnOver('pointer');"><img src="images/pointer.gif" id="pointer" name="pointer" width="22" height="22" border="0" alt="pointer" hspace="2"></a>
+          <a onclick="Option_b('info');" title="Информация" onmouseout="Javascript:ToolOnOut('info');" onmouseover="Javascript:ToolOnOver('info');"><img src="images/info.gif" id="info" name="info" width="22" height="22" border="0" alt="info" hspace="2"></a>
+          <a onclick="Option_b('pan');" title="Сдвиг карты" onmouseout="Javascript:ToolOnOut('pan');" onmouseover="Javascript:ToolOnOver('pan');"><img src="images/pan.gif" id="pan" name="pan" width="22" height="22" border="0" alt="pan" hspace="2"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id="map" style="width: 600px; height: 600px"></div>
+        </td>
+        <td valign=top>
+          <div style="overflow: auto; width: 420px; height: 600px;">
+            <a onclick='show("acerMenu")'><img id='acerMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Aceraceae Juss. &ndash; Кленовые</a><br><div id='acerMenu' style='position:relative; display:none;'><ul class='menu'><li><input type='checkbox' id='Acer_negundo' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='acer' value='Acer+negundo' onclick='toggleLayer(this)' type='radio'><img src='images/pic1_1.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=acer&Mkey=9'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Acer negundo L.</a></li><li><input type='checkbox' id='Acer_pseudoplatanus' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='acer' value='Acer+pseudoplatanus' onclick='toggleLayer(this)' type='radio'><img src='images/pic2_2.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=acer&Mkey=11'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Acer pseudoplatanus L.</a></li><li><input type='checkbox' id='Acer_tataricum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='acer' value='Acer+tataricum' onclick='toggleLayer(this)' type='radio'><img src='images/pic3_3.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=acer&Mkey=12'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Acer tataricum L.</a></li><li><input type='checkbox' id='Acer_campestre' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='acer' value='Acer+campestre' onclick='toggleLayer(this)' type='radio'><img src='images/pic4_4.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=acer&Mkey=136'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Acer campestre L.</a></li><li><input type='checkbox' id='Acer_ginnala' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='acer' value='Acer+ginnala' onclick='toggleLayer(this)' type='radio'><img src='images/pic5_5.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=acer&Mkey=15922'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Acer ginnala Maxim.</a></li><li><input type='checkbox' id='Acer_saccharinum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='acer' value='Acer+saccharinum' onclick='toggleLayer(this)' type='radio'><img src='images/pic1_2.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=acer&Mkey=15930'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Acer saccharinum L.</a></li><li><input type='checkbox' id='Acer_saccharum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='acer' value='Acer+saccharum' onclick='toggleLayer(this)' type='radio'><img src='images/pic2_3.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=acer&Mkey=15931'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Acer saccharum Marsh.</a></li><li><input type='checkbox' id='Acer_tegmentosum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='acer' value='Acer+tegmentosum' onclick='toggleLayer(this)' type='radio'><img src='images/pic3_4.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=acer&Mkey=15933'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Acer tegmentosum Maxim.</a></li><li><input type='checkbox' id='Acer_spicatum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='acer' value='Acer+spicatum' onclick='toggleLayer(this)' type='radio'><img src='images/pic4_5.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=acer&Mkey=24535'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Acer spicatum Lam.</a></li></ul></div><a onclick='show("alismatMenu")'><img id='alismatMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Alismataceae Vent. &ndash; Частуховые</a><br><div id='alismatMenu' style='position:relative; display:none;'><ul class='menu'><li><input type='checkbox' id='Sagittaria_ambigua' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alismat' value='Sagittaria+ambigua' onclick='toggleLayer(this)' type='radio'><img src='images/pic1_1.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alismat&Mkey=24487'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Sagittaria ambigua J.G. Smith</a></li><li><input type='checkbox' id='Sagittaria_latifolia' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alismat' value='Sagittaria+latifolia' onclick='toggleLayer(this)' type='radio'><img src='images/pic2_2.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alismat&Mkey=22728'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Sagittaria latifolia Willd.</a></li><li><input type='checkbox' id='Sagittaria_platyphylla' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alismat' value='Sagittaria+platyphylla' onclick='toggleLayer(this)' type='radio'><img src='images/pic3_3.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alismat&Mkey=10303'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Sagittaria platyphylla (Engelm.) J.G. Smith</a></li></ul></div><a onclick='show("alliMenu")'><img id='alliMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Alliaceae J. Agardh &ndash; Луковые</a><br><div id='alliMenu' style='position:relative; display:none;'><ul class='menu'><li><input type='checkbox' id='Allium_cepa' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alli' value='Allium+cepa' onclick='toggleLayer(this)' type='radio'><img src='images/pic1_1.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alli&Mkey=31'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Allium cepa L.</a></li><li><input type='checkbox' id='Allium_sativum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alli' value='Allium+sativum' onclick='toggleLayer(this)' type='radio'><img src='images/pic2_2.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alli&Mkey=32'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Allium sativum L.</a></li><li><input type='checkbox' id='Allium_angulosum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alli' value='Allium+angulosum' onclick='toggleLayer(this)' type='radio'><img src='images/pic3_3.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alli&Mkey=152'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Allium angulosum L.</a></li><li><input type='checkbox' id='Allium_schoenoprasum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alli' value='Allium+schoenoprasum' onclick='toggleLayer(this)' type='radio'><img src='images/pic4_4.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alli&Mkey=154'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Allium schoenoprasum L.</a></li><li><input type='checkbox' id='Allium_ursinum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alli' value='Allium+ursinum' onclick='toggleLayer(this)' type='radio'><img src='images/pic5_5.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alli&Mkey=155'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Allium ursinum L.</a></li><li><input type='checkbox' id='Allium_inaequale' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alli' value='Allium+inaequale' onclick='toggleLayer(this)' type='radio'><img src='images/pic1_2.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alli&Mkey=1765'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Allium inaequale Janka</a></li><li><input type='checkbox' id='Allium_fistulosum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alli' value='Allium+fistulosum' onclick='toggleLayer(this)' type='radio'><img src='images/pic2_3.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alli&Mkey=2810'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Allium fistulosum L.</a></li><li><input type='checkbox' id='Allium_ramosum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alli' value='Allium+ramosum' onclick='toggleLayer(this)' type='radio'><img src='images/pic3_4.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alli&Mkey=2850'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Allium ramosum L.</a></li><li><input type='checkbox' id='Allium_senescens' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alli' value='Allium+senescens' onclick='toggleLayer(this)' type='radio'><img src='images/pic4_5.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alli&Mkey=2859'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Allium senescens L.</a></li><li><input type='checkbox' id='Allium_proliferum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alli' value='Allium+proliferum' onclick='toggleLayer(this)' type='radio'><img src='images/pic5_1.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alli&Mkey=12847'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Allium proliferum (Moench) Schrad. ex Willd.</a></li><li><input type='checkbox' id='Allium_altissimum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='alli' value='Allium+altissimum' onclick='toggleLayer(this)' type='radio'><img src='images/pic1_3.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=alli&Mkey=16386'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Allium altissimum Regel</a></li></ul></div><a onclick='show("amaranthMenu")'><img id='amaranthMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Amaranthaceae Juss. &ndash; Ширицевые</a><br><div id='amaranthMenu' style='position:relative; display:none;'><ul class='menu'><li><input type='checkbox' id='Alternanthera_sessilis' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Alternanthera+sessilis' onclick='toggleLayer(this)' type='radio'><img src='images/pic1_1.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=2887'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Alternanthera sessilis (L.) DC.</a></li><li><input type='checkbox' id='Amaranthus_acutilobus' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+acutilobus' onclick='toggleLayer(this)' type='radio'><img src='images/pic2_2.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=3391'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus acutilobus Uline et Bray</a></li><li><input type='checkbox' id='Amaranthus_albus' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+albus' onclick='toggleLayer(this)' type='radio'><img src='images/pic3_3.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=1878'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus albus L.</a></li><li><input type='checkbox' id='Amaranthus_blitoides' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+blitoides' onclick='toggleLayer(this)' type='radio'><img src='images/pic4_4.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=156'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus blitoides S. Wats.</a></li><li><input type='checkbox' id='Amaranthus_blitum' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+blitum' onclick='toggleLayer(this)' type='radio'><img src='images/pic5_5.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=2905'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus blitum L.</a></li><li><input type='checkbox' id='Amaranthus_caudatus' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+caudatus' onclick='toggleLayer(this)' type='radio'><img src='images/pic1_2.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=2906'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus caudatus L.</a></li><li><input type='checkbox' id='Amaranthus_crispus' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+crispus' onclick='toggleLayer(this)' type='radio'><img src='images/pic2_3.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=2907'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus crispus (Lesp. & Thev.) N.Terr.</a></li><li><input type='checkbox' id='Amaranthus_cruentus' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+cruentus' onclick='toggleLayer(this)' type='radio'><img src='images/pic3_4.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=2165'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus cruentus L.</a></li><li><input type='checkbox' id='Amaranthus_deflexus' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+deflexus' onclick='toggleLayer(this)' type='radio'><img src='images/pic4_5.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=2908'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus deflexus L.</a></li><li><input type='checkbox' id='Amaranthus_graecizans' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+graecizans' onclick='toggleLayer(this)' type='radio'><img src='images/pic5_1.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=2909'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus graecizans L.</a></li><li><input type='checkbox' id='Amaranthus_hybridus' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+hybridus' onclick='toggleLayer(this)' type='radio'><img src='images/pic1_3.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=157'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus hybridus L.</a></li><li><input type='checkbox' id='Amaranthus_hypochondriacus' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+hypochondriacus' onclick='toggleLayer(this)' type='radio'><img src='images/pic2_4.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=2910'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus hypochondriacus L.</a></li><li><input type='checkbox' id='Amaranthus_palmeri' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+palmeri' onclick='toggleLayer(this)' type='radio'><img src='images/pic3_5.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=16613'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus palmeri S. Wats.</a></li><li><input type='checkbox' id='Amaranthus_powellii' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+powellii' onclick='toggleLayer(this)' type='radio'><img src='images/pic4_1.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=16614'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus powellii S. Wats.</a></li><li><input type='checkbox' id='Amaranthus_retroflexus' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+retroflexus' onclick='toggleLayer(this)' type='radio'><img src='images/pic5_2.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=159'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus retroflexus L.</a></li><li><input type='checkbox' id='Amaranthus_spinosus' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+spinosus' onclick='toggleLayer(this)' type='radio'><img src='images/pic1_4.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=2911'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus spinosus L.</a></li><li><input type='checkbox' id='Amaranthus_viridis' onclick='toggleTheme(this)' class='check_hide'><input name='checkLayer' id='amaranth' value='Amaranthus+viridis' onclick='toggleLayer(this)' type='radio'><img src='images/pic2_5.gif' border=0><a onclick="openWinInfo('ViewInfo.php?tableName=amaranth&Mkey=2915'); return false;">&nbsp;<img src='images/page.gif' width=18 height=18 border=0>Amaranthus viridis L.</a></li></ul></div><a ><img id='amaryllidMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Amaryllidaceae Jaume &ndash; Амариллисовые</a><br><a ><img id='anacardiMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Anacardiaceae Lindl. &ndash; Сумаховые</a><br><a ><img id='apiMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Apiaceae Lindl. &ndash; Зонтичные, или Сельдереевые</a><br><a ><img id='apocynMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Apocynaceae Juss. &ndash; Кутровые</a><br><a ><img id='arMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Araceae Juss. &ndash; Ароидные</a><br><a ><img id='aristolochiMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Aristolochiaceae Juss. &ndash; Кирказоновые</a><br><a ><img id='asclepiadMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Asclepiadaceae R. Br. &ndash; Ластовневые</a><br><a ><img id='asparagMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Asparagaceae Juss. &ndash; Спаржевые</a><br><a ><img id='asterMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Asteraceae Dumort. &ndash; Сложноцветные, или Астровые</a><br><a ><img id='balsaminMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Balsaminaceae Juss. &ndash; Бальзаминовые</a><br><a ><img id='berberidMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Berberidaceae Juss. &ndash; Барбарисовые</a><br><a ><img id='betulMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Betulaceae S. F. Gray &ndash; Березовые</a><br><a ><img id='bignoniMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Bignoniaceae Juss. &ndash; Бигнониевые</a><br><a ><img id='boraginMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Boraginaceae Juss. &ndash; Бурачниковые</a><br><a ><img id='brassicMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Brassicaceae Burnett &ndash; Крестоцветные</a><br><a ><img id='butomMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Butomaceae Rich. &ndash; Сусаковые</a><br><a ><img id='buxMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Buxaceae Dumort. &ndash; Самшитовые</a><br><a ><img id='campanulMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Campanulaceae Juss. &ndash; Колокольчиковые</a><br><a ><img id='cannabMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Cannabaceae Endl. &ndash; Коноплевые</a><br><a ><img id='capparMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Capparaceae Juss. &ndash; Каперсовые</a><br><a ><img id='caprifoliMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Caprifoliaceae Juss. &ndash; Жимолостные</a><br><a ><img id='caryophyllMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Caryophyllaceae Juss. &ndash; Гвоздичные</a><br><a ><img id='celastrMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Celastraceae R. Br. &ndash; Древогубцевые</a><br><a ><img id='chenopodiMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Chenopodiaceae Vent. &ndash; Маревые</a><br><a ><img id='commelinMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Commelinaceae R. Br. &ndash; Коммелиновые</a><br><a ><img id='convallariMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Convallariaceae Horan. &ndash; Ландышевые</a><br><a ><img id='convolvulMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Convolvulaceae Juss. &ndash; Вьюнковые</a><br><a ><img id='cornMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Cornaceae Dumort. &ndash; Кизиловые</a><br><a ><img id='crassulMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Crassulaceae DC. &ndash; Толстянковые</a><br><a ><img id='cucurbitMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Cucurbitaceae Juss. &ndash; Тыквенные</a><br><a ><img id='cupressMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Cupressaceae Bartl. &ndash; Кипарисовые</a><br><a ><img id='cuscutMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Cuscutaceae Dumort. &ndash; Повиликовые</a><br><a ><img id='cyperMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Cyperaceae Juss. &ndash; Осоковые</a><br><a ><img id='dipsacMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Dipsacaceae Juss. &ndash; Ворсянковые</a><br><a ><img id='elaeagnMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Elaeagnaceae Juss. &ndash; Лоховые</a><br><a ><img id='equisetMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Equisetaceae Rich. ex DC. &ndash; Хвощовые</a><br><a ><img id='ericMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Ericaceae Juss. &ndash; Вересковые</a><br><a ><img id='euphorbiMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Euphorbiaceae Juss. &ndash; Молочайные</a><br><a ><img id='fabMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Fabaceae Lindl. &ndash; Бобовые</a><br><a ><img id='fagMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Fagaceae Dumort. &ndash; Буковые</a><br><a ><img id='fumariMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Fumariaceae DC. &ndash; Дымянковые</a><br><a ><img id='geraniMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Geraniaceae Juss. &ndash; Гераниевые</a><br><a ><img id='grossulariMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Grossulariaceae DC. &ndash; Крыжовниковые</a><br><a ><img id='hemerocallidMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Hemerocallidaceae R. Br. &ndash; Красодневовые</a><br><a ><img id='hippocastanMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Hippocastanaceae DC. &ndash; Конскокаштановые</a><br><a ><img id='hyacinthMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Hyacinthaceae Batsch &ndash; Гиацинтовые</a><br><a ><img id='hydrangeMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Hydrangeaceae Dumort. &ndash; Гортензиевые</a><br><a ><img id='hydrocharitMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Hydrocharitaceae Juss. &ndash; Водокрасовые</a><br><a ><img id='hydrophyllMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Hydrophyllaceae R. Br. ex Edwards &ndash; Водолистниковые</a><br><a ><img id='iridMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Iridaceae Juss. &ndash; Касатиковые, или Ирисовые</a><br><a ><img id='juglandMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Juglandaceae A. Rich. ex Kunth &ndash; Ореховые</a><br><a ><img id='juncMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Juncaceae Juss. &ndash; Ситниковые</a><br><a ><img id='juncaginMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Juncaginaceae Rich. &ndash; Ситниковидные</a><br><a ><img id='lamiMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Lamiaceae Lindl. &ndash; Губоцветные, или Яснотковые</a><br><a ><img id='lemnMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Lemnaceae S. F. Gray &ndash; Рясковые</a><br><a ><img id='liliMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Liliaceae Juss. &ndash; Лилейные</a><br><a ><img id='limoniMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Limoniaceae Lincz. &ndash; Кермековые</a><br><a ><img id='linMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Linaceae S. F. Gray &ndash; Льновые</a><br><a ><img id='lythrMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Lythraceae Jaume &ndash; Дербенниковые</a><br><a ><img id='malvMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Malvaceae Juss. &ndash; Мальвовые, или Просвирниковые</a><br><a ><img id='menispermMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Menispermaceae Juss. &ndash; Луносемянниковые</a><br><a ><img id='menyanthMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Menyanthaceae Dumort. &ndash; Вахтовые</a><br><a ><img id='molluginMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Molluginaceae Hutch. &ndash; Моллюговые</a><br><a ><img id='morMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Moraceae Link &ndash; Тутовые</a><br><a ><img id='najadMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Najadaceae Juss. &ndash; Наядовые</a><br><a ><img id='nyctaginMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Nyctaginaceae Juss. &ndash; Никтагиновые</a><br><a ><img id='nymphaeMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Nymphaeaceae Salisb. &ndash; Кувшинковые</a><br><a ><img id='oleMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Oleaceae Hoffmgg. et Link &ndash; Маслиновые</a><br><a ><img id='onagrMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Onagraceae Juss. &ndash; Кипрейные, или Ослинниковые</a><br><a ><img id='orobanchMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Orobanchaceae Vent. &ndash; Заразиховые</a><br><a ><img id='oxalidMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Oxalidaceae R. Br. &ndash; Кислицевые</a><br><a ><img id='papaverMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Papaveraceae Juss. &ndash; Маковые</a><br><a ><img id='phytolaccMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Phytolaccaceae R. Br. &ndash; Лаконосовые</a><br><a ><img id='pinMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Pinaceae Lindl. &ndash; Сосновые</a><br><a ><img id='plantaginMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Plantaginaceae Juss. &ndash; Подорожниковые</a><br><a ><img id='platanMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Platanaceae Dumort. &ndash; Платановые</a><br><a ><img id='poMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Poaceae Barnhart &ndash; Злаки, или Мятликовые</a><br><a ><img id='polemoniMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Polemoniaceae Juss. &ndash; Синюховые</a><br><a ><img id='polygalMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Polygalaceae R. Br. &ndash; Истодовые</a><br><a ><img id='polygonMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Polygonaceae Juss. &ndash; Гречиховые</a><br><a ><img id='pontederiMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Pontederiaceae Kunth &ndash; Понтедериевые</a><br><a ><img id='portulacMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Portulacaceae Juss. &ndash; Портулаковые</a><br><a ><img id='potamogetonMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Potamogetonaceae Dumort. &ndash; Рдестовые</a><br><a ><img id='primulMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Primulaceae Vent. &ndash; Первоцветные</a><br><a ><img id='ranunculMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Ranunculaceae Juss. &ndash; Лютиковые</a><br><a ><img id='resedMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Resedaceae S. F. Gray &ndash; Резедовые</a><br><a ><img id='rhamnMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Rhamnaceae Juss. &ndash; Крушиновые</a><br><a ><img id='rosMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Rosaceae Juss. &ndash; Розоцветные</a><br><a ><img id='rubiMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Rubiaceae Juss. &ndash; Мареновые</a><br><a ><img id='rutMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Rutaceae Juss. &ndash; Рутовые</a><br><a ><img id='salicMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Salicaceae Mirb. &ndash; Ивовые</a><br><a ><img id='salviniMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Salviniaceae Dumort. &ndash; Сальвиниевые</a><br><a ><img id='sambucMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Sambucaceae Batsch ex Borkh. &ndash; Бузиновые</a><br><a ><img id='santalMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Santalaceae R. Br. &ndash; Санталовые</a><br><a ><img id='schisandrMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Schisandraceae Blume &ndash; Лимонниковые</a><br><a ><img id='scrophulariMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Scrophulariaceae Juss. &ndash; Норичниковые</a><br><a ><img id='simaroubMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Simaroubaceae DC. &ndash; Симарубовые</a><br><a ><img id='solanMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Solanaceae Juss. &ndash; Пасленовые</a><br><a ><img id='tiliMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Tiliaceae Juss. &ndash; Липовые</a><br><a ><img id='trapMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Trapaceae Dumort. &ndash; Рогульниковые, или Чилимовые</a><br><a ><img id='typhMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Typhaceae Juss. &ndash; Рогозовые</a><br><a ><img id='ulmMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Ulmaceae Mirb. &ndash; Ильмовые</a><br><a ><img id='urticMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Urticaceae Juss. &ndash; Крапивовые</a><br><a ><img id='valerianMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Valerianaceae Batsch &ndash; Валериановые</a><br><a ><img id='verbenMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Verbenaceae Jaume &ndash; Вербеновые</a><br><a ><img id='viburnMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Viburnaceae Rafin. &ndash; Калиновые</a><br><a ><img id='violMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Violaceae Batsch &ndash; Фиалковые</a><br><a ><img id='vitMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Vitaceae Juss. &ndash; Виноградовые</a><br><a ><img id='zygophyllMenuFolder' src='images/folder.gif' width='18' height='18' border='0'>Zygophyllaceae R. Br. &ndash; Парнолистниковые</a><br>
+          </div>
+        </td>
+      </tr>
+        <td>
+	<table width="600px" cellspacing="2" cellpadding="2" border="0" class="clean">
+	<tr>
+	    <td colspan="4" align="center" class="clean"><b>Степень натурализации</b></td>
+	</tr>
+	<tr>
+	    <td width="40px" class="clean"><img src="images/ephemer.gif" border="1" width="40" height="20"></td>
+	    <td width="260px" class="clean">эфемерофит</td>
+	    <td width="40px" class="clean"><img src="images/natur.gif" border="1" width="40" height="20"></td>
+	    <td width="260px" class="clean">натурализовавшийся</td>
+	</tr>
+	<tr>
+	    <td width="40px" class="clean"><img src="images/invaz.gif" border="1" width="40" height="20"></td>
+	    <td width="260px" class="clean">инвазивный</td>
+	    <td width="40px" class="clean"><img src="images/dn.gif" border="1" width="40" height="20"></td>
+	    <td width="260px" class="clean">степень натурализации не ясна</td>
+	</tr>
+	</table>
+        </td>
+	<td>
+	</td>
+    </table>
+  </body>
+  <script>
+	window.onload = load;
+	window.onunload = unload;
+	//window.onresize = resizeMap;
+</script>
+</html>
+
+

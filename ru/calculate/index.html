@@ -1,0 +1,806 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Программа расчёта высот | Центр геоинформационных исследований</title>
+<META NAME="Author" CONTENT="Mikhail Borisov, borim@yandex.ru">
+<link rel="stylesheet" type="text/css" href="http://geocnt.geonet.ru/sites/all/themes/geocnt_theme/my.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="..." content="..." />
+    <link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/nice_menus/nice_menus.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/nice_menus/nice_menus_default.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views/css/views.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/geocnt_theme/style.css?9" />
+<link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/geocnt_theme/print.css?9" />
+    <script type="text/javascript" src="/misc/jquery.js?9"></script>
+<script type="text/javascript" src="/misc/drupal.js?9"></script>
+<script type="text/javascript" src="//usr/local/www/data/site/tmp/files/languages/ru_ff9b49225a845d1bc6b43ace5b9c1538.js?9"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/superfish.js?9"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/jquery.bgiframe.min.js?9"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/jquery.hoverIntent.minified.js?9"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/nice_menus.js?9"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "nice_menus_options": { "delay": 800, "speed": 1 } });
+//--><!]]>
+</script>
+    <script type="text/javascript" src="/misc/jquery.js"></script>
+<script type="text/javascript" src="/misc/drupal.js"></script>
+<script type="text/javascript" src="/misc/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="/sites/all/themes/geocnt_theme/common.js"></script>
+<!--<link rel="stylesheet" href="../menu.css" type="text/css"> //-->
+<style type="text/css" media="all">@import "/sites/all/themes/geocnt_theme/body.css";</style>
+    <style type="text/css" media="print">@import "/sites/all/themes/geocnt_theme/print.css";</style>
+    <!--[if lt IE 7]>
+    <style type="text/css" media="all">@import "/sites/all/themes/geocnt_theme/fix-ie.css";</style>
+    <![endif]-->
+<!--[if IE]><script type="text/javascript" src="/sites/all/themes/geocnt_theme/excanvas.js"></script><![endif]-->
+</head>
+<body>
+<!-- header ������� ���������� //-->
+<a name="up"></a>
+<table width="100%" height="65" border="0" bgcolor="#0033CC" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="120" height="90">
+			<a href="http://geocnt.geonet.ru"><img src="http://geocnt.geonet.ru/images/logo.gif" width="120" height="90" border="0" title="http://geocnt.geonet.ru" alt="http://geocnt.geonet.ru"></a>
+		</td>
+		<td>
+			<p class="PageTitleMain">Центр геоинформационных исследований<br>Программа расчёта высот</p>
+		</td>
+		<td width="40%" align=right background="http://geocnt.geonet.ru/images/gradient.jpg">
+			<a href="/ru">Russian</a>&nbsp;<a href="/ru"><img src="/sites/all/modules/i18n/flags/ru.png"  class="i18n-icon" width="16" height="12" alt="Russian" /></a>&nbsp;<br>
+			<a href="/en">English</a>&nbsp;<a href="/en"><img src="/sites/all/modules/i18n/flags/en.png"  class="i18n-icon" width="16" height="12" alt="English" /></a>&nbsp;<br>
+			<a href="/es">Espanol</a>&nbsp;<a href="/es"><img src="/sites/all/modules/i18n/flags/es.png"  class="i18n-icon" width="16" height="12" alt="Spanish" /></a>&nbsp;
+		</td>
+	</tr>
+</table>
+<!-- /header ������� ���������� //-->
+<div id="block-nice_menus-1" class="clear-block block block-nice_menus">
+
+
+ <!-- <div class="content"> //--> <ul class="nice-menu nice-menu-down" id="nice-menu-1"><li class="menu-175 menu-path-node-1 first  odd "><a href="/main" title="Главная страница сайта">Главная</a></li>
+<li class="menu-364 menuparent menu-path-news even "><a href="/news" title="Новости сайта">Новости</a><ul><li class="menu-365 menu-path-news first  odd "><a href="/news" title="">Новости</a></li>
+<li class="menu-366 menu-path-news_archive even  last "><a href="/news_archive" title="Архив новостей">Архив новостей</a></li>
+</ul>
+</li>
+<li class="menu-182 menuparent menu-path-node-20 odd "><a href="/soft" title="Продукты и услуги">Продукты и услуги</a><ul><li class="menu-183 menu-path-node-20 first  odd "><a href="/soft" title="Программное обеспечение">Программное обеспечение</a></li>
+<li class="menu-198 menu-path-node-28 even "><a href="/trial" title="Ознакомительные версии">Ознакомительные версии</a></li>
+<li class="menu-199 menu-path-node-29 odd "><a href="/maps" title="Карты">Карты</a></li>
+<li class="menu-200 menu-path-node-10 even "><a href="/snimki" title="Снимки">Снимки</a></li>
+<li class="menu-202 menu-path-node-31 odd  last "><a href="/price" title="Цены">Цены</a></li>
+</ul>
+</li>
+<li class="menu-185 menuparent menu-path-node-32 even "><a href="/supp" title="Техническая поддержка">Техническая поддержка</a><ul><li class="menu-186 menu-path-node-32 first  odd "><a href="/supp" title="Обновление версий">Обновление версий</a></li>
+<li class="menu-196 menu-path-node-33 even "><a href="/hasp" title="Информация о ключах защиты HASP">Информация о ключах защиты HASP</a></li>
+<li class="menu-197 menu-path-node-34 odd  last "><a href="/answer" title="Ответы на вопросы">Ответы на вопросы</a></li>
+</ul>
+</li>
+<li class="menu-187 menuparent menu-path-node-4 odd "><a href="/projects" title="Проекты и публикации">Проекты и публикации</a><ul><li class="menu-191 menu-path-node-4 first  odd "><a href="/projects" title="Проекты">Проекты</a></li>
+<li class="menu-375 menu-path-node-142 even "><a href="/proj_mollweide" title="Мольвейде и вулканы">Мольвейде и вулканы</a></li>
+<li class="menu-255 menu-path-node-155 odd "><a href="/3_axial_equal_area" title="">Равновеликие проекции трехосного эллипсоида</a></li>
+<li class="menu-374 menu-path-node-5 even "><a href="/public" title="Статьи и обзоры">Статьи и обзоры</a></li>
+<li class="menu-193 menu-path-node-6 odd "><a href="/proj_rus" title="Проекции карт России">Проекции карт России</a></li>
+<li class="menu-194 menu-path-node-7 even "><a href="/conic" title="Параметры конических проекций">Параметры конических проекций</a></li>
+<li class="menu-195 menu-path-node-15 odd "><a href="/proj_astr" title="Проекции малых тел">Проекции малых тел</a></li>
+<li class="menu-238 menu-path-node-82 even "><a href="/proj_world" title="">Проекция карты мира</a></li>
+<li class="menu-208 menu-path-node-91 odd "><a href="/cs" title="">Системы координат и мат. основа ГИС</a></li>
+<li class="menu-246 menu-path-node-95 even "><a href="/web_srv" title="">Сравнение географических основ</a></li>
+<li class="menu-250 menu-path-node-128 odd "><a href="/3_axial" title="">Проекции трехосного эллипсоида</a></li>
+<li class="menu-248 menu-path-node-124 even  last "><a href="/soil" title="">Согласование тематических данных</a></li>
+</ul>
+</li>
+<li class="menu-188 menuparent menu-path-node-11 even "><a href="/contacts" title="Контакты">Контакты</a><ul><li class="menu-370 menu-path-node-11 first  odd "><a href="/contacts" title="Как нас найти">Как нас найти</a></li>
+<li class="menu-371 menu-path-node-12 even  last "><a href="/users" title="Пользователи и партнеры">Пользователи и партнеры</a></li>
+</ul>
+</li>
+<li class="menu-367 menu-path-guestbook odd  last "><a href="/guestbook" title="Гостевая">Гостевая</a></li>
+</ul>
+<!-- </div> //-->
+</div>
+
+<hr>
+<!-- content ���������� ��������� //-->
+
+
+<div id="node-176" class="node">
+
+
+
+  
+  <div class="content">
+    <table>
+<tbody>
+<tr>
+<td class="label" colspan="3">большая экваториальная полуось</td>
+<td class="input"><input id="a" size="10" type="text" value="17000" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">малая экваториальная полуось</td>
+<td class="input"><input id="b" size="10" type="text" value="5500" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">полярная полуось</td>
+<td class="input"><input id="c" size="10" type="text" value="5500" /></td>
+</tr>
+<!--
+<tr>
+<td class="label" colspan="3">сдвиг по горизонтали</td>
+<td class="input"><input id="x_shift" size="10" type="text" value="0" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">сдвиг по вертикали</td>
+<td class="input"><input id="y_shift" size="10" type="text" value="0" /></td>
+</tr>
+-->
+<tr>
+<td class="label" colspan="3">точность</td>
+<td class="input"><input id="eps_input" size="10" type="text" value="0.000001" /></td>
+</tr>
+<tr id="tr_file" class="tr_file tab-content" style="">
+<td class="label" colspan="4">
+<input type="file" id="files" name="files[]" /><a download="transform.csv" id="downloadlink" style="display: none">Download</a><br><output id="content"></output>
+</td>
+</tr>
+<tr>
+<td class="label" colspan="4" align="center"><input onclick="result();" type="button" value="result" /></td>
+</tr>
+</tbody>
+</table>
+<script type="text/javascript">
+var textFile = null;
+var resultFile = null;
+var link = document.getElementById('downloadlink');
+var eps5=1e-12;
+var a, b, c, eps_input, e_2, e1_2, e3_2, a0, e_2_mult_e1_2, e_2_plus_e1_2;
+var a11,a12,a13,a14,a15,a16,a21,a22,a23,a24,a25,a26,a32,a33,a34,a35,a36,a43,a44,a45,a46,a54,a55,a56,a65,a66,a76;
+var result_roots = [];
+
+
+function result() {
+a = parseFloat(document.getElementById("a").value);
+b = parseFloat(document.getElementById("b").value);
+c = parseFloat(document.getElementById("c").value);
+eps_input = parseFloat(document.getElementById("eps_input").value)*0.001;
+e_2=(a*a-c*c)/(a*a);
+e1_2=(a*a-b*b)/(a*a);
+e3_2=(b*b-c*c)/(b*b);
+a0 = e1_2*e1_2*e_2*e_2;
+e_2_plus_e1_2 = e_2+e1_2;
+e_2_mult_e1_2 = e1_2*e_2;
+
+/*
+ff = cube_equation(1,-4,3,-12);
+ff1 = cube_equation(1,3,7,5);
+ff2 = cube_equation(1,3,-2,-6);
+ff3 = cube_equation(8,-60,150,-125);
+ff4 = cube_equation(1,-10,12,72);
+
+tt = quart_equation(1,-2,-13,38,-24);
+tt14 = quart_equation(1,-3,1,0,4);
+tt15 = quart_equation(1,3,1,15,-20);
+tt13 = quart_equation(1,3,6,6,4);
+
+tt1 = quart_equation(256,-768,864,-432,81);
+tt12 = quadr_equation(3,3,-6);
+tt15 = quart_equation(2,-20,70,-100,48);
+*/
+
+newContent = "fi;la;r;x_new;y_new;z_new;fi_new;la_new;r_new;h\r\n";
+  if(resultFile && resultFile.length>1){
+  for (var index=0; index<resultFile.length; ++index){
+    la_i = resultFile[index]['la']*Math.PI/180;
+    fi_i = resultFile[index]['fi']*Math.PI/180;
+    r_i = resultFile[index]['r'];
+sin_la_2=Math.sin(la_i)*Math.sin(la_i);
+cos_la_2=Math.cos(la_i)*Math.cos(la_i);
+t_2=Math.cos(fi_i)*Math.cos(fi_i)*cos_la_2+(Math.cos(fi_i)*Math.cos(fi_i)*sin_la_2/(1-e1_2))+(Math.sin(fi_i)*Math.sin(fi_i)/(1-e_2));
+if(Math.abs(r_i-a/Math.sqrt(t_2)) < eps5){
+  x=x0; y=y0; z=z0;
+  la=la_i; fi=fi_i;
+  r=r_i;
+  h=0;
+              newContent += fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + x + ";" + y + ";" + z + ";" + fi*180/Math.PI + ";" + la*180/Math.PI + ";" + r + ";" + h + "\r\n";
+}else{
+in_out = ((r_i>a/Math.sqrt(t_2))?1:-1);
+	x0=r_i*Math.cos(fi_i)*Math.cos(la_i);
+        y0=r_i*Math.cos(fi_i)*Math.sin(la_i);
+        z0=r_i*Math.sin(fi_i);
+	x0=x0/a;
+        y0=y0/b;
+        z0=z0/c;
+        if(Math.abs(x0) < eps5){x0=0;}
+        if(Math.abs(y0) < eps5){y0=0;}
+        if(Math.abs(z0) < eps5){z0=0;}
+        result_roots=[]; roots_number=0;
+        result_roots.length=0;
+        if(y0==0){
+          y=0;
+          if(x0==0){//x=0;y=0;z!=0;
+            x=0; la=la_i; fi=fi_i;
+            //if(z0>0){z=c; h=z0*c-z;}else{z=-c; h=z-z0*c;}
+              r=c;
+              z=r*Math.sin(fi);
+              h=r_i-r;
+              newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + x + ";" + y + ";" + z + ";" + fi*180/Math.PI + ";" + la*180/Math.PI + ";" + r + ";" + h + "\r\n";
+          }else if(z0==0){ //x!=0;y=0;z=0;
+            z=0; la=la_i; fi=fi_i;
+            //if(x0>0){x=a; h=x0*a-x;}else{x=-a; h=x-x0*a;}
+              r=a;
+              x=r*Math.cos(la);
+              h=r_i-r;
+              newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + x + ";" + y + ";" + z + ";" + fi*180/Math.PI + ";" + la*180/Math.PI + ";" + r + ";" + h + "\r\n";
+          }else{ //x!=0;y=0;z!=0;
+            if(e_2==0){
+              la=la_i; fi=fi_i;
+              r=c;
+              x=r*Math.cos(fi)*Math.cos(la);
+              z=r*Math.sin(fi);
+              h=r_i-r;
+              newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + x + ";" + y + ";" + z + ";" + fi*180/Math.PI + ";" + la*180/Math.PI + ";" + r + ";" + h + "\r\n";
+            }else{
+              calc_koeff_a3(x0,z0,e_2);
+              result_roots.push.apply( result_roots, quart_equation(a32,a33,a34,a35,a36));
+              newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + calc_la_fi_h(x0,y0,z0);
+            }
+          }
+        }else if(z0==0){
+          z=0;
+          if(x0==0){ //x=0;y!=0;z=0;
+            x=0; la=la_i; fi=fi_i;
+            r=b;
+            //if(y0>0){y=b; h=y0*b-y;}else{y=-b; h=y-y0*b;}
+            y=r*Math.sin(la);
+            h=r_i-r;
+            newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + x + ";" + y + ";" + z + ";" + fi*180/Math.PI + ";" + la*180/Math.PI + ";" + r + ";" + h + "\r\n";
+          }else{ //x!=0;y!=0;z=0;
+            if(e1_2==0){
+              la=la_i; fi=fi_i;
+              r=a;
+              x=r*Math.cos(la);
+              y=r*Math.sin(la);
+              h=r_i-r;
+              newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + x + ";" + y + ";" + z + ";" + fi*180/Math.PI + ";" + la*180/Math.PI + ";" + r + ";" + h + "\r\n";
+            }else{
+              calc_koeff_a3(x0,y0,e1_2);
+              result_roots.push.apply( result_roots, quart_equation(a32,a33,a34,a35,a36));
+              newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + calc_la_fi_h(x0,y0,z0);
+            }
+          }
+        }else if(x0==0){
+          x=0;
+          if(e3_2==0){
+            la=la_i; fi=fi_i;
+            r=b;
+            y=r*Math.cos(fi)*Math.sin(la);
+            z=r*Math.sin(fi);
+            h=r_i-r;
+            newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + x + ";" + y + ";" + z + ";" + fi*180/Math.PI + ";" + la*180/Math.PI + ";" + r + ";" + h + "\r\n";
+          }else{
+            calc_koeff_a3(y0,z0,e3_2);
+            result_roots.push.apply( result_roots, quart_equation(a32,a33,a34,a35,a36));
+            newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + calc_la_fi_h(x0,y0,z0);
+          }
+
+        }else if(a0==0){
+          if(e1_2==0){
+            if(e_2==0){
+              la=la_i; fi=fi_i;
+              r=a;
+              x=r*Math.cos(fi)*Math.cos(la);
+              y=r*Math.cos(fi)*Math.sin(la);
+              z=r*Math.sin(fi);
+              h=r_i-r;
+              newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + x + ";" + y + ";" + z + ";" + fi*180/Math.PI + ";" + la*180/Math.PI + ";" + r + ";" + h + "\r\n";
+            }else{ //e_2!=0
+            //calc_koeff_a3_el_rev(x0,y0,z0,e_2);
+            x0_mem=x0;
+            y0_mem=y0;
+            x0=r_i*Math.cos(fi_i)/a;
+            y0=0;
+            calc_koeff_a3(x0,z0,e_2);
+            x0=x0_mem;
+            y0=y0_mem;
+            result_roots.push.apply( result_roots, quart_equation(a32,a33,a34,a35,a36));
+            for (var i=0; i < result_roots.length; i++) {
+              result_roots[i] *= Math.cos(la_i);
+            }
+            newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + calc_la_fi_h(x0,y0,z0);
+            }
+          }
+        }else{ //a0!=0
+ 	  calc_koeff(x0,y0,z0);
+          if(result_roots.length>0){
+            result_roots.push.apply( result_roots, quart_equation(a32,a33,a34,a35,a36));
+          }else{
+            bound2 = Math.max( 6*Math.abs(a11), Math.pow(6*Math.abs(a12),0.5), Math.pow(6*Math.abs(a13),1/3), Math.pow(6*Math.abs(a14),0.25), Math.pow(6*Math.abs(a15),0.2), Math.pow(6*Math.abs(a16),1/6) );
+            bound1 = -  bound2;
+            sign_change_left = sign_change(bound1);
+            sign_change_right = sign_change(bound2);
+            roots_number = Math.abs(sign_change_left - sign_change_right);
+
+if(roots_number!=0){
+
+  do{
+    if(result_roots.length==0){
+      x_left = bound1;
+      x_right = bound2;
+    }else{
+      x_left = x_right;
+      x_right = bound2;
+    }
+    do {
+      x_right_old = x_right;
+      x_right = x_left+0.5*(x_right-x_left);
+      sign_change_left = sign_change(x_left);
+      sign_change_right = sign_change(x_right);
+      roots_number_temp = Math.abs(sign_change_left - sign_change_right);
+      if(roots_number_temp==0){
+        x_left=x_right;
+        x_right = x_right_old;
+      }
+    } while ( (x_right-x_left) > eps_input);
+    if(roots_number_temp>1){
+      result_roots.push( x_left+(x_right-x_left)/4 );
+      result_roots.push( x_right-(x_right-x_left)/4 );
+    }else{
+      result_roots.push((x_right+x_left)/2);
+    }
+  }while( result_roots.length<((roots_number>1)?2:1) )
+
+    if(result_roots.length==2 && roots_number>2){
+      polynom_6d_to_4d(result_roots[0],result_roots[1]);
+      result_roots.push.apply( result_roots, quart_equation(a32,a33,a34,a35,a36));
+    }
+
+}else{
+//
+}
+
+          }
+newContent +=  fi_i*180/Math.PI + ";" + la_i*180/Math.PI + ";" + r_i + ";" + calc_la_fi_h(x0,y0,z0);
+	  //calc_a22_a26(calc_a11_a16(x0,y0,z0));
+	}
+//result = calc_la_fi_h(x0,y0,z0);
+//newContent +=  fi_i + ";" + la_i + ";" + r_i + ";" + calc_la_fi_h(x0,y0,z0);
+  }
+}
+        //newContent = ReadFileByLine(resultFile);
+        //if(newContent){
+createLink(newContent);
+//}
+  }else{
+    alert("empty");
+  }
+
+}
+function calc_la_fi_h(x0,y0,z0){
+  x0=a*x0;
+  y0=b*y0;
+  z0=c*z0;
+  h_array = [];
+  for (var index=0; index<result_roots.length; ++index){
+if(x0==0){
+    y = b*result_roots[index];
+    x = 0;
+    z = (1-e3_2)*z0*y/(y0-e3_2*y);
+}else{
+    x = a*result_roots[index];
+    y = (1-e1_2)*y0*x/(x0-e1_2*x);
+    z = (1-e_2)*z0*x/(x0-e_2*x);
+}
+    h_array[index] = Math.sqrt( (x-x0)*(x-x0)+(y-y0)*(y-y0)+(z-z0)*(z-z0) );
+  }
+
+    i = indexOfMin(h_array);
+    h = in_out*h_array[i];
+if(x0==0){
+    y = b*result_roots[i];
+    x = 0;
+    z = (1-e3_2)*z0*y/(y0-e3_2*y);
+}else{
+    x = a*result_roots[i];
+    y = (1-e1_2)*y0*x/(x0-e1_2*x);
+    z = (1-e_2)*z0*x/(x0-e_2*x);
+}
+    r = Math.sqrt( x*x+y*y+z*z );
+    fi = Math.asin(z/r)*180/Math.PI;
+    la = Math.atan2(y,x)*180/Math.PI;
+    if(la<0){la=la+360;}
+
+return x + ";" + y + ";" + z + ";" + fi + ";" + la + ";" + r + ";" + h + "\r\n";
+}
+function indexOfMin(arr) {
+    if (arr.length === 0) {
+        return -1;
+    }
+
+    var min = arr[0];
+    var minIndex = 0;
+
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            minIndex = i;
+            min = arr[i];
+        }
+    }
+
+    return minIndex;
+}
+function calc_koeff_a3(value1,value2,e_el){
+            a32=e_el*e_el;
+            a33=-2*value1*e_el;
+            a34=value1*value1+(1-e_el)*(1-e_el)*value2*value2-e_el*e_el;
+            a35=2*value1*e_el;
+            a36=-value1*value1;
+return false;
+}
+function calc_koeff_a3_el_rev(value1,value2,value3,e_el){
+            a32=e_el*e_el*(value1*value1+value2*value2);
+            a33=-2*value1*e_el*(value1*value1+value2*value2);
+            a34=value1*value1*(value1*value1+value2*value2+(1-e_el)*(1-e_el)*value3*value3-e_el*e_el);
+            a35=2*value1*value1*value1*e_el;
+            a36=-value1*value1*value1*value1;
+return false;
+}
+function calc_koeff(x0,y0,z0){
+  x0_2 = x0*x0;
+  x0_3 = x0*x0*x0;
+  x0_4 = x0*x0*x0*x0;
+/*
+  a11 = -2*x0*e_2_plus_e1_2*e_2_mult_e1_2/a0;
+  a12 = (x0_2*e_2_plus_e1_2*e_2_plus_e1_2+2*x0_2*e_2_mult_e1_2+(1-e1_2)*y0*y0*e_2*e_2+(1-e_2)*z0*z0*e1_2*e1_2-a*a*a0)/a0;
+  a13 = (-2*x0_3*e_2_plus_e1_2-2*(1-e1_2)*y0*y0*x0*e_2-2*(1-e_2)*z0*z0*x0*e1_2+2*a*a*x0*e_2_plus_e1_2*e_2_mult_e1_2 )/a0;
+  a14 = (x0_4+(1-e1_2)*y0*y0*x0_2+(1-e_2)*z0*z0*x0_2-2*a*a*x0_2*e_2_mult_e1_2-a*a*x0_2*e_2_plus_e1_2)/a0;
+  a15 = 2*a*a*x0_3*e_2_plus_e1_2/a0;
+  a16 = -a*a*x0_4/a0;
+*/
+  a11 = -2*x0*e_2_plus_e1_2*e_2_mult_e1_2/a0;
+  a12 = (x0_2*e_2_plus_e1_2*e_2_plus_e1_2+2*x0_2*e_2_mult_e1_2+(1-e1_2)*(1-e1_2)*y0*y0*e_2*e_2+(1-e_2)*(1-e_2)*z0*z0*e1_2*e1_2-a0)/a0;
+  a13 = 2*x0*(e_2_plus_e1_2*(e_2_mult_e1_2-x0_2)-(1-e1_2)*(1-e1_2)*y0*y0*e_2-(1-e_2)*(1-e_2)*z0*z0*e1_2 )/a0;
+  a14 = x0_2*(x0_2+(1-e1_2)*(1-e1_2)*y0*y0+(1-e_2)*(1-e_2)*z0*z0-e_2_plus_e1_2*e_2_plus_e1_2-2*e_2_mult_e1_2)/a0;
+  a15 = 2*x0_3*e_2_plus_e1_2/a0;
+  a16 = -x0_4/a0;
+
+  a21 = 6;
+  a22 = 5*a11;
+  a23 =4*a12;
+  a24 = 3*a13;
+  a25 = 2*a14;
+  a26 = a15;
+
+
+  a32=-( a12-a23/6-(a11/6-a22/36)*a22 );
+  a33=-( a13-a24/6-(a11/6-a22/36)*a23 );
+  a34=-( a14-a25/6-(a11/6-a22/36)*a24 );
+  a35=-( a15-a26/6-(a11/6-a22/36)*a25 );
+  a36=-( a16-(a11/6-a22/36)*a26 );
+
+  if(a32!=0){
+
+    a43=-( a23-a34*6/a32-a33*( a22/a32-a33*6/(a32*a32) ) );
+    a44=-( a24-a35*6/a32-a34*( a22/a32-a33*6/(a32*a32) ) );
+    a45=-( a25-a36*6/a32-a35*( a22/a32-a33*6/(a32*a32) ) );
+    a46=-( a26-a36*( a22/a32-a33*6/(a32*a32) ) );
+
+    if(a43!=0){
+
+      a54=-( a34-a45*a32/a43-a44*(a33/a43-a44*a32/(a43*a43)) );
+      a55=-( a35-a46*a32/a43-a45*(a33/a43-a44*a32/(a43*a43)) );
+      a56=-( a36-a46*(a33/a43-a44*a32/(a43*a43)) );
+
+      if(a54!=0){
+
+        a65=-( a45-a56*a43/a54-a55*(a44/a54-a55*a43/(a54*a54)) );
+        a66=-( a46-a56*(a44/a54-a55*a43/(a54*a54)) );
+
+        if(a65!=0){
+
+          a76=-( a56-a66*(a55/a65-a66*a54/(a65*a65)) );
+
+          if(Math.abs(a76) < eps5){
+
+            a66=a66/a65;
+            result_roots.push.apply( result_roots, [-a66,-a66]);
+            polynom_6d_to_4d(-a66,-a66);
+
+          }// if a76==0
+        } // if a65!=0
+      } // if a54!=0
+    } // if a43!=0
+  } // if a32!=0
+  //return a11,a12,a13,a14,a15,a16,a21,a22,a23,a24,a25,a26,a32,a33,a34,a35,a36,a43,a44,a45,a46,a54,a55,a56,a65,a66,a76;
+}
+function polynom_6d_to_4d(value1,value2){
+  a21=1;
+  a22=a11+value1;
+  a23=a12+value1*a22;
+  a24=a13+value1*a23;
+  a25=a14+value1*a24;
+  a26=a15+value1*a25;
+
+  a32=1;
+  a33=a22+value2;
+  a34=a23+value2*a33;
+  a35=a24+value2*a34;
+  a36=a25+value2*a35;
+
+}
+function polynom_6d(x){
+  x_2=x*x;
+  x_3=x_2*x;
+  x_4=x_3*x;
+  x_5=x_4*x;
+  x_6=x_5*x;
+  return x_6+a11*x_5+a12*x_4+a13*x_3+a14*x_2+a15*x+a16;
+}
+function polynom_5d(x){
+  x_2=x*x;
+  x_3=x_2*x;
+  x_4=x_3*x;
+  x_5=x_4*x;
+  return a21*x_5+a22*x_4+a23*x_3+a24*x_2+a25*x+a26;
+}
+function polynom_4d(x){
+  x_2=x*x;
+  x_3=x_2*x;
+  x_4=x_3*x;
+  return a32*x_4+a33*x_3+a34*x_2+a35*x+a36;
+}
+function polynom_3d(x){
+  x_2=x*x;
+  x_3=x_2*x;
+  return a43*x_3+a44*x_2+a45*x+a46;
+}
+function polynom_2d(x){
+  x_2=x*x;
+  return a54*x_2+a55*x+a56;
+}
+function polynom_1d(x){
+  return a65*x+a66;
+}
+function sign_change(value){
+
+//array_polynoms=[polynom_6d(value) * polynom_5d(value),polynom_5d(value) * polynom_4d(value),polynom_4d(value) * polynom_3d(value),polynom_3d(value) * polynom_2d(value),polynom_2d(value) * polynom_1d(value),polynom_1d(value) * a76];
+
+array_polynoms=[polynom_6d(value),polynom_5d(value),polynom_4d(value),polynom_3d(value),polynom_2d(value),polynom_1d(value),a76];
+array_polynoms=array_polynoms.filter(function(i){return i});
+count = 0;
+for (index = 0; index < array_polynoms.length; ++index) {
+  count = ((array_polynoms[index]*array_polynoms[index+1]<0)?count+1:count);
+}
+
+return count;
+   // ( ( polynom_6d(value) * polynom_5d(value)<0 )?1:0 ) + ( ( polynom_5d(value) * polynom_4d(value)<0 )?1:0 )
+}
+
+function cube_equation(cub0,cub1,cub2,cub3){
+var cub_x=cub_y=[];
+cub_x.length=cub_y.length=0;
+cub_a = cub2/cub0-cub1*cub1/(3*cub0*cub0);
+cub_b = 2*cub1*cub1*cub1/(27*cub0*cub0*cub0)-cub1*cub2/(3*cub0*cub0)+cub3/cub0;
+//if(Math.abs(cub_a) < eps5){cub_a=0;}
+//if(Math.abs(cub_b) < eps5){cub_b=0;}
+ if(cub_a==0){
+   if(cub_b==0){
+    cub_y[0] = cub_y[1] = cub_y[2] = 0;
+  }else{
+    cub_y[0] = -Math.pow2(cub_b,1/3);
+  }
+}else{
+  cub_D = cub_b*cub_b/4+cub_a*cub_a*cub_a/27;
+  //if(Math.abs(cub_D) < eps5){cub_D=0;}
+  if(cub_D==0){
+    cub_y[0] = 3*cub_b/cub_a;
+    cub_y[1] = cub_y[2] = -3*cub_b/(2*cub_a);
+  }else if(cub_D<0){
+    cub_fi = Math.acos(3*Math.sqrt(3)*cub_b/(2*cub_a*Math.sqrt(-cub_a)))/3;
+    cub_y[0] = 2*Math.sqrt(-cub_a/3)*Math.cos(cub_fi);
+    cub_y[1] = 2*Math.sqrt(-cub_a/3)*Math.cos(cub_fi+4*Math.PI/3);
+    cub_y[2] = 2*Math.sqrt(-cub_a/3)*Math.cos(cub_fi+2*Math.PI/3);
+  }else{
+    cub_y[0] = Math.pow2(-cub_b/2+Math.sqrt(cub_D),1/3)+Math.pow2(-cub_b/2-Math.sqrt(cub_D),1/3);
+}
+}
+for (var index=0; index<cub_y.length; ++index){
+  cub_x[index] = cub_y[index] - cub1/(3*cub0);
+}
+return cub_x;
+}
+
+function quart_equation(quart0,quart1,quart2,quart3,quart4){
+  var quart_x=quart_y=[];
+quart_x.length=quart_y.length=0;
+  quart_a = quart2/quart0-3*quart1*quart1/(8*quart0*quart0);
+  quart_b = quart3/quart0-0.5*quart1*quart2/(quart0*quart0)+0.125*quart1*quart1*quart1/(quart0*quart0*quart0);
+  quart_c = quart4/quart0-0.25*quart1*quart3/(quart0*quart0)+0.0625*quart1*quart1*quart2/(quart0*quart0*quart0)-3*quart1*quart1*quart1*quart1/(256*quart0*quart0*quart0*quart0);
+  //if(Math.abs(quart_a) < eps5){quart_a=0;}
+  //if(Math.abs(quart_b) < eps5){quart_b=0;}
+  //if(Math.abs(quart_c) < eps5){quart_c=0;}
+  if(quart_b==0){
+    roots = quadr_equation(1,quart_a,quart_c);
+    for (var index=0; index<roots.length; ++index){
+      quart_y[2*index] = Math.sqrt(roots[index]);
+      quart_y[2*index+1] = -Math.sqrt(roots[index]);
+    }
+  }else{
+    roots=cube_equation(8,8*quart_a,2*quart_a*quart_a-8*quart_c,-quart_b*quart_b);
+
+  roots_positive = roots.filter(function(number) {  return number > 0;});
+  if(roots_positive.length>0){ 
+    quart_y.push.apply( quart_y,quadr_equation(1,Math.sqrt(2*roots_positive[0]),0.5*quart_a+roots_positive[0]-quart_b/(2*Math.sqrt(2*roots_positive[0]))) );
+    quart_y.push.apply( quart_y,quadr_equation(1,-Math.sqrt(2*roots_positive[0]),0.5*quart_a+roots_positive[0]+quart_b/(2*Math.sqrt(2*roots_positive[0]))) );
+  }else{
+    //quart_y=[];
+    quart_r = roots[0];
+    quart_ro = Math.sqrt((quart_r+quart_a)*(quart_r+quart_a)-quart_b*quart_b/(2*quart_b));
+    quart_fi = Math.atan2(-quart_b/Math.sqrt(-2*quart_r),-quart_r-quart_a);
+    if(Math.abs(Math.sqrt(quart_ro)*Math.sin(quart_fi/2)-Math.sqrt(-quart_r) ) < eps5 || Math.abs(Math.sqrt(quart_ro)*Math.sin(quart_fi/2)+Math.sqrt(-quart_r) ) < eps5){
+      quart_y.push.apply( quart_y, [Math.sqrt(quart_ro)*Math.cos(quart_fi/2)/Math.sqrt(2),-Math.sqrt(quart_ro)*Math.cos(quart_fi/2)/Math.sqrt(2)]);
+    }
+  }
+
+  }
+  for (var index=0; index<quart_y.length; ++index){
+    quart_x[index] = quart_y[index] - quart1/(4*quart0);
+  }
+  return quart_x;
+}
+function quadr_equation(quadr0,quadr1,quadr2){
+  var quadr_x=quadr_y=[];
+quadr_x.length=quadr_y.length=0;
+  quadr_D = quadr1*quadr1-4*quadr0*quadr2;
+  //if(Math.abs(quadr_D) < eps5){quadr_D=0;}
+  if(quadr_D==0){
+    quadr_x[0]=quadr_x[1]=-0.5*quadr1/quadr0;
+  }else if(quadr_D>0){
+    quadr_x[0] = (-quadr1+Math.sqrt(quadr_D))/(2*quadr0);
+    quadr_x[1] = (-quadr1-Math.sqrt(quadr_D))/(2*quadr0);
+  }
+  return quadr_x;
+}
+
+
+/*
+function x0_y0_z0(la,fi,r){
+x0=r*Math.cos(fi)*Math.cos(la);
+y0=r*Math.cos(fi)*Math.sin(la);
+z0=r*Math.sin(fi);
+return array(x0,y0,z0);
+}
+*/
+Math.pow2 = function(n, p)
+{
+    if(n < 0)
+    {
+        var v = Math.pow((n * -1), p);
+        v = (v * -1);
+        return v;
+    }
+    else
+    {
+        return Math.pow(n, p);
+    }
+}
+function handleFileSelect(evt) {
+  var files = evt.target.files; 
+  for (var i = 0, f; f = files[i]; i++) {
+    var reader = new FileReader();
+    reader.onload = (function(theFile) {
+      return function(e) {
+        link.style.display = 'none';
+        resultFile = processData(e.target.result);
+        //resultFile = Papa.parse(e.target.result);
+        //newContent = ReadFileByLine(result);
+        //if(newContent){createLink(newContent);}
+      };
+    })(f);
+    reader.readAsText(f);
+  }
+}
+function processData(allText) {
+    var allTextLines = allText.split(/\r\n|\n/);
+    var headers = allTextLines[0].split(';');
+    var lines = [];
+
+    for (var i=1; i<allTextLines.length; i++) {
+        var data = allTextLines[i].split(';');
+        if (data.length == headers.length) {
+
+            var tarr = [];
+            for (var j=0; j<headers.length; j++) {
+                //tarr.push(headers[j]+":"+data[j]);
+                tarr[headers[j]]=data[j];
+            }
+            lines.push(tarr);
+        }
+    }
+//console.log(lines);
+return lines;
+}
+function makeTextFile(text) {
+  var data = new Blob([text], {type: 'text/plain'});
+  if (textFile !== null) {
+    window.URL.revokeObjectURL(textFile);
+  }
+  textFile = window.URL.createObjectURL(data);
+  return textFile;
+};
+function createLink(content){
+//if(content){
+  link.href = makeTextFile(content);
+  link.style.display = 'inline-block';
+//}else{
+//  link.style.display = 'none';
+//}
+  return false;
+}
+
+if (window.File && window.FileReader) {
+  jQuery("#content").html('Файл csv в кодировке UTF8. В первом столбце координаты объектов в формате WKT.');
+  document.getElementById('files').addEventListener('change', handleFileSelect, false); // чтение данных из файла csv
+} else {
+  jQuery("#content").html('The File APIs are not fully supported in this browser.');
+}
+  
+</script>
+<br>
+<br>
+М.В. Нырцов, М.Э. Флейс, М.М. Борисов, А. И. Соколов
+<br>
+<br>
+Используемая литература.<br>
+1. Шафаревич, И. Р. О решении уравнений высших степеней: (Метод Штурма) / М.: Гостехиздат, 1954. – 24 с.<br>
+2. Сушкевич, А. К. Основы высшей алгебры /М.- Л.: ОГИЗ, 1941. – 460 с.<br>  </div>
+
+  <div class="clear-block clear">
+    <div class="meta">
+        </div>
+
+      </div>
+
+</div>
+<!-- /content ���������� ��������� //-->
+
+<!-- footer ������ ���������� //-->
+<p class="PageFooter"><img src="http://geocnt.geonet.ru/images/line.gif" width="100%"><br>
+<table align="center" width="95%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="40">
+			<a href="#up"><img border=0 src="http://geocnt.geonet.ru/images/go2top.gif" alt="� ������ ��������" title="� ������ ��������"></a>
+		</td>
+		<td width=60% align=center><!-- begin of Top100 code -->
+
+<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?1591988"></script>
+<noscript>
+<img src="http://counter.rambler.ru/top100.cnt?1591988" alt="" width="1" height="1" border="0" />
+
+</noscript>
+<!-- end of Top100 code --></td>
+		<td>
+			<p class="PageFooter" style="text-align:right">
+				Центр Геоинформационных Исследований Института Географии РАН<br>
+119017, Москва, Старомонетный пер., 29<br>
+телефоны:(495) 959-0017,  (495) 230-8170<br>
+факс:(495) 959-0017<br>
+e-mail:<a href="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a>			</p>
+		</td>
+	</tr>
+</table>
+</p><br>
+<!-- /footer ������ ���������� //-->
+  <!-- begin of Top100 code -->
+
+<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?1591988"></script>
+<noscript>
+<img src="http://counter.rambler.ru/top100.cnt?1591988" alt="" width="1" height="1" border="0" />
+
+</noscript>
+<!-- end of Top100 code -->
+</body>
+</html>
+
+

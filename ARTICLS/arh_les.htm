@@ -1,0 +1,175 @@
+<html>
+
+<head>
+<title>Об опыте использования GeoDraw/GeoGraph в лесоустройстве</title>
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link rel="stylesheet" href="../CSS/zaglav.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" link="#0033FF" onLoad="MM_preloadImages('../HOME/button/but_n1_r1_c1_f3.gif','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif','../HOME/button/but_n1_r1_c2_f3.gif','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif','../HOME/button/but_n1_r1_c3_f3.gif','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif','../HOME/button/but_n1_r1_c4_f3.gif','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif','../HOME/button/but_n1_r1_c5_f3.gif','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif','../HOME/button/but_n1_r1_c6_f3.gif','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif','../HOME/button/but_n1_r1_c8_f3.gif','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif','../HOME/button/but_n1_r1_c9_f3.gif','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif','../HOME/button/but_n1_r1_c10_f3.gif','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif','../HOME/button/but_n1_r1_c11_f3.gif','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif','../HOME/button/but_n1_r1_c12_f3.gif','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif','../HOME/button/but_n1_r1_c13_f3.gif','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif')">
+<div align="center"> 
+
+  <a name="up"></a>
+
+    <tr>
+      <td height="28"> 
+        
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tabl">
+        <!-- fwtable fwsrc="but_n1.png" fwbase="but_n1.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+        <tr> 
+          <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../HOME/button/spacer.gif" width="56" height="1" border="0" name="undefined_2"></td>          
+          <td><img src="../HOME/button/spacer.gif" width="56" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0" name="undefined_2"></td>
+                  </tr>
+        <tr> 
+          <td><a href="../HOME/home.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f3.gif',1);" ><img name="but_n1_r1_c1" src="../HOME/button/but_n1_r1_c1.gif" width="63" height="22" border="0" alt="Home"></a></td>
+          <td><a href="../NEWS/news.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f3.gif',1);" ><img name="but_n1_r1_c2" src="../HOME/button/but_n1_r1_c2.gif" width="63" height="22" border="0" alt="News"></a></td>
+          <td><a href="../GEOCNT/soft.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f3.gif',1);" ><img name="but_n1_r1_c3" src="../HOME/button/but_n1_r1_c3.gif" width="69" height="22" border="0" alt="Programmy"></a></td>
+          <td><a href="../GEOCNT/supp.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f3.gif',1);" ><img name="but_n1_r1_c4" src="../HOME/button/but_n1_r1_c4.gif" width="57" height="22" border="0" alt="File"></a></td>
+          <td><a href="../GEOCNT/maps.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f3.gif',1);" ><img name="but_n1_r1_c5" src="../HOME/button/but_n1_r1_c5.gif" width="56" height="22" border="0" alt="Maps"></a></td>
+          <td><a href="../GEOCNT/snimki.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f3.gif',1);" ><img name="but_n1_r1_c6" src="../HOME/button/but_n1_r1_c6.gif" width="57" height="22" border="0" alt="Snimki"></a></td>
+          <td><a href="../GEOCNT/proect.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f3.gif',1);" ><img name="but_n1_r1_c8" src="../HOME/button/but_n1_r1_c8.gif" width="63" height="22" border="0" alt="Proekty"></a></td>
+          <td><a href="../ARTICLS/articls.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f3.gif',1);" ><img name="but_n1_r1_c9" src="../HOME/button/but_n1_r1_c9.gif" width="57" height="22" border="0" alt="Stat`i"></a></td>
+          <td><a href="../GEOCNT/obuchen.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f3.gif',1);" ><img name="but_n1_r1_c10" src="../HOME/button/but_n1_r1_c10.gif" width="63" height="22" border="0" alt="Obuchenie"></a></td>
+          <td><a href="../GEOCNT/partner.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f3.gif',1);" ><img name="but_n1_r1_c11" src="../HOME/button/but_n1_r1_c11.gif" width="63" height="22" border="0" alt="Partnery"></a></td>
+          <td><a href="../QUEST/quest.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f3.gif',1);" ><img name="but_n1_r1_c12" src="../HOME/button/but_n1_r1_c12.gif" width="69" height="22" border="0" alt="Vopros-Otvet"></a></td>
+          <td><a href="../GEOCNT/kontakt.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f3.gif',1);" ><img name="but_n1_r1_c13" src="../HOME/button/but_n1_r1_c13.gif" width="69" height="22" border="0" alt="Kontakt"></a></td>
+                  </tr>
+      </table>
+</td>
+    </tr>
+</div>
+
+<h3 class="zaglav">Об опыте использования GeoDraw/GeoGraph в лесоустройстве </h3>
+<p align="center"><font color="#000080">М.Ю. Коноплев, ведущий
+инженер-программист, С.В. Торхов, главный инженер
+Архангельской лесоустроительной экспедиции</font></p>
+
+<p align="left">Основная задача лесоустройства - обеспечение информацией о лесах 
+  работников лесного хозяйства и лесозаготовителей. Характер этой информации по 
+  Архангельской области можно представить такими цифрами: на карты масштаба 1:25 
+  000 положено 30 млн га лесов, описано по 10-20 показателям 1,5 млн выделов. 
+  Информация достаточно обширна, круг ее потребителей постоянно расширяется, соответственно 
+  меняются и требования к ее представлению и актуализации. Традиционные технологии 
+  изготовления лесных карт через печатный станок чрезмерно громоздки для постоянного 
+  обновления материалов и к тому же при малых тиражах (5-20 экз.) неоправданно 
+  дороги. Кроме того, перед экспедицией остро встал вопрос развития собственного 
+  картографического производства. Поиск новых путей поставил перед нами проблему 
+  выбора необходимого программного обеспечения. В апреле 1995 года после знакомства 
+  с наиболее популярными ГИС-системами мы остановили свой выбор на GeoDraw/GeoGraph. 
+  Основными показателями, склонившими нас к этому, явились невысокая стоимость, 
+  простота освоения, возможность обмена информацией с другими системами, доступность 
+  разработчиков. Полтора с лишним года работы подтвердили правильность такого 
+  решения. За это время нам удалось создать новую технологию производства лесоустроительных 
+  картографических материалов, полностью исключающую ручное вычерчивание планшетов 
+  (ранее доля ручного труда составляла 90%). Это не только позволило экспедиции 
+  значительно снизить трудозатраты на их изготовление, но и улучшить качество. 
+  Говоря о снижении трудоемкости работ, хочется проиллюстрировать это таким примером. 
+  Одна из операций при обработке лесоустроительных материалов - вычисление площадей 
+  выделов. Раньше это делалось с помощью планиметров и палеток. При этом на вычисление 
+  площадей по лесничеству затрачивалось в среднем 12-15 человеко-дней, сейчас 
+  GeoGraph делает это за 10-15 минут. В настоящее время мы имеем четыре рабочих 
+  места на базе GeoDraw/GeoGraph, на которых выполняется оцифровка аэрофотоснимков 
+  и других материалов (преимущественно с использованием дигитайзеров, но в некоторых 
+  случаях производится цифрование по растру), оформляются и готовятся к печати 
+  планшеты, планы лесонасаждений и прочая картографическая продукция. Переход 
+  на автоматизированное изготовление картографических материалов позволяет довольно 
+  легко решать нестандартные задачи (например, изготовление планов освоения лесосечного 
+  фонда для лесозаготовителей), что было бы затруднительно выполнить по ранее 
+  существовавшей технологии. Справедливости ради нужно заметить, что процесс создания 
+  лесных карт оказался значительно более трудным, чем это первоначально ожидалось, 
+  эйфория от первых успехов омрачалась невозможностью абсолютно точно повторить 
+  бумажные оригиналы. Прекрасно понимая, что в &quot;прокрустовом ложе&quot; существующих 
+  инструкций и различных нормативов ГИС-технологиям тесно, мы все же совместно 
+  со специалистами ЦГИ предприняли попытки (и заметная часть их удалась) максимально 
+  сохранить традиционное решение лесных карт. Совершенно ясно, что при использовании 
+  ГИС появляются новые возможности представления информации, и необходимо работать 
+  именно в этом направлении. В 1995 году на основе материалов лесоустройства, 
+  прошедшего за год до этого, создана ГИС Холмогорского лесхоза Архангельской 
+  области. Конечными пользователями ГИС являются сотрудники лесхоза, легко освоившие 
+  GeoGraph при поддержке специалистов экспедиции. В минувшем году параллельно 
+  с устройством Онежского лесхоза была создана ГИС, а сейчас такая же работа ведется 
+  по Шенкурскому лесхозу. В 1996 году начата работа над ГИС Кенозерского национального 
+  парка (совместно с Госцентром &quot;Природа&quot; Роскартографии). Таким образом, 
+  теперь после проведения лесоустройства лесхозы получают не только привычные 
+  бумажные карты, но и ГИС лесного фонда, позволяющую перевести управление лесным 
+  хозяйством на новый уровень. Нашей задачей сейчас является накопление и объединение 
+  информации по разрозненным и немногочисленным пока лесхозам в единую ГИС лесного 
+  хозяйства, которая в недалеком будущем должна стать составной частью ГИС Архангельской 
+  области. Процесс развития ГИС в лесном хозяйстве Архангельской области инициируется 
+  областным Управлением лесами, лесоустроительной экспедицией, активно пропагандируется 
+  первыми пользователями. Противников нет, но экономические трудности сдерживают 
+  этот процесс, будем надеяться, ненадолго. </p>
+<p align="left">М.Ю. Коноплев, ведущий инженер-программист, С.В. Торхов, главный 
+  инженер Архангельской лесоустроительной экспедиции</p>
+<p><a href="#up">К началу страницы</a></p>
+
+<p><img src="../IMG/line.gif" width="800" height="1"
+alt="Colorbar.gif (4491 bytes)"></p>
+
+<p class="adres"><font size="-1">Центр Геоинформационных Исследований Института 
+  Географии РАН<br>
+  109107, Москва, Старомонетный пер., 29 <br>
+  телефоны: (095) 959-0017, (095) 230-8170; факс: (095) 959-0017<b><br>
+  </b>e-mail:<a href="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a> 
+  </font></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<script language="javascript">
+var o = opener.parent.SkriptFrame;
+document.writeln('<title>' + o.identifyTitle + '</title>');
+document.writeln('<link rel="stylesheet" href="' + o.styleURL + '" type="text/css">');
+</script>
+<head>
+
+<script language="javascript">
+document.writeln('<body bgcolor="' + o.IdentifyWinColor + '" leftmargin="13" topmargin="11" marginwidth="13" marginheight="11">');
+</script>
+<div class="ueber1">Объект не найден.
+</div>
+<div>Информация отсутствует</DIV>
+<script language="javascript">
+o = opener.parent.SkriptFrame;
+for(i=0; i<o.layerList.length;i++){
+	if(o.layerIsQueryable[i]){
+		document.writeln('<DIV><B>');
+		document.writeln(o.layerAlias[i]+'<BR>');
+		document.writeln('</B></DIV>');
+		document.writeln('<DIV>Abfragbare Layer sind durch das Symbol <img src="'+o.queryURL+'"> in der Themensteuerung gekennzeichnet');
+	}
+}
+</script>
+
+</body>
+</html>

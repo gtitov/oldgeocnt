@@ -1,0 +1,152 @@
+<html>
+
+<head>
+<title>ЦГИ ИГ РАН - Карта как QLE-объект</title>
+<script language="JavaScript">
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link rel="stylesheet" href="../CSS/zaglav.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" link="#0033FF" onLoad="MM_preloadImages('../HOME/button/but_n1_r1_c1_f3.gif','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif','../HOME/button/but_n1_r1_c2_f3.gif','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif','../HOME/button/but_n1_r1_c3_f3.gif','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif','../HOME/button/but_n1_r1_c4_f3.gif','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif','../HOME/button/but_n1_r1_c5_f3.gif','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif','../HOME/button/but_n1_r1_c6_f3.gif','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif','../HOME/button/but_n1_r1_c8_f3.gif','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif','../HOME/button/but_n1_r1_c9_f3.gif','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif','../HOME/button/but_n1_r1_c10_f3.gif','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif','../HOME/button/but_n1_r1_c11_f3.gif','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif','../HOME/button/but_n1_r1_c12_f3.gif','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif','../HOME/button/but_n1_r1_c13_f3.gif','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif')" text="#000000" vlink="#990066" alink="#990066">
+
+
+  <tr>
+    <td height="28"> 
+      
+    <table border="0" cellpadding="0" cellspacing="0" width="807">
+  <!-- fwtable fwsrc="but_n1.png" fwbase="but_n1.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+  <tr> 
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="1" border="0"></td>
+  </tr>
+  <tr> 
+    <td><a href="../HOME/home.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f3.gif',1)" ><img name="but_n1_r1_c1" src="../HOME/button/but_n1_r1_c1.gif" width="63" height="22" border="0" alt="Home"></a></td>
+    <td><a href="../NEWS/news.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f3.gif',1)" ><img name="but_n1_r1_c2" src="../HOME/button/but_n1_r1_c2.gif" width="63" height="22" border="0" alt="News"></a></td>
+    <td><a href="../NEWS/price.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f3.gif',1)" ><img name="but_n1_r1_c3" src="../HOME/button/but_n1_r1_c3.gif" width="57" height="22" border="0" alt="Price"></a></td>
+    <td><a href="../GEOCNT/soft.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f3.gif',1)" ><img name="but_n1_r1_c4" src="../HOME/button/but_n1_r1_c4.gif" width="69" height="22" border="0" alt="Programmy"></a></td>
+    <td><a href="../GEOCNT/supp.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f3.gif',1)" ><img name="but_n1_r1_c5" src="../HOME/button/but_n1_r1_c5.gif" width="57" height="22" border="0" alt="File"></a></td>
+    <td><a href="../GEOCNT/maps.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f3.gif',1)" ><img name="but_n1_r1_c6" src="../HOME/button/but_n1_r1_c6.gif" width="57" height="22" border="0" alt="Maps"></a></td>
+    <td><a href="../GEOCNT/snimki.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f2.gif','../HOME/button/but_n1_r1_c7_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f3.gif',1)" ><img name="but_n1_r1_c7" src="../HOME/button/but_n1_r1_c7.gif" width="57" height="22" border="0" alt="Snimki"></a></td>
+    <td><a href="../GEOCNT/proect.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f3.gif',1)" ><img name="but_n1_r1_c8" src="../HOME/button/but_n1_r1_c8.gif" width="63" height="22" border="0" alt="Proekty"></a></td>
+    <td><a href="../ARTICLS/articls.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f3.gif',1)" ><img name="but_n1_r1_c9" src="../HOME/button/but_n1_r1_c9.gif" width="57" height="22" border="0" alt="Stat`i"></a></td>
+    <td><a href="../GEOCNT/obuchen.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f3.gif',1)" ><img name="but_n1_r1_c10" src="../HOME/button/but_n1_r1_c10.gif" width="63" height="22" border="0" alt="Obuchenie"></a></td>
+    <td><a href="../GEOCNT/partner.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f3.gif',1)" ><img name="but_n1_r1_c11" src="../HOME/button/but_n1_r1_c11.gif" width="63" height="22" border="0" alt="Partnery"></a></td>
+    <td><a href="../QUEST/quest.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f3.gif',1)" ><img name="but_n1_r1_c12" src="../HOME/button/but_n1_r1_c12.gif" width="69" height="22" border="0" alt="Vopros-Otvet"></a></td>
+    <td><a href="../GEOCNT/kontakt.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f3.gif',1)" ><img name="but_n1_r1_c13" src="../HOME/button/but_n1_r1_c13.gif" width="69" height="22" border="0" alt="Kontakt"></a></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="22" border="0"></td>
+  </tr>
+</table>
+</td>
+  </tr>
+<h4 class="zaglav2">Можно ли загрузить карту, созданную в ГеоГраф, в Microsoft 
+  Word как OLE-объект? </h4>
+<p>Пользователи ГеоГраф версии 1.5 могут загрузить созданную в нем карту в Miscoroft 
+  Word как OLE объект. Для этого необходимо произвести следующие действия: 
+<ol>
+  <li>На Вашем компьютере должен быть установлен<b> <strong>Microsoft Word 97</strong></b>.и<a href="ftp://geocnt.geonet.ru/pub/gc20"> 
+    ГеоКонструктор версии 2.0</a></li>
+  <li>Загрузите Microsoft Word, выберите в верхнем меню пункт &quot;Вставка&quot;, 
+    далее в ниспадающем меню пункт &quot;Объект&quot;. На листе возникнет окно 
+    для вставки объекта, которое нужно деактивизировать, поместив курсор мыши 
+    вне окна и нажав левую кнопку мыши, и затем активизировать окно вновь, поместив 
+    курсор мыши в окно и нажав левую кнопку мыши. Возможно, при активации окна 
+    придется некоторое время подождать. Далее, поместив курсор мыши в окно, нажмите 
+    правую кнопку, и в появившемся меню выбеерите пункт &quot;Объект&quot;, и 
+    в появившемся дополнительном меню - &quot;Загрузить карту&quot;. Выберите 
+    файл с композицией карты Географ 1.5 (файлы с расширением .mp) с диска и зарузите 
+    его. Далее в окне должна появиться карта ГеоГраф, с которой можно оперировать 
+    как с OLE-объектом. При этом можно использовать меню, появляющееся при нажатии 
+    правой кнопки мыши.</li>
+</ol>
+<p> <strong><b><font color="#FF0000">Примечание.</font></b></strong> Данный способ 
+  может быть применен только для карт, в которых загружены слои ГеоГраф 1.5, многолистные 
+  слои ГеоГраф 1.5 или растровые слои ГеоГраф 1.5. Остальные типы слоев (например, 
+  слои ARCView Shape file, слои Динамической сегментации и др.) для данного механизма 
+  пока не поддерживаются, и для содержащих их композиций карт ГеоГраф 1.5 при 
+  необходимости их вставки в Microsoft Word можно использовать лишь ранее имевшиеся 
+  способы (экспорт изображения в файлы типа BMP<font> или </font>Windows metafile<font> 
+  заданных пользователем размеров с последующей загрузкой этих файлов в </font>Microsoft 
+  Word). </p>
+
+
+
+<p><img src="../IMG/line.gif" width="800" height="1"
+alt="Colorbar.gif (4491 bytes)"> </p>
+
+<p class="adres"><font size="-1">Центр Геоинформационных Исследований Института 
+  Географии РАН<br>
+  109107, Москва, Старомонетный пер., 29 <br>
+  телефоны: (095) 959-0017, (095) 230-8170; факс: (095) 959-0017<br>
+e-mail:<a href="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a> 
+  </font></p>
+</body>
+</html>

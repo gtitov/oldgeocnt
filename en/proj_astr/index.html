@@ -1,0 +1,463 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cartographic projections for small bodies | –¶–µ–Ω—Ç—Ä –≥–µ–æ–∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏–æ–Ω–Ω—ã—Ö –∏—Å—Å–ª–µ–¥–æ–≤–∞–Ω–∏–π</title>
+<META NAME="Author" CONTENT="Mikhail Borisov, borim@yandex.ru">
+<link rel="stylesheet" type="text/css" href="http://geocnt.geonet.ru/sites/all/themes/geocnt_theme/my.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="..." content="..." />
+    <link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/nice_menus/nice_menus.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/nice_menus/nice_menus_default.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views/css/views.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/geocnt_theme/style.css?J" />
+<link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/geocnt_theme/print.css?J" />
+    <script type="text/javascript" src="/misc/jquery.js?J"></script>
+<script type="text/javascript" src="/misc/drupal.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/superfish.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/jquery.bgiframe.min.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/jquery.hoverIntent.minified.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/nice_menus.js?J"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "nice_menus_options": { "delay": 800, "speed": 1 } });
+//--><!]]>
+</script>
+    <script type="text/javascript" src="/misc/jquery.js"></script>
+<script type="text/javascript" src="/misc/drupal.js"></script>
+<script type="text/javascript" src="/misc/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="/sites/all/themes/geocnt_theme/common.js"></script>
+<!--<link rel="stylesheet" href="../menu.css" type="text/css"> //-->
+<style type="text/css" media="all">@import "/sites/all/themes/geocnt_theme/body.css";</style>
+    <style type="text/css" media="print">@import "/sites/all/themes/geocnt_theme/print.css";</style>
+    <!--[if lt IE 7]>
+    <style type="text/css" media="all">@import "/sites/all/themes/geocnt_theme/fix-ie.css";</style>
+    <![endif]-->
+<!--[if IE]><script type="text/javascript" src="/sites/all/themes/geocnt_theme/excanvas.js"></script><![endif]-->
+</head>
+<body>
+<!-- header ‚ÂıÌËÈ ÍÓÎÓÌÚËÚÛÎ //-->
+<a name="up"></a>
+<table width="100%" height="65" border="0" bgcolor="#0033CC" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="120" height="90">
+			<a href="http://geocnt.geonet.ru"><img src="http://geocnt.geonet.ru/images/logo.gif" width="120" height="90" border="0" title="http://geocnt.geonet.ru" alt="http://geocnt.geonet.ru"></a>
+		</td>
+		<td>
+			<p class="PageTitleMain">–¶–µ–Ω—Ç—Ä –≥–µ–æ–∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏–æ–Ω–Ω—ã—Ö –∏—Å—Å–ª–µ–¥–æ–≤–∞–Ω–∏–π<br>Cartographic projections for small bodies</p>
+		</td>
+		<td width="40%" align=right background="http://geocnt.geonet.ru/images/gradient.jpg">
+			<a href="/ru">Russian</a>&nbsp;<a href="/ru"><img src="/sites/all/modules/i18n/flags/ru.png"  class="i18n-icon" width="16" height="12" alt="Russian" /></a>&nbsp;<br>
+			<a href="/en">English</a>&nbsp;<a href="/en"><img src="/sites/all/modules/i18n/flags/en.png"  class="i18n-icon" width="16" height="12" alt="English" /></a>&nbsp;<br>
+			<a href="/es">Espanol</a>&nbsp;<a href="/es"><img src="/sites/all/modules/i18n/flags/es.png"  class="i18n-icon" width="16" height="12" alt="Spanish" /></a>&nbsp;
+		</td>
+	</tr>
+</table>
+<!-- /header ‚ÂıÌËÈ ÍÓÎÓÌÚËÚÛÎ //-->
+<div id="block-nice_menus-1" class="clear-block block block-nice_menus">
+
+
+ <!-- <div class="content"> //--> <ul class="nice-menu nice-menu-down" id="nice-menu-1"><li class="menu-205 menu-path-node-40 first  odd "><a href="/en/main" title="Main page">Main</a></li>
+<li class="menu-363 menu-path-news even "><a href="/en/news" title="">News</a></li>
+<li class="menu-210 menu-path-node-42 odd "><a href="/en/soft" title="Software">Software</a></li>
+<li class="menu-211 menu-path-node-52 even "><a href="/en/maps" title="Maps">Maps</a></li>
+<li class="menu-212 menuparent menu-path-node-49 active-trail odd "><a href="/en/projects" title="Projects and papers">Projects and papers</a><ul><li class="menu-213 menu-path-node-49 first  odd "><a href="/en/projects" title="GIS Areas">GIS Areas</a></li>
+<li class="menu-372 menu-path-node-143 even "><a href="/en/proj_mollweide" title="Mollweide and volcanoes">Mollweide and volcanoes</a></li>
+<li class="menu-214 menu-path-node-51 active-trail odd "><a href="/en/proj_astr" title="Small bodies projections" class="active">Small bodies projections</a></li>
+<li class="menu-215 menu-path-node-50 even "><a href="/en/conic" title="Conic projections">Conic projections</a></li>
+<li class="menu-239 menu-path-node-83 odd "><a href="/en/proj_world" title="">Projection map of the world</a></li>
+<li class="menu-249 menu-path-node-125 even "><a href="/en/soil" title="">Thematic data harmonization</a></li>
+<li class="menu-251 menu-path-node-129 odd "><a href="/en/3_axial" title="">Cartographical Projections of Triaxial Ellipsoid</a></li>
+<li class="menu-373 menu-path-node-156 even  last "><a href="/en/3_axial_equal_area" title="Equal-Area Projections of The Triaxial Ellipsoid">Equal-Area Projections of The Triaxial Ellipsoid</a></li>
+</ul>
+</li>
+<li class="menu-207 menu-path-node-39 even "><a href="/en/contacts" title="Contacs">Contacts</a></li>
+<li class="menu-368 menu-path-guestbook odd  last "><a href="/en/guestbook" title="Guestbook">Guestbook</a></li>
+</ul>
+<!-- </div> //-->
+</div>
+
+<hr>
+<!-- content ÒÓ‰ÂÊ‡ÌËÂ ‰ÓÍÛÏÂÌÚ‡ //-->
+
+
+<div id="node-51" class="node">
+
+
+
+  
+  <div class="content">
+    <table cellspacing="5" cellpadding="5" border="0">
+<tr>
+    <td>
+<h3>fragment of paper<br>
+M.E. Fleis, M.M. Borisov, M.V. Alexandrovich, P. Stooke, K.B. Shingareva CARTOGRAPHIC PROJECTIONS FOR SMALL BODIES OF THE SOLAR SYSTEM (XXIII International Cartographic Conference)</h3>
+<b> Formulae of two conformal projections (Transverse Cylindrical and Transverse Azimuthal) for "upturned" ellipsoid of revolution with revolution axis of ellipse matching with its major axis (not minor as usual) and being perpendicular to revolution axis of the body. Formulae are obtained without approximations and are true even for eccentricity close to 1.</b><br>
+
+<br>
+<b> Symbols </b><br>
+<br>
+<b> Projection constants </b><br>
+ <img src="../images/imgPrjSmBody/image002.gif" width="13" height="15" alt="" border="0"> - semimajor axis of ellipse (for Eros asteroid we assume it to be 33000/2 m)<br>
+ <img src="../images/imgPrjSmBody/image004.gif" width="13" height="19" alt="" border="0"> - semiminor axis of ellipse (for Eros asteroid we assume it to be 13000/2 m)<br>
+ <img src="../images/imgPrjSmBody/image006.gif" width="12" height="15" alt="" border="0"> - eccentricity of ellipse <br>
+
+ <img src="../images/imgPrjSmBody/image008.gif" width="19" height="24" alt="" border="0"> - longitude of the center of projection: <img src="../images/imgPrjSmBody/image010.gif" width="52" height="24" alt="" border="0"> or <img src="../images/imgPrjSmBody/image012.gif" width="67" height="25" alt="" border="0"> <br>
+ <img src="../images/imgPrjSmBody/image014.gif" width=13 height=19 alt="" border="0"> - radius of the Equator of transverse graticule on Azimuthal projection under condition of no distortion in the center of projection <br>
+ <img width=49 height=23 src="../images/imgPrjSmBody/image016.gif"> - auxiliary values <br>
+ <img width=28 height=23 src="../images/imgPrjSmBody/image017.gif">- minimal value of angular distance from the center of projection (we assume 0.0016 )<br>
+
+ <img width=29 height=24 src="../images/imgPrjSmBody/image018.gif"> - maximal value of angular distance from the center of projection in the neighbourhood of point opposite to the center of projection (we assume 3.14 )<br>
+<br>
+<b> Input variables </b><br>
+ <img width=33 height=24 src="../images/imgPrjSmBody/image022.gif"> - planetocentric latitude in normal aspect <br>
+ <img width=23 height=24 src="../images/imgPrjSmBody/image024.gif"> - longitude west of zero meridian <br>
+<br>
+
+<b> Intermediate values </b><br>
+ <img width=21 height=23 src="../images/imgPrjSmBody/image026.gif"> -  longitude east of zero meridian <br>
+ <img width=35 height=24 src="../images/imgPrjSmBody/image029.gif"> -  longitude east of the center of projection <br>
+ <img width=13 height=13 src="../images/imgPrjSmBody/image030.gif"> - angular distance from the center of projection <br>
+ <img width=20 height=15 src="../images/imgPrjSmBody/image031.gif"> - azimuth as an angle measured clockwise from the north <br>
+
+ <img width=15 height=17 src="../images/imgPrjSmBody/image032.gif"> - latitude at "upturned" ellipsoid of revolution <br>
+ <img width=33 height=24 src="../images/imgPrjSmBody/image034.gif"> - radius of latitude circle on Azimuthal projection (transverse graticule) divided by <img width=33 height=19 src="../images/imgPrjSmBody/image036.gif"> <br>
+ <img width=33 height=24 src="../images/imgPrjSmBody/image038.gif"> - radius of latitude circle on Azimuthal projection (transverse graticule) divided by <img width=35 height=17 src="../images/imgPrjSmBody/image040.gif"> <br>
+<br>
+<b> Output variables:</b><br>
+
+ <img width=31 height=17 src="../images/imgPrjSmBody/image042.gif"> - rectangular coordinates ( <img width=13 height=15 src="../images/imgPrjSmBody/image044.gif"> - horizontal, <img width=17 height=17 src="../images/imgPrjSmBody/image046.gif"> - vertical)<br>
+<br>
+<b> Calculation of constant parameters:</b><br>
+   <img width=76 height=44 src="../images/imgPrjSmBody/image048.gif">         
+  <br>
+<img width=140 height=44 src="../images/imgPrjSmBody/image050.gif">
+  <br>
+
+<img width=151 height=23 src="../images/imgPrjSmBody/image053.gif">(for Azimuthal projection)
+  <br>
+<img width=48 height=23 src="../images/imgPrjSmBody/image055.gif">(for Azimuthal projection)
+<br><br>
+<b> Calculation of rectangular coordinates:</b><br>
+<img width=103 height=24 src="../images/imgPrjSmBody/image056.gif">
+  <br>           
+<img width=139 height=41 src="../images/imgPrjSmBody/image059.gif">
+ <br>
+<img width=160 height=24 src="../images/imgPrjSmBody/image061.gif">
+ <br>
+ <h3> Azimuthal projection </h3><br>
+
+<center><img src="../images/imgPrjSmBody/az.gif"></center><br>
+To exclude the possibility of division by zero and breaking the domain of the functions we use three variants of coordinates' calculation depending on <img width=36 height=15
+src="../images/imgPrjSmBody/image062.gif"> value.<br>
+<b>1.</b> <img width=68 height=21 src="../images/imgPrjSmBody/image064.gif"> <br>
+ <img width=37 height=19 src="../images/imgPrjSmBody/image066.gif"><br>
+ <img width=39 height=21 src="../images/imgPrjSmBody/image068.gif"><br>
+<br>
+<b>2.</b><img width=87 height=41 src="../images/imgPrjSmBody/image070.gif"><br>    
+<br>
+
+ <img width=121 height=27 src="../images/imgPrjSmBody/image072.gif"><br>
+<br>
+ <img width=115 height=24 src="../images/imgPrjSmBody/image075.gif"><br>
+<br>
+ <img width=179 height=47 src="../images/imgPrjSmBody/image077.gif"><br>
+<br>
+where <br>
+<img width=255 height=47 src="../images/imgPrjSmBody/image079.gif"> , <img width=155 height=51 src="../images/imgPrjSmBody/image080.gif"><br>    
+<br>
+<b>3.</b> <img width=64 height=41 src="../images/imgPrjSmBody/image082.gif">  
+
+<br>
+If <img width=105 height=24 src="../images/imgPrjSmBody/image084.gif"> , then <img width=105 height=24 src="../images/imgPrjSmBody/image086.gif"> , if also <br>
+1) <img width=107 height=24 src="../images/imgPrjSmBody/image199.gif">  let <img width=77 height=24 src="../images/imgPrjSmBody/image200.gif"> <br>
+2) <img width=128 height=24 src="../images/imgPrjSmBody/image201.gif">  let <img width=101 height=24 src="../images/imgPrjSmBody/image202.gif"> <br>
+
+3) <img width=125 height=24 src="../images/imgPrjSmBody/image203.gif">  let <img width=87 height=24 src="../images/imgPrjSmBody/image204.gif"> <br>
+4) <img width=152 height=24 src="../images/imgPrjSmBody/image205.gif">  let <img width=111 height=24 src="../images/imgPrjSmBody/image206.gif"> <br>
+<br>
+<br>
+<img width=121 height=27 src="../images/imgPrjSmBody/image072.gif"> 
+<br>
+<img width=168 height=24 src="../images/imgPrjSmBody/image108.gif">
+ <br>
+
+<img width=112 height=24 src="../images/imgPrjSmBody/image098.gif">
+ <br>
+<b> where </b><br>
+<img width=284 height=45 src="../images/imgPrjSmBody/image112.gif"> , <img width=127 height=45 src="../images/imgPrjSmBody/image102.gif"><br><br>
+<h3> Cylindrical projection </h3><br>
+<br><br>
+<center><img width=623 height=502 src="../images/imgPrjSmBody/cil.gif"></center>
+<br>
+<br> 
+<img width=161 height=24 src="../images/imgPrjSmBody/image116.gif"><br>
+
+If <img width=104 height=23 src="../images/imgPrjSmBody/image118.gif">  then <img width=104 height=23 src="../images/imgPrjSmBody/image120.gif"> , if also <br>
+1) <img width=100 height=24 src="../images/imgPrjSmBody/image122.gif"> let <img width=76 height=24 src="../images/imgPrjSmBody/image124.gif"> <br>
+2) <img width=147 height=24 src="../images/imgPrjSmBody/image126.gif">  let <img width=109 height=24 src="../images/imgPrjSmBody/image128.gif"> <br>
+<br>
+
+<br>
+If <img width=105 height=24 src="../images/imgPrjSmBody/image197.gif"> , then <img width=109 height=24 src="../images/imgPrjSmBody/image198.gif"> , if also <br>
+<br>
+1) <img width=107 height=24 src="../images/imgPrjSmBody/image199.gif">  let <img width=77 height=24 src="../images/imgPrjSmBody/image200.gif"> <br>
+2) <img width=128 height=24 src="../images/imgPrjSmBody/image201.gif">  let <img width=101 height=24 src="../images/imgPrjSmBody/image202.gif"> <br>
+
+3) <img width=125 height=24 src="../images/imgPrjSmBody/image203.gif">  let <img width=87 height=24 src="../images/imgPrjSmBody/image204.gif"> <br>
+4) <img width=152 height=24 src="../images/imgPrjSmBody/image205.gif">  let <img width=111 height=24 src="../images/imgPrjSmBody/image206.gif"> <br>
+<img width=121 height=27 src="../images/imgPrjSmBody/image072.gif"><br>
+<img width=113 height=43 src="../images/imgPrjSmBody/image131.gif"><br>
+<br>
+To exclude the possibility of breaking the domain of the function we use three variants of azimuth calculation depending on cosine value.<br>
+1. If <img width=76 height=19 src="../images/imgPrjSmBody/image133.gif">  azimuth is equal to <img width=15 height=15 src="../images/imgPrjSmBody/image135.gif"> <br>
+
+2. If <img width=65 height=19 src="../images/imgPrjSmBody/image137.gif">  azimuth is equal to zero. <br>
+3.<img width=147 height=51 src="../images/imgPrjSmBody/image139.gif">  if <img width=147 height=24 src="../images/imgPrjSmBody/image141.gif"> <br>
+<img width=157 height=51 src="../images/imgPrjSmBody/image143.gif"> if <img width=139 height=24 src="../images/imgPrjSmBody/image145.gif">   <br>
+If  <img width=49 height=41 src="../images/imgPrjSmBody/image147.gif"> then azimuth is increased by 
+<img width=24 height=19 src="../images/imgPrjSmBody/image149.gif"><br>
+
+<img width=128 height=45 src="../images/imgPrjSmBody/image151.gif"><br>
+<img width=235 height=44 src="../images/imgPrjSmBody/image153.gif"><br>
+<img width=89 height=23 src="../images/imgPrjSmBody/image155.gif"><br>
+<br> 
+ 
+<b> Program for calculation of rectangular coordinates of points sets on the projections </b><br><br>
+<table cellspacing="0" cellpadding="5" border="0" style="border: solid 1px black;">
+<tr>
+    <td colspan=4 class="label"><input type="radio" name="prjName" value="0" checked onclick="javascript: changeField(0);"> Azimuthal projection <br><input type="radio" name="prjName"  value="1" onclick="javascript: changeField(1);"> Cylindrical projection </td>
+</tr>
+<tr>
+
+    <td class="label"> longitude </td>
+    <td class="input">from&nbsp;&nbsp;<input type="text" id="x0" size="3" value="0"></td>
+    <td class="input">to&nbsp;&nbsp;<input type="text" id="x1" size="3" value="360"></td>
+    <td class="input">step&nbsp;&nbsp;<input type="text" id="x_step" size="3" value="10"></td>
+</tr>
+<tr>
+    <td class="label"> latitude </td>
+
+    <td class="input">from&nbsp;&nbsp;<input type="text" id="y0" size="3" value="-90"></td>
+    <td class="input">to&nbsp;&nbsp;<input type="text" id="y1" size="3" value="90"></td>
+    <td class="input">step&nbsp;&nbsp;<input type="text" id="y_step" size="3" value="10"></td>
+</tr>
+<tr>
+    <td colspan="3" class="label"> semimajor axis of ellipse </td>
+    <td class="input"><input type="text" id="a" size="10" value="16500"></td>
+
+</tr>
+<tr>
+    <td colspan="3" class="label"> semiminor axis of ellipse </td>
+    <td class="input"><input type="text" id="b" size="10" value="6500"></td>
+</tr>
+<tr>
+    <td colspan="3" class="label"><div id="Field"> longitude of the center of projection </div></td>
+    <td class="input"><select id="la0" size="1">
+	<option value="0">0</option>
+
+	<option value="180">180</option></select></td>
+</tr>
+<tr>
+    <td colspan="4" align="center" class="label"><input type="button" value="result" onclick="result();"></td>
+</tr>
+</table>
+<!--
+<table border="0" cellspacing="0" cellpadding="0" style="border: solid 1px black;">
+<tr>
+	<td align="center" style="border: solid 1px black;"> longitude </td>
+	<td align="center" style="border: solid 1px black;"> latitude </td>
+</tr>
+<tr>
+    <td style="border: solid 1px black;">
+<table cellspacing="2" cellpadding="2" border="0">
+<tr>
+    <td>from</td>
+    <td><input type="text" id="x0" size="3" value="0"></td>
+</tr>
+<tr>
+    <td>to</td>
+    <td><input type="text" id="x1" size="3" value="360"></td>
+</tr>
+<tr>
+    <td>step</td>
+    <td><input type="text" id="x_step" size="3" value="10"></td>
+</tr>
+</table>
+	</td>
+    <td style="border: solid 1px black;">
+<table cellspacing="2" cellpadding="2" border="0">
+<tr>
+    <td>ÔøΩÔøΩ</td>
+    <td><input type="text" id="y0" size="3" value="0"></td>
+</tr>
+<tr>
+    <td>ÔøΩÔøΩ</td>
+    <td><input type="text" id="y1" size="3" value="90"></td>
+</tr>
+<tr>
+    <td>step</td>
+    <td><input type="text" id="y_step" size="3" value="10"></td>
+</tr>
+</table>
+	</td>
+<tr> 
+<td style="border: solid 1px black;"> semimajor <br> axis <br> of ellipse </td>
+    <td align="right" valign="top" style="border: solid 1px black;"><input type="text" id="a" size="10" value="16500"></td>
+</tr>
+<tr>
+<td style="border: solid 1px black;"> semiminor <br> axis <br> of ellipse </td>
+    <td align="right" valign="top" style="border: solid 1px black;"><input type="text" id="b" size="10" value="6500"></td>
+</tr>
+<tr>
+<td style="border: solid 1px black;"> longitude <br> of the center <br> of projection </td>
+    <td align="right" valign="top" style="border: solid 1px black;"><select id="la0" size="1">
+	<option value="0">0</option>
+	<option value="180">180</option></select></td>
+</tr>
+<tr>
+    <td colspan="2" align="center"><input type="button" value="result" onclick="result();">	</td>
+</tr>
+</table>
+//-->
+<div id="result" name="result"></div>
+<script>
+var prjName=0;
+function changeField(val){
+//alert(document.getElementById("prjName").checked);
+if (val==0){prjName=0;}
+else{prjName=1;}
+}
+function result() {
+resultStr="id longitude latitude x y<br>";
+var i=0;
+var a = parseFloat(document.getElementById("a").value);
+var b = parseFloat(document.getElementById("b").value);
+var la0=parseFloat(document.getElementById("la0").options[document.getElementById("la0").selectedIndex].value);
+var x_step=parseFloat(document.getElementById("x_step").value);
+var x0=parseFloat(document.getElementById("x0").value);
+var x1=parseFloat(document.getElementById("x1").value)+x_step;
+var y_step=parseFloat(document.getElementById("y_step").value);
+var y0=parseFloat(document.getElementById("y0").value);
+var y1=parseFloat(document.getElementById("y1").value)+y_step;
+if (y0>90){y0=90;}
+if(y0<-90){y0=-90;}
+var z_max=3.14;
+var z_min=0.0016;
+e2=1-b*b/(a*a);
+e=Math.sqrt(e2);
+t=1-e2;
+t1=e/Math.sqrt(t);
+c1=2*a*Math.exp( t1*Math.atan(t1));
+c=c1*t;
+cos_z_max=Math.cos(z_max);
+cos_z_min=Math.cos(z_min);
+for (var x_i=x0; x_i+x_step*.999<x1; x_i=x_i+x_step){
+la_w=x_i;
+for (var y_i=y0; y_i+y_step*.999<y1; y_i=y_i+y_step){
+i++;
+fi_norm=y_i;
+la_norm=(360-la_w-la0)*Math.PI/180;
+fi_norm=fi_norm*Math.PI/180;
+cos_z=Math.cos(fi_norm)*Math.cos(la_norm);
+if (prjName==0){
+if(cos_z>=1) {
+ x=0;
+  y=0;}
+else {
+  sin_z= Math.sqrt(1-cos_z* cos_z);
+  if(cos_z>0.5) {
+    fi=(Math.PI/2)-Math.atan(  sin_z/(t*cos_z) ); 
+    ro_tan_z=c1*Math.sin(fi)/( (1+Math.sin(fi))*Math.exp(t1*Math.atan(t1*Math.sin(fi))) )
+    x=ro_tan_z*Math.tan(la_norm);
+    y= ro_tan_z*Math.sin(fi_norm) / (Math.cos(fi_norm)*Math.cos(la_norm)); }
+  else {
+    if(cos_z<cos_z_max){cos_z=cos_z_max;
+		if ( la_norm < -z_max && la_norm >= -Math.PI ){la_norm=-z_max;}
+		if ( la_norm < -Math.PI && la_norm > -(Math.PI+z_min) ){la_norm=-(Math.PI+z_min);}
+		if ( la_norm > z_max && la_norm <= Math.PI ){la_norm=z_max;}
+		if ( la_norm > Math.PI && la_norm < (Math.PI+z_min) ){la_norm=Math.PI+z_min;}
+	sin_z= Math.sqrt(1-cos_z* cos_z);
+	}
+    fi=Math.atan(  (t*cos_z /sin_z) );
+    ro_sin_z=c*Math.cos(fi)/( (1+Math.sin(fi))*sin_z*Math.exp(t1*Math.atan(t1*Math.sin(fi))) )
+    x= ro_sin_z*Math.cos(fi_norm)*Math.sin(la_norm);
+	y=ro_sin_z*Math.sin(fi_norm); }}
+}else
+{
+    if(cos_z<cos_z_max){cos_z=cos_z_max;
+		if ( la_norm < -z_max && la_norm >= -Math.PI ){la_norm=-z_max;}
+		if ( la_norm < -Math.PI && la_norm > -(Math.PI+z_min) ){la_norm=-(Math.PI+z_min);}
+		if ( la_norm > z_max && la_norm <= Math.PI ){la_norm=z_max;}
+		if ( la_norm > Math.PI && la_norm < (Math.PI+z_min) ){la_norm=Math.PI+z_min;}
+		}
+	if(cos_z>cos_z_min){cos_z=cos_z_min;
+		if ( la_norm >= 0 && la_norm < z_min ){la_norm=z_min;}
+		if ( la_norm > (2*Math.PI-z_min) && la_norm <= 2*Math.PI ){la_norm=2*Math.PI-z_min;}
+	}
+	sin_z= Math.sqrt(1-cos_z* cos_z);
+	cos_az=Math.sin(fi_norm)/sin_z;
+	if ( cos_az <= -1 ){az=Math.PI;}
+	else {
+		if ( cos_az >= 1 ){az=0;}
+		else {
+		az=Math.acos(cos_az);
+		if (Math.cos(fi_norm)*Math.sin(la_norm)<0){az=-az;}
+			}
+		}
+	if (az <= Math.PI/2){az=az+2*Math.PI;}
+    fi=Math.atan( t*cos_z /sin_z );
+	x=b*Math.log( (1+Math.sin(fi))/Math.cos(fi) )+a*e*Math.atan( t1*Math.sin(fi) );
+	y=b*(az-Math.PI); }
+resultStr=resultStr+i+" "+x_i+" "+y_i+" "+Math.round(x*10)/10+" "+Math.round(y*10)/10+"<br>";
+}
+}
+document.getElementById("result").innerHTML=resultStr;
+}
+</script>
+</td>
+</tr>
+</table>  </div>
+
+  <div class="clear-block clear">
+    <div class="meta">
+        </div>
+
+         <!-- <div class="links"><ul class="links inline"><li class="node_translation_ru first last"><a href="/proj_astr" title="–ü—Ä–æ–µ–∫—Ü–∏–∏ –º–∞–ª—ã—Ö —Ç–µ–ª" class="translation-link">Russian</a></li>
+</ul></div>//-->
+      </div>
+
+</div>
+<!-- /content ÒÓ‰ÂÊ‡ÌËÂ ‰ÓÍÛÏÂÌÚ‡ //-->
+
+<!-- footer ÌËÊÌËÈ ÍÓÎÓÌÚËÚÛÎ //-->
+<p class="PageFooter"><img src="http://geocnt.geonet.ru/images/line.gif" width="100%"><br>
+<table align="center" width="95%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="40">
+			<a href="#up"><img border=0 src="http://geocnt.geonet.ru/images/go2top.gif" alt="Í Ì‡˜‡ÎÛ ÒÚ‡ÌËˆ˚" title="Í Ì‡˜‡ÎÛ ÒÚ‡ÌËˆ˚"></a>
+		</td>
+		<td width=60% align=center><!-- begin of Top100 logo --><a href="http://top100.rambler.ru/home?id=1591988"><img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-blue.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a><!-- end of Top100 logo --></td>
+		<td>
+			<p class="PageFooter" style="text-align:right">
+				–¶–µ–Ω—Ç—Ä –ì–µ–æ–∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏–æ–Ω–Ω—ã—Ö –ò—Å—Å–ª–µ–¥–æ–≤–∞–Ω–∏–π –ò–Ω—Å—Ç–∏—Ç—É—Ç–∞ –ì–µ–æ–≥—Ä–∞—Ñ–∏–∏ –†–ê–ù<br>
+119017, –ú–æ—Å–∫–≤–∞, –°—Ç–∞—Ä–æ–º–æ–Ω–µ—Ç–Ω—ã–π –ø–µ—Ä., 29<br>
+—Ç–µ–ª–µ—Ñ–æ–Ω—ã:(495) 959-0017,  (495) 230-8170<br>
+—Ñ–∞–∫—Å:(495) 959-0017<br>
+e-mail:<a href="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a>			</p>
+		</td>
+	</tr>
+</table>
+</p><br>
+<!-- /footer ÌËÊÌËÈ ÍÓÎÓÌÚËÚÛÎ //-->
+  <!-- begin of Top100 code -->
+<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?1591988"></script><noscript><img src="http://counter.rambler.ru/top100.cnt?1591988" alt="" width="1" height="1" border="0"></noscript>
+<!-- end of Top100 code -->
+</body>
+</html>
+
+

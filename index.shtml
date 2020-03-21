@@ -1,0 +1,292 @@
+<html>
+<head>
+<title>ЦГИ ИГ РАН</title>
+<script language="JavaScript">
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(1);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 15;
+    document.MM_Time[0][0] = new String("behavior");
+    document.MM_Time[0][0].frame = 16;
+    document.MM_Time[0][0].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 16;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+<link rel="stylesheet" href="../CSS/ type="text/css">
+</head>
+
+<body bgcolor="#0033CC" text="#000000" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFF00" onLoad="MM_timelinePlay('Timeline1');MM_preloadImages('button/knopki_r1_c1_f3.gif','button/knopki_r1_c1_f2.gif','button/knopki_r1_c1_f4.gif','button/knopki_r1_c3_f3.gif','button/knopki_r1_c3_f2.gif','button/knopki_r1_c3_f4.gif','button/knopki_r1_c5_f3.gif','button/knopki_r1_c5_f2.gif','button/knopki_r1_c5_f4.gif')">
+<table width="100%" border="0" height="20" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="20"> 
+      <table border="0" cellpadding="0" cellspacing="0" width="257" align="left">
+        <!-- fwtable fwsrc="knopki.png" fwbase="knopki.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+        <tr> 
+          <td width="75"><img src="button/spacer.gif" width="75" height="1" border="0" name="undefined_2"></td>
+          <td width="15"><img src="button/spacer.gif" width="16" height="1" border="0" name="undefined_2"></td>
+          <td width="76"><img src="button/spacer.gif" width="75" height="1" border="0" name="undefined_2"></td>
+          <td width="36"><img src="button/spacer.gif" width="16" height="1" border="0" name="undefined_2"></td>
+          <td width="75"><img src="button/spacer.gif" width="75" height="1" border="0" name="undefined_2"></td>
+        </tr>
+        <tr> 
+          <td width="75"> <img name="knopki_r1_c1" src="button/knopki_r1_c1.gif" width="75" height="18" border="0" usemap="#m_knopki_r1_c1"></td>
+          <td width="15"> <img name="knopki_r1_c2" src="button/knopki_r1_c2.gif" width="16" height="18" border="0"></td>
+          <td width="76"> <img name="knopki_r1_c3" src="button/knopki_r1_c3.gif" width="75" height="18" border="0" usemap="#m_knopki_r1_c3"></td>
+          <td width="36"> <img name="knopki_r1_c4" src="button/knopki_r1_c4.gif" width="16" height="18" border="0"></td>
+          <td width="75"> <img name="knopki_r1_c5" src="button/knopki_r1_c5.gif" width="75" height="18" border="0" usemap="#m_knopki_r1_c5"></td>
+        </tr>
+        <map name="m_knopki_r1_c1"> 
+          <area shape="poly" coords="7,-1,68,-1,73,2,75,8,75,8,73,14,68,17,7,17,2,14,0,8,0,8,2,2,7,-1" href="../GEOCNTE/mpage.htm" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','knopki_r1_c1','button/knopki_r1_c1_f2.gif','button/knopki_r1_c1_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','knopki_r1_c1','button/knopki_r1_c1_f3.gif',1);" target="_top" alt="English" title="English"  >
+        </map>
+        <map name="m_knopki_r1_c3"> 
+          <area shape="poly" coords="8,0,69,0,74,3,76,9,76,9,74,15,69,18,8,18,3,15,1,9,1,9,3,3,8,0" href="../HOME/home.htm" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','knopki_r1_c3','button/knopki_r1_c3_f2.gif','button/knopki_r1_c3_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','knopki_r1_c3','button/knopki_r1_c3_f3.gif',1);" target="_top" alt="Russian" title="Russian"  >
+        </map>
+        <map name="m_knopki_r1_c5"> 
+          <area shape="poly" coords="7,-2,68,-2,73,1,75,7,75,7,73,13,68,16,7,16,2,13,0,7,0,7,2,1,7,-2" href="../ESPANOL/igras_es.htm" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','knopki_r1_c5','button/knopki_r1_c5_f2.gif','button/knopki_r1_c5_f4.gif',1);"  onClick="MM_nbGroup('down','navbar1','knopki_r1_c5','button/knopki_r1_c5_f3.gif',1);" target="_top" alt="Espanol" title="Espanol"  >
+        </map>
+      </table>
+      <div align="right"></div>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><img src="zag1.gif" width="600" height="50" border="0" hspace="0" vspace="0"></p>
+
+<table width="100%" border="0" height="72" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="40%" height="72"> 
+      <div align="center"><b><font color="#FFFF00" face="Verdana, Arial, Helvetica, sans-serif">Профессиональные 
+        общедоступные геоинформационные системы, программы, технологии и данные.</font></b></div>
+    </td>
+    <td width="20%" height="72"> 
+      <div align="center"><img src="shar3.gif" width="72" height="72"></div>
+    </td>
+    <td width="40%" height="72"> 
+   
+  <p align="center"><b><font color="#FFFF00" face="Verdana, Arial, Helvetica, sans-serif">Professional 
+        Geographical Information Systems, software, technologies and data.</font></b></p>
+      
+    </td>
+  </tr>
+</table>
+
+<p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#CCCCCC" size="-1">Обеспечим 
+  Вам приобретение любых программных средств ГИС и САПР, цифровых карт и растровых 
+  снимков на выгодных условиях. Консультации, помощь! <a href="mailto:supp@geocnt.geonet.ru">Пишите 
+  нам. </a></font> </p>
+<div align="center"><a href="../NEWS/news.htm"><img  src="../IMG/special.gif" border="0" vspace="0" alt="NEW!" align="left"></a></div><br>
+<div align="center"><a href="../NEWS/news.htm"><img  src="../IMG/new1.gif" width="85" height="55" border="0" vspace="0" alt="NEW!" align="left"></a></div>
+<font color="#CCCCCC"><font color="#FFFFFF">Наши пользователи</font><br>
+- лауреаты национальной ИНТЕРНЕТ-премии!<br>
+- единственные победители тендеров программы "Электронная России" по тематике 
+ГИС <a href="../NEWS/news.htm">подробнее..</a></font> 
+<p align="center" ><font size="-1" face="Verdana, Arial, Helvetica, sans-serif" color="#CCCCCC"> 
+  <a href="../GEOCNT/gc_web.htm"> ГеоКонструктор Web</a> - Инструментальное средство 
+  для публикации цифровых карт в Веб</font><br>
+  <font size="-1"  face="Verdana, Arial, Helvetica, sans-serif" color="#CCCCCC">Пример 
+  <a href="http://195.19.70.35"> интерактивной карты в INTERNET</a> на основе 
+  ГеоКонструктор Web</font></p>
+<div align="center"> 
+ 
+  <p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif" color="#CCCCCC"><a href="../GEOCNTE/gc_web.htm"> 
+    GeoConstructor Web -</a> Tool for publication of electronic maps in Wеb</font><br>
+    <font size="-1" face="Verdana, Arial, Helvetica, sans-serif" color="#CCCCCC" >Sample 
+	<a href="http://195.19.70.35/maps_eng">
+	Interactive  maps in INTERNET</a> by GeoConstructor Web</font> </p>
+</div>
+
+<p align="center"> 
+  <!-- fwtable fwsrc="new.png" fwbase="new" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+  <!-- fwtable fwsrc="newp2.png" fwbase="newp2" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+  <!-- fwtable fwsrc="newp2.png" fwbase="newp2" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+</p>
+<hr>
+
+<p align="center"><font face="Verdana" color="#00FFFF"> 
+  <P Align=Center><Font Size=+2>Вы 1 посетитель нашего сервера<BR>
+
+  </font></p>
+<hr>
+
+  <tr>
+    <td width="238"><!-- SpyLOG v2 f:1211 --> <script language="javascript">
+u="u167.54.spylog.com";d=document;nv=navigator;na=nv.appName;t="";p=0;
+sz=" width=88 height=31 ";
+hl=history.length;d.cookie="b=b";c=0;
+bv=Math.round(parseFloat(nv.appVersion)*100);
+if (d.cookie) c=1;n=(na.substring(0,2)=="Mi")?0:1;
+if((n==0)||(bv >= 300)){rn=Math.random();t=(new Date()).getTimezoneOffset();} else {rn=0;}
+z="p="+p+"&rn="+rn+"&t="+t+"&c="+c+"&hl="+hl;
+if (self != top) { fr=1;} else { fr=0;}
+r1=escape(d.referrer);r=escape(parent.document.referrer);
+sl="1.0";h=0;
+</script> <script language="javascript1.1">
+pl="";sl="1.1";
+if((n==1) && (bv >= 300)) 
+{ for(var i = 0; i < nv.plugins.length; i++)
+  pl += nv.plugins[i].name+":"; }
+j = (navigator.javaEnabled() ? "Y" : "N");
+</script>
+    <script language="javascript1.2">
+sl="1.2";s=screen;wh=s.width+'x'+s.height;
+px=(n==0)?screen.colorDepth:screen.pixelDepth;z+="&wh="+wh+"&px="+px;
+</script> <script language="javascript1.3">
+sl="1.3"
+</script> <script
+    language="javascript">
+y="";
+y+="<a href='http://"+u+"/cnt?f=3&p="+p+"&rn="+rn+"' target=_blank>";
+y+="<img src='http://"+u+"/cnt?";
+y+=z+"&j="+j+"&sl="+sl+"&r="+r+"&r1="+r1+"&fr="+fr+"&pg="+escape(window.location.href)+"&pl="+escape(pl);
+y+="' border=0 "+sz+" alt='SpyLOG'>";
+y+="</a>"; 
+d.write(y);
+</script> <script language="javascript1.2"><!--
+if (n == 0) { d.write("<");d.write("!--"); }
+//--></script>
+     <a
+    href="http://u167.54.spylog.com/cnt?f=3&amp;p=0" target="_blank"><img
+    src="http://u167.54.spylog.com/cnt?p=0" alt="SpyLOG" border="0" width="88" height="31"> 
+    </a>
+    <script language="javascript1.2"><!--
+if (n == 0) { d.write("--");d.write(">"); }
+//--></script> <!-- SpyLOG  --></td>
+    <td width="20%"><!--begin of Top100--> <a href="http://counter.rambler.ru/top100/"><img
+    src="http://counter.rambler.ru/top100.cnt?133949" alt="Rambler's Top100" width="81"
+    height="63" border="0"></a> <!--end of Top100 code--> </td>
+  </tr>
+
+  </body>
+</html>

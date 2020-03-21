@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Hilfe zu den Kartenwerkzeugen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="javascript">
+//Abkuerzungsvariablen
+var o = opener.parent.SkriptFrame;
+var ow = o.ToolWidth;
+var oh = o.ToolHeight;
+var nw = o.NorthSouthWidth_MF;
+var nh = o.NorthSouthHeight_MF;
+var ew = o.EastWestWidth_MF;
+var eh = o.EastWestHeight_MF;
+//Ausrichtung in den Tabellenzellen
+var vertical = "top";
+var horizontal = "center";
+document.write('<link rel="stylesheet" href="' + o.styleURL + '" type="text/css">');
+</script>
+</head>
+
+<script language="javascript">
+document.writeln('<body bgcolor="' + o.HelpWinColor + '" leftmargin="11" topmargin="9" marginwidth="11" marginheight="9" link="' + o.BereichColor2 + '" vlink="' + o.BereichColor2 + '" alink="' + o.BereichColor2 + '">');
+document.writeln('<table cellspacing="0" cellpadding="2" border="0">');
+document.writeln('<tr><td colspan="3" class="ueber1">Hilfe zu den Kartenwerkzeugen</td></tr>');
+document.writeln('<tr><td colspan="3" height="8"><img src="' + o.px_buntURL + '" width="356" height="1" border="0" alt=""></td></tr>');
+
+document.writeln('<tr><td align="' + horizontal + '"><img src="' + o.steuerungURL + '" width="12" height="33" border="0" alt="' + o.toolName[0] + '"></td>');
+document.writeln('<td><img src="' + o.pxURL + '" width="5" height="1" border="0" alt=""></td>');
+document.writeln('<td>Die Sichtbarkeit der einzelnen Themen können Sie durch Anklicken der jeweiligen "Checkbox" steuern. Nach jedem Ändern einer Checkbox wird die Karte neu geladen.</td></tr>');
+
+if (o.ZoomInTool) {
+document.writeln('<tr><td valign="' + vertical + '"><img src="' + o.ZoomInURL_o + '" width="' + ow + '" height="' + oh + '" border="0" alt="' + o.toolName[5] + '"></td>');
+document.writeln('<td></td>');
+document.writeln('<td>Zum Vergrößern des Kartenausschnittes schalten Sie diesen Knopf ein. Wenn Sie in die Karte klicken, wird die Ansicht um den gew&auml;hlten Punkt vergr&ouml;&szlig;ert und auf diesen zentriert. Um einen exakten Ausschnitt zu bestimmen, k&ouml;nnen Sie bei gedr&uuml;ckter linker Maustaste einen Rahmen aufziehen.</td></tr>');
+}
+
+if (o.ZoomOutTool) {
+document.writeln('<tr><td valign="' + vertical + '"><img src="' + o.ZoomOutURL_o + '" width="' + ow + '" height="' + oh + '" border="0" alt="' + o.toolName[6] + '"></td>');
+document.writeln('<td></td>');
+document.writeln('<td>Zum Verkleinern des Kartenausschnittes schalten Sie diesen Knopf ein. Wenn Sie in die Karte klicken, wird die Ansicht um den gew&auml;hlten Punkt verkleinert und auf diesen zentriert. Um einen exakten Ausschnitt zu bestimmen, k&ouml;nnen Sie bei gedr&uuml;ckter linker Maustaste einen Rahmen aufziehen.</td></tr>');
+}
+
+if (o.FullExtentTool) {
+document.writeln('<tr><td valign="' + vertical + '"><img src="' + o.FullExtentURL + '" width="' + ow + '" height="' + oh + '" border="0" alt="' + o.toolName[7] + '"></td>');
+document.writeln('<td></td>');
+document.writeln('<td>Die Gesamtansicht der Karte erreichen Sie durch Drücken dieses Knopfes.</td></tr>');
+}
+
+if (o.PanTool) {
+document.writeln('<tr><td valign="' + vertical + '"><img src="' + o.PanURL_o + '" width="' + ow + '" height="' + oh + '" border="0" alt="' + o.toolName[8] + '"></td>');
+document.writeln('<td></td>');
+document.writeln('<td>Um die Karte zu verschieben, schalten Sie diesen Knopf ein. Ziehen Sie die Karte bei gedrückter linker Maustaste in die gewünschte Richtung.</td></tr>');
+}
+
+
+if (o.IdentifyTool) {
+document.writeln('<tr><td valign="' + vertical + '"><img src="' + o.IdentifyURL_o + '" width="' + ow + '" height="' + oh + '" border="0" alt="' + o.toolName[9] + '"></td>');
+document.write('<td></td>');
+document.write('<td>Zusätzliche Informationen zu den sichtbaren Kartenthemen erhalten Sie, wenn Sie diesen Knopf einschalten und in der Karte mit der linken Maustaste auf das entsprechende Objekt klicken.</td></tr>');
+}
+
+
+if (o.HelpTool) {
+document.writeln('<tr><td valign="' + vertical + '"><img src="' + o.HelpURL + '" width="' + ow + '" height="' + oh + '" border="0" alt="' + o.toolName[10] + '"></td>');
+document.writeln('<td></td>');
+document.writeln('<td>Das momentan sichtbare Hilfefenster wurde durch Betätigen dieses Knopfes geöffnet.</td></tr>');
+}
+
+if (o.JumpTool_MF) {
+document.writeln('<tr><td colspan="2"></td>');
+document.writeln('<td>Verschieben Sie den sichtbaren Kartenausschnitt mit den folgenden Schaltflächen</td></tr>');
+document.writeln('<tr><td valign="' + vertical + '" align="' + horizontal + '"><img src="' + o.NorthURL_MF + '" width="' + nw + '" height="' + nh + '" border="0" alt="' + o.toolName[1] + '"></td>');
+document.writeln('<td></td>');
+document.writeln('<td>... nach Norden.</td></tr>');
+document.writeln('<tr><td valign="' + vertical + '" align="' + horizontal + '"><img src="' + o.SouthURL_MF + '" width="' + nw + '" height="' + nh + '" border="0" alt="' + o.toolName[2] + '"></td>');
+document.writeln('<td></td>');
+document.writeln('<td>... nach Süden.</td></tr>');
+document.writeln('<tr><td valign="' + vertical + '" align="' + horizontal + '"><img src="' + o.EastURL_MF + '" width="' + ew + '" height="' + eh + '" border="0" alt="' + o.toolName[3] + '"></td>');
+document.writeln('<td></td>');
+document.writeln('<td>... nach Osten.</td></tr>');
+document.writeln('<tr><td valign="' + vertical + '" align="' + horizontal + '"><img src="' + o.WestURL_MF + '" width="' + ew + '" height="' + eh + '" border="0" alt="' + o.toolName[4] + '"></td>');
+document.writeln('<td></td>');
+document.writeln('<td>... nach Westen.</td></tr>');
+}
+
+document.writeln('<tr><td valign="' + vertical + '"></td>');
+document.writeln('<td></td>');
+document.writeln('<td>Die Karte kann über die Druckfunktion des Browsers auf einem Drucker ausgeben werden (Menu Datei/Drucken...). Für ein optimales Ergebnis sollte die Karte im Querformat ausgegeben werden.</td></tr>');
+</script>
+</table>
+</body>
+</html>

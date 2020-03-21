@@ -1,0 +1,160 @@
+<html>
+
+<head>
+<title>IGRAS - GeoConstructor  Web</title>
+</head>
+
+<body background="toptxtr.gif" bgcolor="#FFFFFF">
+
+<p align="center"><a name="up"></a><b><font size="3" color="#800080" face="Arial">GIS 
+  Software</font></b></p>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="30">
+  <tr> 
+    <td align="center"><a href="mpage.htm"><img src="images/bmain1.gif"
+    alt="Main Page" border="0" width="86" height="30"></a> </td>
+    <td align="center" valign="top"><a href="company.htm"><img src="images/company.gif" width="136" height="30" border="0" alt="Company profile"></a></td>
+    <td align="center" valign="top"><a href="soft.htm"><img
+    src="images/bsoft1.gif" border="0" alt="Software @ Downloads" width="112" height="30"></a></td>
+    <td align="center" valign="top"><a href="appl.htm"><img src="images/bapp2.gif"
+    alt="GIS application areas" width="136" height="30" border="0"></a><a href="maps.htm"><img src="images/bmaps1.gif" width="135" height="29" border="0"></a></td>
+    <td align="center" valign="top"><a href="serv.htm"><img
+    src="images/bserv1.gif" border="0" alt="GIS service and consultancy" width="118"
+    height="30"></a></td>
+    <td valign="top"><a href="../HOME/home.htm"><img
+    src="images/brus1.gif" alt="Russian Page" border="0" width="108" height="30"></a></td>
+  </tr>
+</table>
+
+
+<p><a href="ftp://geocnt.geonet.ru/pub/GCWeb"><font face="Arial" size="3"><strong><font color="#000080">GeoConstructor 
+  Web</font></strong></font></a></p>
+<div align="center"> <i><font color="#009900" size="4"><b>How to implement GIS 
+  databases and interactive maps in INTERNET/INTRANET by using GeoConstructor 
+  Web.</b></font></i> </div>
+<blockquote> 
+  <p><a href="http://195.19.70.35/maps_eng"><b>Sample</b></a> Interactive maps 
+    in Internet by GeoConstructor Web</p>
+  <p>Contents</p>
+  <p>Importance of GIS platform for GIS-INTERNET applications .<br>
+    Our strategy for implementation GIS in INTERNET<br>
+    <b>Real realizations<br>
+    Principles of design.<br>
+    Installation.<br>
+    Advantages.</b></p>
+  <p><br>
+    <i>Importance of GIS platform for GIS-INTERNET applications .</i></p>
+</blockquote>
+<p>GeoCosntructor Web is the tool based on the GIS platform GeoDraw/GeoGraph/GeoConstructor 
+  , existing for 1992-2002, having about 3000 users, all basic capabilities to 
+  implement digital maps, raster images and related attribute databases from many 
+  sources.<br>
+  The GIS platform facilitates for you :</p>
+<ul>
+  <li><b>.</b>putting existing digital maps, GIS databases from different formats 
+    (GeoDraw/GeoGraph, ArcView, MapInfo, DXF) INTERNET/INTRANET server with minimal 
+    time/financial expenses;</li>
+  <li><b>.</b>design your own GIS application for INTERNET/INTRANET from any functions 
+    available for modern desktop GIS.</li>
+</ul>
+<p><i><br>
+  Our strategy for implementation GIS in INTERNET</i></p>
+<blockquote>
+  <p>Basic proposals :<br>
+    (a) implementation of GIS in INTERNET must be available for the wide range 
+    of users (minimal financial expenses, minimal requirements to the quality 
+    of telecommunication networks and &quot;think&quot; clients etc.) <br>
+    (b) for creation of GIS-servers in INTERNET/INTRANET it is necessary to make 
+    some programming work, depending on requirements of concrete users <br>
+    ·(c) GIS-web-server must be reliable under high press of visitors in INTERNET 
+    (millions visitors per day)<br>
+    ·(ã) law rights for maps publishing in INTERNET (different depending on countries)<br>
+    ·(ä) GIS-server must be opened for functional development.</p>
+  <p><b>Real realizations</b><br>
+    <br>
+    GIS and interactive maps in INTERNET powered by GeoConstructor Web have been 
+    realized at :<br>
+    INTERNET-holding rambler - the largest Russian INTERNET server (more than 
+    3 millions visitors per day) - <a href="http://www.rambler.ru/map/" target="_blank">www.rambler.ru/maps</a>, 
+    <a href="http://www.nakarte.ru/" target="_blank">www.nakarte.ru</a><br>
+    Official server of Moscow city administration - the most popular server among 
+    administrations in Russian INTERNET - <a href="http://www.mos.ru/" target="_blank">www.mos.ru</a>, 
+    part Atlas of Moscow<br>
+    Rossbusinessconsulting - the largest business consulting server in Russian 
+    INTERNET - <a href="http://www.rbc.ru/" target="_blank">www.rbc.ru</a><br>
+    Management of oil pipelines from Russia to the Europe through Belorussia &quot;Druzshba&quot;<br>
+    All Russian institute of economy of mineral resources and geology - <a href="http://www.viems.ru/" target="_blank">www.viems.ru </a><br>
+  Fund of effective policy - one of the leading political consulting centers 
+    in Russia - <a href="http://www.fep.ru/" target="_blank">www.fep.ru </a>  </p>
+  <p><b>Principles of design.</b></p>
+  <p>Now there are 2 solutions to realize GIS-servers for INTERNET. In the both 
+    solutions it is necessary to have 2 logical servers to realize the required 
+    security. It is shown on the simplest schemes (each logical server is a separate 
+    hardware):</p>
+  <p>1. The first server is an UNIX server, looking to the world, with a firewall. 
+    Inside the firewall there is a server with Microsoft Windows NT/2000 with 
+    installed Internet Information Server (IIS) and Active Server Pages (ASP). 
+    Our software (GeoConstructorWeb, which is ActiveX component) works in the 
+    environment of ASP. So there is no any straight interaction from the external 
+    world with NT/2000 GIS server. It helps to solve a set of problems (make the 
+    costs lower, including lower cost of development tools for NT/2000, data protection, 
+    security etc.). For the example, RAMBLER INTERNET holding has tested security, 
+    speed, reliability etc. of this solutions and has been satisfied. </p>
+  <p>2. The server (UNIX or not) has output to INTERNET Server and installed interpreter 
+    of Perl language. Perl interpreter processes our Perl-scripts, which transmit 
+    the users GIS-related queries to the internal network to the second server 
+    (MS Windows NT/2000), where our service module (based on GeoConstructor-web) 
+    works. The connections is based on TCP-protocol. In this solution it is not 
+    required to install on Windows server IIS è ASP, and the security depends 
+    only on your security on your external server.</p>
+  <p>Maps (vector, raster) and attribute data for both solutions can be prepared by use of GIS GeoDraw/GeoGraph (cost US$250), including straight reading of data from ArcView shape files/raster world files via drivers, reading MapInfo files, conversion of DXF files from AutoCAD, Microstation etc.</p>
+  <p>The basic approach - as an output for the user , the raster map image is 
+    generated from the source GIS database and regenerated depending on users 
+    action. This approach gives the technology which does not require loading 
+    any software on clients computers besides standard INTERNET browser.</p>
+  <p>Multi-user work with attribute data bases.</p>
+  <p>Because in the solution (1) the single client is MSIIS, it is not necessary 
+    to install powerful database management servers for multi-user access to the 
+    attribute data (or to the spatial data saving in the relational database). 
+    In this case the technology itself will support the multi-user access. In 
+    case if database management servers (for example Oracle) are already used 
+    besides INTERNET scheme, the access to them is also supported by existing 
+    components.</p>
+  <p><br>
+    <b>Installation.</b></p>
+  <p>In the solution (1).<br>
+    It is required to have MS Windows NT/2000 server with installed Microsoft 
+    Internet Information Server (MSIIS).<br>
+    Then on this server have to be installed :<br>
+    GeoConstructor-web-server<br>
+    Map compositions, including digital vector map layers, raster images, attribute 
+    databases, previously prepared in GeoGraph (there is not necessary to make 
+    any changes in hem , usually installation and update take a minutes)<br>
+    The active pages are created and adopted to the users goals, using provided 
+    in GeoConstructor Web samples of such pages. <br>
+    It is possible to address to these active pages from :<br>
+    - HTML-pages from Java-scripts (for simple applications, for &quot;think&quot; 
+    clients, maximal security)<br>
+    Java-applets (when it is required to have rather complicated client, for example 
+    multi-user editing of topological layers in INTERNET). </p>
+  <p><b>Advantages.</b></p>
+  <p>·Saving cost proposal (many time lesser cost then from foreign companies)<br>
+    GIS platform with the developed service as a background for GIS Internet applications<br>
+    Capability to realize a wide range of applications from very simple to implement 
+    to the complicated ones·<br>
+    Reliability, speed and security in real intensive use in INTERNET on sites 
+    of popular INTERNET-companies.</p>
+  </blockquote>
+<hr>
+
+<p align="left"><font size="1" face="Arial"><a href="#up"><img src="gostarth.gif" alt="Up"
+border="0" width="38" height="59">To the beginning of this page</a></font></p>
+
+<p align="right"><font size="1" face="Arial">GIS Research Centre<br>
+Institute of Geography of the Russian Academy of Sciences<br>
+Staromonetny per.,29<br>
+  119017, Moscow, Russia<br>
+phones: 7 (095) 959-0017, (095) 230-8170;<br>
+fax: 7 (095) 959-0017 <br>
+e-mail: <a href="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a> </font></p>
+</body>
+</html>

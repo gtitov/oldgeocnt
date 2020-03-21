@@ -1,0 +1,64 @@
+<html><head><title>Информация</title><meta http-equiv='Content-Type' content='text/html; charset=windows-1251'></head><body><table border=1><tr><tr><td valign=top><b> Название проекции</b></td><td valign=top><b> Название пакета</b></td><td valign=top><b> Название проекции в пакете</b></td><td valign=top><b> Вид файла параметров проекции</b></td><td valign=top><b> Параметры, задаваемые в диалоге</b></td><td valign=top><b> Примечание</b></td></tr><tr><td valign=top> Нормальная коническая равнопромежуточная проекция Нефедовой (проекция ПКО) для карты России и сопредельных государств масштаба 1:2 500 000, 1999г</td><td valign=top> ГеоГраф ГИС 2.0</td><td valign=top> Нормальная коническая равнопромежуточная</td><td valign=top width=100px> GRC IGRAS Projection Description File<br>
+Нормальная коническая равнопромежуточная<br>
+1<br>
+0<br>
+1<br>
+1<br>
+0<br>
+0<br>
+12<br>
+0.000000<br>
+0.000000<br>
+0.000000<br>
+0.000000<br>
+100.000000<br>
+90.000000<br>
+0.000000<br>
+0.000000<br>
+1000.000000<br>
+6378245.000000<br>
+6356863.000000<br>
+0.000000<br>
+71.568357<br>
+46.548696<br>
+0.000000<br>
+0.000000<br>
+54.000000<br>
+0<br>
+0.000000<br>
+0.000000<br>
+0.000000</td><td valign=top> Проекция: Нормальная коническая равнопромежуточная<br>
+Форма Земли: Эллипсоид<br>
+Шар/Эллипсоид: Эллипсоид Красовского 1940<br>
+Масштаб: 1:1000<br>
+Полюс проекции: Северный полюс <br>
+Долгота осевого меридиана: 100 в.д.<br>
+Широта выбранной параллели: 54 с.ш.<br>
+Способ задания: Две стандартные параллели (параллели сечения)<br>
+Параллели:<br>
+Северная: 71.568357<br>
+Южная: 46.548696 с.ш.</td><td valign=top> Параметры проекции слоя хранятся в файле <имя_слоя>.prj в папке, содержащей данный слой. Если такого файла нет, считается, что проекция слоя не задана<br>
+<br>
+Коэффициент пропорциональности долгот: = 0.850966<br>
+Радиус экватора в проекции: C = 10321085м</td></tr><tr><td valign=top> Нормальная коническая равнопромежуточная проекция Нефедовой (проекция ПКО) для карты России и сопредельных государств масштаба 1:2 500 000, 1999г</td><td valign=top> MapInfo 6.5 Professional</td><td valign=top> Equidistant Conic</td><td valign=top width=100px> "проекция ПКО (1999года)", 6, 1001, 7, 100, 54, 71.568357, 46.548696, 0, 0</td><td valign=top> &nbsp;</td><td valign=top> Файл mapinfow.prj, содержащий информацию о всех доступных проекциях. Задать проекцию со своими параметрами "изнутри" программы нельзя - только выбор из списка.<br>
+Описание проекции в MIF-файле:<br>
+CoordSys Earth Projection 6, 1001, "m", 100, 54, 71.568357, 46.548696, 0, 0</td></tr><tr><td valign=top> Нормальная коническая равнопромежуточная проекция Нефедовой (проекция ПКО) для карты России и сопредельных государств масштаба 1:2 500 000, 1999г</td><td valign=top> ArcGis 9.0</td><td valign=top> Equidistant_Conic</td><td valign=top width=100px> PROJCS["kavr",GEOGCS["pulk_42",DATUM["D_Pulkovo_1942",SPHEROID["Krasovsky_1940",6378245.0,298.3]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Equidistant_Conic"],PARAMETER["False_Easting",0.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",100.0],PARAMETER["Standard_Parallel_1",46.548696],PARAMETER["Standard_Parallel_2",71.568357],PARAMETER["Latitude_Of_Origin",54.0],UNIT["Meter",1.0]]</td><td valign=top> Projection: Equidistant_Conic<br>
+False_Easting: 0.000000<br>
+False_Northing: 0.000000<br>
+Central_Meridian: 100.000000<br>
+Standard_Parallel_1: 46.548696<br>
+Standard_Parallel_2: 71.568357<br>
+Latitude_Of_Origin: 54.000000<br>
+<br>
+Angular Unit: Degree (0.017453292519943299)<br>
+Prime Meridian: Greenwich (0.0)<br>
+Datum: D_Pulkovo_1942<br>
+  Spheroid: Krasovsky_1940<br>
+    Semimajor Axis: 6378245.0<br>
+    Semiminor Axis: 6356863.01877304730<br>
+    Inverse Flattening: 298.300000000000010<br></td><td valign=top> Датум D_Pulkovo_1942 является стандартным (выбирается из списка по имени)</td></tr><tr><td valign=top> Нормальная коническая равнопромежуточная проекция Нефедовой (проекция ПКО) для карты России и сопредельных государств масштаба 1:2 500 000, 1999г</td><td valign=top> ArcView GIS 3.2</td><td valign=top> Equidistant Conic</td><td valign=top> &nbsp;</td><td valign=top> Projection: Equidistant Conic<br>
+Spheroid: Krasovsky<br>
+Central Meridian: 100<br>
+Reference Latitude: 54<br>
+Standard Parallel 1: 46.548696<br>
+Standard Parallel 2: 71.568357</td><td valign=top> &nbsp;</td></tr></tr></table></body>

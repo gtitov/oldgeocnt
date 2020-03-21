@@ -1,0 +1,322 @@
+<html>
+
+<head>
+<title>Цифровые карты и планы в ГИС</title>
+<link rel="stylesheet" href="../CSS/zaglav.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" link="#0033FF" onLoad="MM_preloadImages('../HOME/button/but_n1_r1_c1_f3.gif','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif','../HOME/button/but_n1_r1_c2_f3.gif','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif','../HOME/button/but_n1_r1_c3_f3.gif','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif','../HOME/button/but_n1_r1_c4_f3.gif','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif','../HOME/button/but_n1_r1_c5_f3.gif','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif','../HOME/button/but_n1_r1_c6_f3.gif','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif','../HOME/button/but_n1_r1_c8_f3.gif','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif','../HOME/button/but_n1_r1_c9_f3.gif','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif','../HOME/button/but_n1_r1_c10_f3.gif','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif','../HOME/button/but_n1_r1_c11_f3.gif','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif','../HOME/button/but_n1_r1_c12_f3.gif','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif','../HOME/button/but_n1_r1_c13_f3.gif','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif')" text="#000000" vlink="#990066" alink="#990066">
+<p><a name="up"></a></p>
+
+  <tr>
+    <td>
+      
+    <table border="0" cellpadding="0" cellspacing="0" width="807">
+  <!-- fwtable fwsrc="but_n1.png" fwbase="but_n1.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+  <tr> 
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="57" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="63" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="69" height="1" border="0"></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="1" border="0"></td>
+  </tr>
+  <tr> 
+    <td><a href="../HOME/home.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f2.gif','../HOME/button/but_n1_r1_c1_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c1','../HOME/button/but_n1_r1_c1_f3.gif',1)" ><img name="but_n1_r1_c1" src="../HOME/button/but_n1_r1_c1.gif" width="63" height="22" border="0" alt="Home"></a></td>
+    <td><a href="../NEWS/news.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f2.gif','../HOME/button/but_n1_r1_c2_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c2','../HOME/button/but_n1_r1_c2_f3.gif',1)" ><img name="but_n1_r1_c2" src="../HOME/button/but_n1_r1_c2.gif" width="63" height="22" border="0" alt="News"></a></td>
+    <td><a href="../NEWS/price.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f2.gif','../HOME/button/but_n1_r1_c3_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c3','../HOME/button/but_n1_r1_c3_f3.gif',1)" ><img name="but_n1_r1_c3" src="../HOME/button/but_n1_r1_c3.gif" width="57" height="22" border="0" alt="Price"></a></td>
+    <td><a href="../GEOCNT/soft.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f2.gif','../HOME/button/but_n1_r1_c4_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c4','../HOME/button/but_n1_r1_c4_f3.gif',1)" ><img name="but_n1_r1_c4" src="../HOME/button/but_n1_r1_c4.gif" width="69" height="22" border="0" alt="Programmy"></a></td>
+    <td><a href="../GEOCNT/supp.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f2.gif','../HOME/button/but_n1_r1_c5_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c5','../HOME/button/but_n1_r1_c5_f3.gif',1)" ><img name="but_n1_r1_c5" src="../HOME/button/but_n1_r1_c5.gif" width="57" height="22" border="0" alt="File"></a></td>
+    <td><a href="../GEOCNT/maps.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f2.gif','../HOME/button/but_n1_r1_c6_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c6','../HOME/button/but_n1_r1_c6_f3.gif',1)" ><img name="but_n1_r1_c6" src="../HOME/button/but_n1_r1_c6.gif" width="57" height="22" border="0" alt="Maps"></a></td>
+    <td><a href="../GEOCNT/snimki.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f2.gif','../HOME/button/but_n1_r1_c7_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c7','../HOME/button/but_n1_r1_c7_f3.gif',1)" ><img name="but_n1_r1_c7" src="../HOME/button/but_n1_r1_c7.gif" width="57" height="22" border="0" alt="Snimki"></a></td>
+    <td><a href="../GEOCNT/proect.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f2.gif','../HOME/button/but_n1_r1_c8_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c8','../HOME/button/but_n1_r1_c8_f3.gif',1)" ><img name="but_n1_r1_c8" src="../HOME/button/but_n1_r1_c8.gif" width="63" height="22" border="0" alt="Proekty"></a></td>
+    <td><a href="../ARTICLS/articls.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f2.gif','../HOME/button/but_n1_r1_c9_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c9','../HOME/button/but_n1_r1_c9_f3.gif',1)" ><img name="but_n1_r1_c9" src="../HOME/button/but_n1_r1_c9.gif" width="57" height="22" border="0" alt="Stat`i"></a></td>
+    <td><a href="../GEOCNT/obuchen.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f2.gif','../HOME/button/but_n1_r1_c10_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c10','../HOME/button/but_n1_r1_c10_f3.gif',1)" ><img name="but_n1_r1_c10" src="../HOME/button/but_n1_r1_c10.gif" width="63" height="22" border="0" alt="Obuchenie"></a></td>
+    <td><a href="../GEOCNT/partner.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f2.gif','../HOME/button/but_n1_r1_c11_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c11','../HOME/button/but_n1_r1_c11_f3.gif',1)" ><img name="but_n1_r1_c11" src="../HOME/button/but_n1_r1_c11.gif" width="63" height="22" border="0" alt="Partnery"></a></td>
+    <td><a href="../QUEST/quest.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f2.gif','../HOME/button/but_n1_r1_c12_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c12','../HOME/button/but_n1_r1_c12_f3.gif',1)" ><img name="but_n1_r1_c12" src="../HOME/button/but_n1_r1_c12.gif" width="69" height="22" border="0" alt="Vopros-Otvet"></a></td>
+    <td><a href="../GEOCNT/kontakt.htm" target="_top" onMouseOut="MM_nbGroup('out');"  onMouseOver="MM_nbGroup('over','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f2.gif','../HOME/button/but_n1_r1_c13_f4.gif',1)"  onClick="MM_nbGroup('down','navbar1','but_n1_r1_c13','../HOME/button/but_n1_r1_c13_f3.gif',1)" ><img name="but_n1_r1_c13" src="../HOME/button/but_n1_r1_c13.gif" width="69" height="22" border="0" alt="Kontakt"></a></td>
+    <td><img src="../HOME/button/spacer.gif" width="1" height="22" border="0"></td>
+  </tr>
+</table>
+</td>
+  </tr>
+<h3 align="center"><span class="zaglav">GeoDraw/Географ/Геоконструктор ПО ЦГИ 
+  ИГ РАН: опыт и перспективы разработки </span> <br>
+</h3>
+<div align="center"><font color="#000099">Статья для журнала &quot;ГИС-обозрение&quot;, 
+  &nbsp;&nbsp; 1,1999 </font></div>
+
+<p><a href="staty1.htm"  target="_top">История 
+  развития и идеология выбора места на рынке ГИС.</a><br>
+  <a href="staty3.htm"  target="_top">Программное обеспечение для 
+  конечного пользователя. ГеоГраф.</a><br>
+  <a href="staty4.htm"  target="_top">Инструментальное средство для 
+  разработки ГИС-приложений. ГеоКонструктор.</a><br>
+  <a href="staty5.htm"  target="_top">Перспективы развития.</a> </p>
+<span class="zaglav2">Цифровые карты и планы в ГИС. GeoDraw.</span>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Одна из ключевых задач,
+решаемых в ГИС - создание, ведение и обновление
+цифровых карт и планов, связывание их с базами
+атрибутивных данных, обмен данными с другими
+системами. Требования, первоначально
+предъявляемые при этом пользователями,
+варьируются в очень широком диапазоне - от
+&quot;сохранения существующего фонда традиционных
+планов по причине ухудшения состояния материала,
+на котором они были вычерчены&quot; и
+&quot;визуализации данных в виде наглядных
+изображений&quot; до &quot;интеграции
+пространственных и связанных с ними данных,
+постоянно обновляемых по одной и той же
+территории различными организациями&quot;.
+Существенно, что у одних и тех же пользователей
+по мере освоения ГИС эти требования
+содержательно и качественно меняются от
+простейших к более сложным, поэтому задача
+помогающих им профессиональных ГИС-команд -
+предвидеть и предупредить те проблемы, которые
+появятся у пользователей в перспективе,
+сэкономить им средства, время и избежать крупных
+последующих акций по редактированию уже
+введенных данных.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; При работе по созданию и
+обновлению цифровых карт и планов наше
+программное обеспечение позволяет осуществлять
+ввод пространственных данных при помощи всех
+основных возможных видов технологий: 
+
+<ul>
+  <li><span class="vydelenie">преобразование традиционных карт и планов</span> 
+    с бумажных и других носителей в векторную форму путем использования дигитайзеров 
+    или сканирования с последующей векторизацией растровых изображений. Список 
+    подключаемых дигитайзеров достаточно широк и открыт (новые дигитайзеры могут 
+    быть добавлены путем составления простого текстового файла описания дигитайзера). 
+    Список растровых изображений включает около 40 форматов, включая все наиболее 
+    общеупотребительные (BMP, TIFF, GIF, JPEG и др.). Загрузка растровых изображений 
+    построена по принципу драйверов форматов, т.е. для добавления нового формата 
+    нет нужды осуществлять какие-то переделки в системе, достаточно написать драйвер 
+    для формата и добавить его в список. Для растров может формироваться требуемая 
+    система координат путем чтения привязки к модели земной поверхности, заложенной 
+    как в самом формате, например, для снимков SPOT и других, так и полученной 
+    путем трансформации растра по опорным точкам. Растры могут иметь большие размеры 
+    (несколько гигабайт), что почти не влияет на скорость произвольного масштабирования, 
+    сдвига и другие характеристики. Цветность растровых изображений сохраняется 
+    в соответствии с ограничениями исходного формата (до десятков тысяч или миллионов 
+    цветов). Растровые изображения могут средствами самого программного продукта 
+    быть трансформированы в любые требуемые системы координат, &quot;собраны&quot; 
+    в единое поле, выбранные цвета в черно-белых и цветных растрах могут быть 
+    представлены как &quot;прозрачные&quot;, цветовая палитра может меняться пользователем 
+    по зонам и так далее; </li>
+</ul>
+
+<p align="center"><img SRC="image6.jpg" WIDTH="300" HEIGHT="225" HSPACE="12"> 
+<ul>
+  <li><span class="vydelenie">использовать данные натурных измерений</span>на 
+    местности в качестве средства создания и обновления по ним цифровых карт и 
+    планов непосредственно; </li>
+  <li><span class="vydelenie">импортировать или читать</span>пространственные 
+    и связанные с ними атрибутивные данные из широкого круга <strong>других распространенных 
+    систем и форматов</strong> данных как зарубежного, так и отечественного производства 
+    (ARC/INFO, MapInfo, DXF AutoCAD, форматы представления цифровых топографических 
+    карт Роскартографии, Военно-топографического управления МО РФ, DX-90 и др.); 
+    для систем уровня конечного пользователя встроен механизм чтения данных из 
+    любых форматов, драйверы которых имеются в списке, напрямую. При этом в одну 
+    и ту же композицию карты могут войти слои разных форматов, а различия, например, 
+    в картографических проекциях элиминируются путем их пересчета при чтении &quot;на 
+    лету&quot;.</li>
+</ul>
+
+<p >&nbsp;&nbsp;&nbsp;&nbsp; Общепринятым является
+деление векторных программных средств ГИС на
+топологические и нетопологические. В первых
+фиксация топологических пространственных
+отношений между объектами (смежности, связности,
+вложенности и др.) является основой их
+конструкции. Во вторых же цифруются
+пространственные объекты, изначально не знающие
+друг о друге, и построение отношений между ними
+осуществляется в режиме постпроцесса.
+Топологические системы являются более
+адекватным инструментом для создания
+качественных цифровых карт, поскольку наиболее
+сильной стороной традиционных карт (для
+специалистов) и цифровых карт (в явном виде, как
+баз данных) является фиксация именно
+пространственных отношений между объектами, а не
+самих объектов. Практика ГИС показывает, что
+значительно выгоднее, когда оператор создает
+изначально качественные карты и фиксирует в них
+отношения между объектами, а не относит эту
+стадию на этап постпроцесса. Хотя в настоящее
+время идет процесс сближения этих двух видов
+систем (в изначально топологических системах
+вводятся механизмы формирования
+нетопологических слоев, а в нетопологических
+вводяятся элементы топологии), влияние
+отмеченного разделения остается.</p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Создаваемые при помощи нашего ПО цифровые карты 
+могут изначально делиться на слои, определяемые требованиями к формируемой ГИС. 
+В пределах слоев обеспечивается необходимое топологическое согласование объектов 
+- смежности, связности, вложенности и др., сборка из них более сложных объектов, 
+фиксация топологических отношений между пространственными объектами ( в т.ч. в 
+виде таблиц пространственных отношений, которые могут использоваться при дальнейшем 
+анализе). Функциональная достаточность и легкость освоения работы по созданию 
+топологически корректных цифровых карт отмечается много лет нашими многочисленными 
+пользователями в России и за рубежом (в частности, обмен данными с ARC/INFO очень 
+легок и не требует дополнительных исправлений карт).
+<p >&nbsp;&nbsp;&nbsp;&nbsp;<em>Пример планшета
+кабельных линий</em></p>
+
+<p><img src="image7.jpg" width="400" height="300"></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Сильной стороной GeoDraw является встроенный 
+  механизм преобразований систем координат, включающий как преобразования около 
+  40 типов картографических проекций, так и преобразования по опорным точкам - 
+  сдвиг-поворот, афинные, проективные, полиномиальные, локально-афинные и другие. 
+  Накопленный у нас многолетний опыт позволяет говорить о возможности высококачественного 
+  решения задач интеграции пространственных данных, создаваемых и обновляемых 
+  в различных отраслях и на различных масштабных уровнях (от 1:500 до 1:50 000 
+  000), включая топографические карты, планы, схемы, снимки и другие материалы. 
+  Преобразования применимы как к векторным слоям, так и к растровым изображениям.</p>
+
+<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Система обеспечивает
+большой резерв в плане объемов создаваемых и
+обновляемых данных. Реально используются сотни
+тысяч объектов на один слой, возможны миллионы
+объектов на слой. Работа с множеством листов карт
+обеспечивается механизмом драйвера
+многостраничного слоя, при котором один и тот же
+слой на разных листах, включая связанные с ним
+базы атрибутивных данных, может рассматриваться
+и обрабатываться как один целый логический слой,
+что дает возможность работы с многолистной
+структурой карт и планов. </p>
+
+<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Создаваемые слои
+векторных цифровых карт могут быть связаны с
+базами атрибутивных данных практически в любых
+форматах, используя драйверы ODBC и IDAPI. Наш опыт
+такой стыковки и поддержки созданных систем
+включает работу с форматами DBF dBase и DB Paradox, MS Access, MS
+Excel, СУБД Oracle, Interbase, и другими форматами. Связь
+может быть осуществлена как с уже существующими
+базами, так и с создаваемыми в процессе
+формирования ГИС.</p>
+
+<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Решение задач
+формирования множества векторных слоев цифровых
+карт, их обновления, преобразования в требуемых
+системы координат, связи с базами атрибутивных
+данных, увязки векторных слоев с растровыми
+изображениями и ешение прочих подобных задач
+выделено в отдельный программный модуль - GeoDraw. Он
+широко используется в организациях
+геологического, лесо- и землеустроительного,
+дорожного, архитектурно-градостроительного
+профиля, службах, ведущих информацию по
+инженерным коммуникациям, работающих в сфере
+геодезии и картографии, учебных и других
+организациях. В организациях и подразделениях,
+где создание цифровых карт и планов не
+осуществляется или имеет незначительный
+вспомогательный вес, используется программный
+модуль ГеоГраф - система конечного пользователя.
+В качестве примеров можно назвать, кроме
+указанных выше видов организаций, администрации
+городов и районов, рекламные фирмы и отделы
+производственных предприятий, организации,
+работающие в общественно-политической и
+социологической сфере (организации
+Центризбиркома, партии и
+общественно-политические движения, центры
+изучения общественного мнения),
+картоиздательские фирмы. </p>
+
+<p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Для пользователей,
+заинтересованных в создании и распространении
+своих собственных ГИС-приложений, предлагается
+инструментальное средство ГеоКонструктор. В
+качестве пользователей можно назвать службы
+реагирования в экстремальных ситуациях,
+организации Минобороны, разработчиков
+прикладного программного обеспечения в
+различных указанных выше отраслях и создателей
+массовой продукции (электронных карт городов и
+другой подобной продукции). При разработке
+указанных программных продуктов учтен опыт
+многолетнего взаимодействия с тысячами
+пользователей, многие из которых имеют большой
+опыт работ с ГИС-системами - мировыми лидерами, и
+системно реализованы тысячи их пожеланий,
+эффективных для конкретной работы</p>
+
+<a HREF="#up"> </a>
+<p><a href="#up">К началу страницы</a></p>
+<img src="../IMG/line.gif" width="800" height="1"> 
+<p class="adres"> <font size="-1">Центр Геоинформационных Исследований Института 
+  Географии РАН<br>
+  109107, Москва, Старомонетный пер., 29<br>
+  телефоны: (095) 959-0017, (095) 230-8170; факс: (095) 959-0017<br>
+  e-mail: <a HREF="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a></font></p>
+</body>
+</html>

@@ -1,0 +1,737 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Equal-Area Projections of The Triaxial Ellipsoid | Центр геоинформационных исследований</title>
+<META NAME="Author" CONTENT="Mikhail Borisov, borim@yandex.ru">
+<link rel="stylesheet" type="text/css" href="http://geocnt.geonet.ru/sites/all/themes/geocnt_theme/my.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="..." content="..." />
+    <link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/nice_menus/nice_menus.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/nice_menus/nice_menus_default.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views/css/views.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/geocnt_theme/style.css?J" />
+<link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/geocnt_theme/print.css?J" />
+    <script type="text/javascript" src="/misc/jquery.js?J"></script>
+<script type="text/javascript" src="/misc/drupal.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/superfish.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/jquery.bgiframe.min.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/jquery.hoverIntent.minified.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/nice_menus.js?J"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "nice_menus_options": { "delay": 800, "speed": 1 } });
+//--><!]]>
+</script>
+    <script type="text/javascript" src="/misc/jquery.js"></script>
+<script type="text/javascript" src="/misc/drupal.js"></script>
+<script type="text/javascript" src="/misc/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="/sites/all/themes/geocnt_theme/common.js"></script>
+<!--<link rel="stylesheet" href="../menu.css" type="text/css"> //-->
+<style type="text/css" media="all">@import "/sites/all/themes/geocnt_theme/body.css";</style>
+    <style type="text/css" media="print">@import "/sites/all/themes/geocnt_theme/print.css";</style>
+    <!--[if lt IE 7]>
+    <style type="text/css" media="all">@import "/sites/all/themes/geocnt_theme/fix-ie.css";</style>
+    <![endif]-->
+<!--[if IE]><script type="text/javascript" src="/sites/all/themes/geocnt_theme/excanvas.js"></script><![endif]-->
+</head>
+<body>
+<!-- header ������� ���������� //-->
+<a name="up"></a>
+<table width="100%" height="65" border="0" bgcolor="#0033CC" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="120" height="90">
+			<a href="http://geocnt.geonet.ru"><img src="http://geocnt.geonet.ru/images/logo.gif" width="120" height="90" border="0" title="http://geocnt.geonet.ru" alt="http://geocnt.geonet.ru"></a>
+		</td>
+		<td>
+			<p class="PageTitleMain">Центр геоинформационных исследований<br>Equal-Area Projections of The Triaxial Ellipsoid</p>
+		</td>
+		<td width="40%" align=right background="http://geocnt.geonet.ru/images/gradient.jpg">
+			<a href="/ru">Russian</a>&nbsp;<a href="/ru"><img src="/sites/all/modules/i18n/flags/ru.png"  class="i18n-icon" width="16" height="12" alt="Russian" /></a>&nbsp;<br>
+			<a href="/en">English</a>&nbsp;<a href="/en"><img src="/sites/all/modules/i18n/flags/en.png"  class="i18n-icon" width="16" height="12" alt="English" /></a>&nbsp;<br>
+			<a href="/es">Espanol</a>&nbsp;<a href="/es"><img src="/sites/all/modules/i18n/flags/es.png"  class="i18n-icon" width="16" height="12" alt="Spanish" /></a>&nbsp;
+		</td>
+	</tr>
+</table>
+<!-- /header ������� ���������� //-->
+<div id="block-nice_menus-1" class="clear-block block block-nice_menus">
+
+
+ <!-- <div class="content"> //--> <ul class="nice-menu nice-menu-down" id="nice-menu-1"><li class="menu-205 menu-path-node-40 first  odd "><a href="/en/main" title="Main page">Main</a></li>
+<li class="menu-363 menu-path-news even "><a href="/en/news" title="">News</a></li>
+<li class="menu-210 menu-path-node-42 odd "><a href="/en/soft" title="Software">Software</a></li>
+<li class="menu-211 menu-path-node-52 even "><a href="/en/maps" title="Maps">Maps</a></li>
+<li class="menu-212 menuparent menu-path-node-49 active-trail odd "><a href="/en/projects" title="Projects and papers">Projects and papers</a><ul><li class="menu-213 menu-path-node-49 first  odd "><a href="/en/projects" title="GIS Areas">GIS Areas</a></li>
+<li class="menu-372 menu-path-node-143 even "><a href="/en/proj_mollweide" title="Mollweide and volcanoes">Mollweide and volcanoes</a></li>
+<li class="menu-214 menu-path-node-51 odd "><a href="/en/proj_astr" title="Small bodies projections">Small bodies projections</a></li>
+<li class="menu-215 menu-path-node-50 even "><a href="/en/conic" title="Conic projections">Conic projections</a></li>
+<li class="menu-239 menu-path-node-83 odd "><a href="/en/proj_world" title="">Projection map of the world</a></li>
+<li class="menu-249 menu-path-node-125 even "><a href="/en/soil" title="">Thematic data harmonization</a></li>
+<li class="menu-251 menu-path-node-129 odd "><a href="/en/3_axial" title="">Cartographical Projections of Triaxial Ellipsoid</a></li>
+<li class="menu-373 menu-path-node-156 active-trail even  last "><a href="/en/3_axial_equal_area" title="Equal-Area Projections of The Triaxial Ellipsoid" class="active">Equal-Area Projections of The Triaxial Ellipsoid</a></li>
+</ul>
+</li>
+<li class="menu-207 menu-path-node-39 even "><a href="/en/contacts" title="Contacs">Contacts</a></li>
+<li class="menu-368 menu-path-guestbook odd  last "><a href="/en/guestbook" title="Guestbook">Guestbook</a></li>
+</ul>
+<!-- </div> //-->
+</div>
+
+<hr>
+<!-- content ���������� ��������� //-->
+
+
+<div id="node-156" class="node">
+
+
+
+  
+  <div class="content">
+        <table class="none mollweide" border="0" cellspacing="5" cellpadding="5">
+<tbody>
+<tr>
+<td>
+<h3>Equal-Area Projections of The Triaxial Ellipsoid (in work)</h3><br /><br />
+Equal-Area Projections of The Triaxial Ellipsoid are suggested. For derivation of the projections the <a href="http://geocnt.geonet.ru/en/3_axial_program" target="_blank">program of calculation of the definite integral</a>,based on Gaussian quadrature rule is used. Today it is possible to calculate the Equal-Area cylindrical projection as well as the Equal-Area azimuthal projection. The Cylindrical projection is equidistant along the cylinder tangent line. The azimuthal projection has no distortion at the pole. Ellipse of distortion (Tissot indicatrix) is showed in points with latitude 0, 30N, 60N, 30S, 60S and longitude 0, 30E, 60E, 90E, 120E.<br />
+<br />
+<b>Projection Constants: </b><br />
+  <img width="13" height="14" border="0" alt="" src="../images/img3axial/image001.png"> - semimajor equatorial axis (15000 meters for Eros)<br />
+  <img width="13" height="18" border="0" alt="" src="../images/img3axial/image003.png"> - semiminor equatorial axis (7500 meters for Eros)<br />
+  <img width="11" height="14" border="0" alt="" src="../images/img3axial/image005.png"> -  polar semiaxis (7500 meters for Eros)<br />
+For Azimuthal projection the longitude of central meridian and center of a map (North Pole, South Pole, intersection of equator and prime meridian, intersection of equator and meridian 90<sup>0</sup>) are inputted additionally.<br />
+For Cylindrical projection the cylinder tangent line (equator, prime meridian, meridian 90<sup>0</sup>)are inputted additionally.<br />
+Horizontal or vertical offset is inputted in the same units as axes .<br />
+<br />
+<b>Input variables</b><br />
+Planetocentric latitude and longitude to the East from prime meridian.<br />
+<b>Output variables</b><br />
+ <img width="27" height="17" border="0" alt="" src="../images/img3axial/image007.png"> -  projection’s coordinates (in the same units as axes).  <img width="13" height="14" border="0" alt="" src="../images/img3axial/image009.png"> - horizontal to the right,  <img width="14" height="17" border="0" alt="" src="../images/img3axial/image011.png"> - vertical up<br />
+<br />
+<b>Symbols are used in formulas</b><br />
+The variables used in software are given in brackets.<br />
+ <img width="13" height="21" border="0" alt="" src="../images/img3axial/image017.png"> - planetocentric latitude (the angle between radii from the center of ellipsoid to a given point on the surface of ellipsoid and the equatorial plane) (y_i – in degrees, b_1 – in radians)<br />
+ <img width="14" height="18" border="0" alt="" src="../images/img3axial/image019.png"> - longitude from prime meridian (x_i – in degrees, la – in radians)<br />
+ <img width="18" height="21" border="0" alt="" src="../images/img3axial/image021.png"> - square of eccentricity of an arbitrary ellipse (e_el_2) <br />
+ <img width="18" height="23" border="0" alt="" src="../images/img3axial/image023.png"> - square of eccentricity of the equatorial ellipse (e_1_2)<br />
+ <img width="21" height="25" border="0" alt="" src="../images/img3axial/image026.png">  - square of eccentricity of the polar ellipse (section of the prime meridian) (e_2)<br />
+ <img width="21" height="24" border="0" alt="" src="../images/img3axial/image025.png"> - major semi-axis of ellipse of the meridian section (d) <br />
+ <img width="18" height="25" border="0" alt="" src="../images/img3axial/image027.png"> - square of eccentricity of ellipse of the meridian section (e_d_2) <br />
+ <a class="thumbnail" href="javascript:void(0)"><i>E, G, F</i><span> <img width="516" height="429" border="0" alt="" src="../images/img3axial/egf.png"></span></a> - Gauss coefficients of the first fundamental form,  <i class="blackcolor">G<sub>0</sub></i> - coefficient <i class="blackcolor">G</i> at the equator<br />
+<i class="blackcolor">&omega;</i> - the angle between meridian and parallel of planetocentric latitude on the surface of the triaxial ellipsoid<br />
+<i class="blackcolor">K<sub>scale</sub></i> – scale factor along the direction perpendicular to meridian line for cylindrical projections and for azimuthal projections (but not at the pole) in the normal orientation; scale factor along the direction perpendicular to meridian of the transverse coordinate system for cylindrical projections and for azimuthal projections (but not at the center of projection) in the transverse orientation; ratio of similitude for Jacobi conformal projection.<br />
+<i class="blackcolor">K<sub>mer</sub></i> – local linear scale along a meridian (along a meridian of the transverse coordinate system in the transverse orientation).<br />
+<i class="blackcolor">K<sub>par</sub></i> – local linear scale along a parallel (along a parallel of the transverse coordinate system in the transverse orientation.<br />
+<i class="blackcolor">&omega;<sub>proj</sub></i> – the angle between meridian and parallel on projection (between meridian and parallel of the transverse coordinate system in the transverse orientation).<br />
+<i class="blackcolor">&theta;<sub>max</sub></i> – the maximum angular deformation on the projection.<br />
+<br />
+<b>Calculation of projection</b><br />
+<br />
+Calculation of squared eccentricity of the equatorial ellipse<br />
+ <img width="120" height="24" border="0" alt="" src="../images/img3axial/image029.png"><br />
+<br />
+Calculation of squared eccentricity of the polar ellipse<br />
+ <img width="122" height="25" border="0" alt="" src="../images/img3axial/image034.png"><br />
+<br />
+<b>With derived value of longitude  </b><img width="43" height="24" border="0" alt="" src="../images/img3axial/image031.png"><br />
+ <img width="133" height="49" border="0" alt="" src="../images/img3axial/image033.png"><br />
+<br />
+ <img width="123" height="25" border="0" alt="" src="../images/img3axial/image035.png"><br />
+<br />
+ <img width="132" height="48" border="0" alt="" src="../images/img3axial/image037.png"><br />
+<br />
+<br />
+<b>The cylindrical Equal-Area projection for planetocentric latitude</b><br />
+<br />
+ <img width="210" height="63" border="0" alt="" src="../images/img3axial/image039.png">, that are input parameters for a function of calculation of an integral: <a href="http://geocnt.geonet.ru/en/3_axial_f1" target="_blank"> number of integrand «1»</a> , <img width="50" height="24" border="0" alt="" src="../images/img3axial/image041.png">, lower limit of integration is «0», upper limit of integration is «<img width="17" height="24" border="0" alt="" src="../images/img3axial/image043.png">», the accuracy in radians is «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+<br />
+<img width="187" height="48" border="0" alt="" src="../images/img3axial/image072.png"><br />
+<br />
+<img width="351" height="110" border="0" alt="" src="../images/img3axial/image074_.png"><br />
+<br />
+ <img width="112" height="70" border="0" alt="" src="../images/img3axial/image076_1.png"> , that are input parameters for a function of calculation of an integral: <a href="http://geocnt.geonet.ru/en/3_axial_f10" target="_blank">number of integrand «10»</a>, lower limit of integration is «0», upper limit of integration is «<img width="17" height="24" border="0" alt="" src="../images/img3axial/image054.png">», the accuracy in radians is «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+<br />
+<br />
+<b>The azimuthal projection for planetocentric latitude</b><br />
+<br />
+<br>
+<img width="187" height="48" border="0" src="../images/img3axial/image072.png" alt="">
+<br />
+<img width="206" height="70" border="0" src="../images/img3axial/image075_1.png" alt="">
+<br />
+ <img width="159" height="21" border="0" src="../images/img3axial/image071.png" alt=""> for the North pole and  <img width="150" height="21" border="0" src="../images/img3axial/image073.png" alt=""> for the South pole,  that are input parameters for a function of calculation of an integral: <a href="http://geocnt.geonet.ru/en/3_axial_f11" target="_blank">number of integrand «11»</a> , <img width="50" height="25" border="0" src="../images/img3axial/image060.png" alt=""> , lower limit of integration is «<img width="17" height="24" border="0" src="../images/img3axial/image054.png" alt="">» for the North pole and «-<img width="17" height="24" border="0" src="../images/img3axial/image054.png" alt="">» for the South pole, upper limit of integration is «<img width="17" height="41" border="0" alt="" src="../images/img3axial/image077.png">», the accuracy in radians is  «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">» and  <img width="70" height="24" border="0" alt="" src="../images/img3axial/image079.png">	<br />
+<br />
+<br />
+References.<br />
+1. Бугаевский Л. М. Теория картографических проекций регулярных поверхностей. – М.: «Златоуст», 1999-144 с.<br />
+2. Калиткин Н. Н. Численные методы. – М.: Наука, 1978. – 512 с.<br />
+3. Никольский С. М. Квадратурные формулы. – М.: Наука, 1988.- 256 с.<br />
+4. Каган В. Ф.. Основы теории поверхностей в тензорном изложении. Часть первая/При редакционном участии Г. Б. Гуревича. – М., ОГИЗ Гостехихдат, 1941. – 512 с.<br />
+5. Prudnikov, A. P.; Brychkov, Yu. A.; and Marichev, O. I. (1986) Integrals and Series, Vol. 1: Elementary Functions. New York: Gordon and Breach<br />
+6. Nyrtsov, M.V., Fleis, M.E., Borisov, M.M. Mapping asteroid 433 Eros with equidistant along meridians cylindrical and azimuthal projections of triaxial ellipsoid// Izvestia vuzov . Geodesy and aerophotography . – 2012. №1. P. 54-61<br />
+<br />
+ <strong>Program for calculation of rectangular coordinates</strong><br /><br /> 
+<table style="border: solid 1px black;" border="0" cellspacing="0" cellpadding="5">
+<tbody>
+<tr>
+<td class="label" colspan="4"><input onclick="javascript: changeField(10);" name="prjName" type="radio" value="10" />The Cylindrical Equal-Area projection<br /><input onclick="javascript: changeField(11);" name="prjName" type="radio" value="11" />The Azimuthal Equal-Area projection<br /></td>
+<td rowspan=12><div id="result" name="result" style="border-left:1px solid black;padding-left:30px;height:500px;width:500px;overflow: auto;"></div></td></tr>
+<tr>
+    <td class="label labelc" colspan="3"><div id="FieldCenter">center of the map</div><div id="FieldType">tangent line</div><div id="FieldGap">линия разрыва</div></td>
+    <td class="input inputc"><select id="fi_centr" size="1">
+	<option value="1">The North pole</option>
+	<option value="-1">The South pole</option>
+	<option value="3">Equator, longitude 0</option>
+	<option value="2">Equator, longitude 90</option></select>
+	<select id="cyl_type" size="1">
+	<option value="1">Equator</option>
+	<option value="2">The prime meridian</option>
+	<option value="3">The meridian 90</option></select>
+<!-- 	<select id="gap_type" size="1">
+	<option value="1">экватор-круговая точка</option>
+	<option value="2">круговая точка-полюс</option></select> //--></td>
+</tr>
+<tr>
+<td class="label labelc" colspan="3"><div id="Fieldla0">longitude of the central meridian</div><div id="parallel"><input type="checkbox" id="parallelCheckbox">параллель круговых точек</div></td>
+<td class="input"><input id="la0" size="10" type="text" value="0" /></td>
+</tr>
+<tr>
+<td class="label">longitude</td>
+<td class="input">from  <input id="x0" size="3" type="text" value="-180" /></td>
+<td class="input">to <input id="x1" size="3" type="text" value="180" /></td>
+<td class="input">step <input id="x_step" size="3" type="text" value="10" /></td>
+</tr>
+<tr>
+<td class="label">latitude</td>
+<td class="input">from  <input id="y0" size="3" type="text" value="-90" /></td>
+<td class="input">to <input id="y1" size="3" type="text" value="90" /></td>
+<td class="input">step <input id="y_step" size="3" type="text" value="10" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">semimajor equatorial axis</td>
+<td class="input"><input id="a" size="10" type="text" value="15000" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">semiminor equatorial axis</td>
+<td class="input"><input id="b" size="10" type="text" value="7500" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">polar semiaxis</td>
+<td class="input"><input id="c" size="10" type="text" value="7500" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">x-shift</td>
+<td class="input"><input id="x_shift" size="10" type="text" value="0" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">y-shift</td>
+<td class="input"><input id="y_shift" size="10" type="text" value="0" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">accuracy</td>
+<td class="input"><input id="eps_input" size="10" type="text" value="0.000001" /></td>
+</tr>
+<tr>
+<td class="label" colspan="4" align="center"><input onclick="result();" type="button" value="result" /></td>
+</tr>
+</tbody>
+</table>
+<canvas  id="can1" width="1020" height="1020"></canvas>
+
+<script type="text/javascript">
+var myCanvas, myContext, coord, x, y, R, la0, a, b, c, e_2,e_d_2,e1_2,x_shift, y_shift,t_1, e_el_2,eps_input,fi_centr,cos_la_2, sin_la_2, sin_2la, dl_equator, t_3,t_4,cos_fi_2, sin_fi_2, sin_2fi,a_norm,b_norm,c_norm,cyl_type,k_int_2,nu_int,e_2_norm,e1_2_norm;
+var k_del,j_del,x_step_del,y_step_del,str_del,K_mer,K_par,theta_max,cos_om_proj,G_0_Gauss,dy_lambda,dy_fi;
+var F_Gauss_glob,G_Gauss_glob,dl_par_glob,E_Gauss_glob,dl_mer_glob,cos_om_glob,sin_om_glob,k_gamma_max,k_gamma_min,cos_gamma_proj_max,cos_gamma_proj_min,sin_gamma_proj_min;
+var dro_lambda,dro_fi,ro;
+var eps1=1e-5;
+var eps2=1e-8;
+var eps3=1e-7;
+var eps4=1e-6;
+
+//var fi_centr = 1;
+var prjName=getPrj(document.getElementsByName("prjName"));
+
+window.onload = function() {
+myCanvas = document.getElementById("can1");
+myContext = myCanvas.getContext("2d");
+keyupCentre();
+}
+function changeField(val){
+prjName=val;
+keyupCentre();
+  //if (val==0){prjName=0;}else{prjName=1;}
+}
+function getPrj(obj){
+for(i=0; i < obj.length; i++){
+  if (obj[i].checked == true){
+    return parseInt(obj[i].value);
+  }
+}
+}
+function keyupCentre(){
+  if(prjName==11){
+document.getElementById('fi_centr').style.display = "block";
+document.getElementById('FieldCenter').style.display = "block";
+document.getElementById('Fieldla0').style.display = "block";
+document.getElementById('la0').style.display = "block";
+document.getElementById('FieldType').style.display = "none";
+document.getElementById('cyl_type').style.display = "none";
+document.getElementById('FieldGap').style.display = "none";
+//document.getElementById('gap_type').style.display = "none";
+document.getElementById('parallel').style.display = "none";
+  }else{
+document.getElementById('fi_centr').style.display = "none";
+document.getElementById('FieldCenter').style.display = "none";
+document.getElementById('Fieldla0').style.display = "none";
+document.getElementById('la0').style.display = "none";
+document.getElementById('cyl_type').style.display = "block";
+document.getElementById('FieldType').style.display = "block";
+document.getElementById('FieldGap').style.display = "none";
+//document.getElementById('gap_type').style.display = "none";
+document.getElementById('parallel').style.display = "none";
+};
+}
+function result() {
+myContext.clearRect(0,0,1020,1020);
+resultStr="id longitude latitude x y <span style='color:blue;'>cos_om</span> K_scale <span style='color:blue;'>K_mer</span> K_par <span style='color:blue;'>cos_om_proj</span> theta_max<br />";
+str_del="";
+
+var i=0, j=0;
+a = parseFloat(document.getElementById("a").value);
+b = parseFloat(document.getElementById("b").value);
+c = parseFloat(document.getElementById("c").value);
+la0 = parseFloat(document.getElementById("la0").value)*Math.PI/180;
+x_shift=parseFloat(document.getElementById("x_shift").value);
+y_shift=parseFloat(document.getElementById("y_shift").value);
+var k_m2s=250/(0.4*Math.PI*Math.max(a,b,c));
+var x_step=parseFloat(document.getElementById("x_step").value);
+var x0=parseFloat(document.getElementById("x0").value);
+var x1=parseFloat(document.getElementById("x1").value)+x_step;
+var y_step=parseFloat(document.getElementById("y_step").value);
+var y0=parseFloat(document.getElementById("y0").value);
+var y1=parseFloat(document.getElementById("y1").value)+y_step;
+eps_input=parseFloat(document.getElementById("eps_input").value);
+fi_centr=parseFloat(document.getElementById("fi_centr").options[document.getElementById("fi_centr").selectedIndex].value);
+cyl_type=parseFloat(document.getElementById("cyl_type").options[document.getElementById("cyl_type").selectedIndex].value);
+//gap_type=parseFloat(document.getElementById("gap_type").options[document.getElementById("gap_type").selectedIndex].value);
+if (prjName==11 ){
+if(fi_centr>1){cyl_type=fi_centr;fi_centr=-1;}else{cyl_type=1;}
+}
+e_2_norm=(a*a-c*c)/(a*a);
+e1_2_norm=(a*a-b*b)/(a*a);
+a_norm=a; b_norm=b; c_norm=c;
+if(cyl_type==3){c=a_norm; a=b_norm; b=c_norm;} //меридиан 90
+if(cyl_type==2){c=b_norm; a=c_norm; b=a_norm;} //начальный меридиан
+if (y0>90){y0=90;}
+if(y0<-90){y0=-90;}
+e_2=(a*a-c*c)/(a*a);
+e1_2=(a*a-b*b)/(a*a);
+
+//maxid=((x1-x0)/x_step)*((y1-y0)/y_step);
+//x_step_del=((x1-x0)/x_step)-1;
+//y_step_del=((y1-y0)/y_step)-1;
+j_del=0;
+for (var x_i=x0; x_i+x_step*.999<x1; x_i=x_i+x_step){
+j_del++;
+k_del=0;
+  for (var y_i=y0; y_i+y_step*.999<y1; y_i=y_i+y_step){
+    k_del++;
+    i++;
+coord=calc(i,x_i,y_i);
+xp=Math.round((k_m2s*coord[0]+500))+5;
+yp=Math.round(-1*k_m2s*coord[1]+500)+5;
+
+    resultStr=resultStr+i+" "+Math.round(x_i*10000)/10000+" "+Math.round(y_i*10000)/10000+" "+Math.round(coord[0]*1000)/1000+" "+Math.round(coord[1]*1000)/1000+" <span style='color:blue;'>"+Math.round(coord[2]*100000)/100000+"</span> "+Math.round(coord[3]*1000)/1000+" <span style='color:blue;'>"+Math.round(coord[4]*1000)/1000+"</span> "+Math.round(coord[5]*1000)/1000+" <span style='color:blue;'>"+Math.round(coord[6]*100000)/100000+"</span> "+" "+Math.round(coord[7]*100000)/100000+"<br>";
+    myContext.beginPath();
+    myContext.arc(xp, yp, 3, 0, 2 * Math.PI, false);
+    myContext.fillStyle = "#8ED6FF";
+    myContext.fill();
+if( (x_i==0 || x_i==30 || x_i==60 || x_i==90 || x_i==120) && (y_i==0 || y_i==30 || y_i==60 || y_i==-30 ||  y_i==-60) ){
+myContext.save();
+if(prjName==11){
+if(fi_centr==1){
+la_temp=(Math.PI-la+la0)+Math.atan2(sin_gamma_proj_min,cos_gamma_proj_min);
+}else{
+la_temp=(la-la0)-Math.atan2(sin_gamma_proj_min,cos_gamma_proj_min);
+}
+
+//la_temp=fi_centr*(Math.PI-la+la0)+Math.asin(sin_gamma_proj_min);
+}else{
+la_temp=Math.acos(cos_gamma_proj_max);
+}
+myContext.translate(xp,yp);
+myContext.rotate(la_temp);
+myContext.translate(-xp,-yp);
+myContext.scale(k_gamma_max, k_gamma_min);
+myContext.beginPath();
+myContext.arc(xp/k_gamma_max, yp/k_gamma_min, 10, 0, Math.PI*2, false);
+
+myContext.stroke();
+myContext.closePath();
+myContext.restore();
+
+for (var gamma=0; gamma<=360; gamma=gamma+1){
+gammaR=gamma*Math.PI/180;
+if (prjName==11 ){
+dfi_dlambda=-(ro*Math.cos(gammaR)/Math.sin(gammaR)+dro_lambda)/dro_fi;
+k_gamma=Math.sqrt((ro*ro+(dro_fi*dfi_dlambda+dro_lambda)*(dro_fi*dfi_dlambda+dro_lambda))/(E_Gauss_glob*dfi_dlambda*dfi_dlambda+2*F_Gauss_glob*dfi_dlambda+G_Gauss_glob));
+dx_proj=800*k_gamma*Math.sin(gammaR-(la-la0));
+dy_proj=800*fi_centr*k_gamma*Math.cos(gammaR-(la-la0));
+}else{
+dfi_dlambda=(G_0_Gauss*Math.cos(gammaR)/Math.sin(gammaR)-dy_lambda*dl_equator)/(dl_par_glob*dl_mer_glob*sin_om_glob);
+k_gamma=Math.sqrt((G_0_Gauss+(dy_fi*dfi_dlambda+dy_lambda)*(dy_fi*dfi_dlambda+dy_lambda))/((E_Gauss_glob*G_Gauss_glob-F_Gauss_glob*F_Gauss_glob)/E_Gauss_glob+(F_Gauss_glob/dl_mer_glob+dl_mer_glob*dfi_dlambda)*(F_Gauss_glob/dl_mer_glob+dl_mer_glob*dfi_dlambda)));
+dx_proj=k_gamma*800*Math.sin(gammaR);
+dy_proj=k_gamma*800*Math.cos(gammaR);
+}
+
+x_distor=Math.round((k_m2s*(coord[0]+dx_proj)+500))+5;
+y_distor=Math.round(-1*k_m2s*(coord[1]+dy_proj)+500)+5;
+    myContext.beginPath();
+    myContext.arc(x_distor, y_distor, 1, 0, 2 * Math.PI, false);
+    myContext.fillStyle = (y_i>=0)?"#FE16FF":"#1E16FF";
+    myContext.fill();
+}
+
+}
+
+  }
+}
+
+document.getElementById("result").innerHTML="<a href='javascript:copyWin();'>copy</a><br /><div>"+resultStr+str_del+"</div>";
+}
+function calc(i,x_i,y_i){
+    la=x_i*Math.PI/180;
+    b_1=y_i*Math.PI/180;
+    fi_norm=b_1;
+    la_norm=la;
+    cos_la_norm=Math.cos(la_norm);
+    sin_la_norm=Math.sin(la_norm);
+    d_norm=b_norm/Math.sqrt(1-e1_2_norm*cos_la_norm*cos_la_norm);
+    t_1=e1_2_norm*Math.sin(2*la_norm)/(2*(1-e1_2_norm*cos_la_norm*cos_la_norm));
+
+    sin_fi_norm=Math.sin(fi_norm);
+    cos_fi_norm=Math.cos(fi_norm);
+if (cyl_type==2){
+//cos_z=Math.cos(fi_norm)*Math.cos(la_norm);
+b_1=-Math.asin(cos_fi_norm*sin_la_norm);
+la=Math.atan2(cos_fi_norm*(-cos_la_norm),sin_fi_norm);
+
+if(la_norm<Math.PI/2 && la_norm>-Math.PI/2-eps3){k_EW=-1}else{k_EW=1}
+if(fi_norm<=-Math.PI/2){b_1=0; la=k_EW*Math.PI;}
+if(la<-Math.PI){la=la+2*Math.PI}
+if(la>Math.PI){la=la-2*Math.PI}
+}else if (cyl_type==3){
+//cos_z=Math.cos(fi_norm)*Math.cos(la_norm);
+b_1=-Math.asin(cos_fi_norm*cos_la_norm);
+la=Math.atan2(cos_fi_norm*sin_la_norm,sin_fi_norm);
+
+if(la_norm<0 || la_norm>Math.PI+eps3){k_EW=-1}else{k_EW=1}
+if(fi_norm<=-Math.PI/2){b_1=0; la=k_EW*Math.PI;}
+if(la<-Math.PI){la=la+2*Math.PI}
+if(la>Math.PI){la=la-2*Math.PI}
+}
+
+d=b/Math.sqrt(1-e1_2*Math.cos(la)*Math.cos(la));
+e_d_2=(d*d-c*c)/(d*d);
+t_1=e1_2*Math.sin(2*la)/(2*(1-e1_2*Math.cos(la)*Math.cos(la)));
+e_el_2=e1_2;
+cos_om_view=" ";K_scale_view=" ";ro=" ";ro_0=" ";cos_om_proj=" ";theta_max=" ";
+sin_la_2=sin_la_norm*sin_la_norm;
+cos_la_2=cos_la_norm*cos_la_norm;
+sin_2la=Math.sin(2*la_norm);
+t_3=cos_la_2+sin_la_2/(1-e1_2_norm)-1/(1-e_2_norm);
+t_2=cos_fi_norm*cos_fi_norm*cos_la_2+(cos_fi_norm*cos_fi_norm*sin_la_2/(1-e1_2_norm))+(sin_fi_norm*sin_fi_norm/(1-e_2_norm));
+t_4=cos_fi_norm*(1-1/(1-e1_2_norm));
+fi1=fi_norm;
+EGF_cos_sin(fi1);
+
+cos_om_view=cos_om;
+
+sin_la_2=Math.sin(la)*Math.sin(la);
+cos_la_2=Math.cos(la)*Math.cos(la);
+sin_2la=Math.sin(2*la);
+t_3=cos_la_2+sin_la_2/(1-e1_2)-1/(1-e_2);
+G_0_Gauss=( 4*(cos_la_2+sin_la_2/(1-e1_2))*(cos_la_2+sin_la_2/(1-e1_2))+sin_2la*sin_2la*(1-1/(1-e1_2))*(1-1/(1-e1_2)) )/(4*(cos_la_2+sin_la_2/(1-e1_2))*(cos_la_2+sin_la_2/(1-e1_2))*(cos_la_2+sin_la_2/(1-e1_2)) );
+dl_equator=Math.sqrt(G_0_Gauss);
+fi1=b_1;
+t_2=Math.cos(fi1)*Math.cos(fi1)*cos_la_2+(Math.cos(fi1)*Math.cos(fi1)*sin_la_2/(1-e1_2))+(Math.sin(fi1)*Math.sin(fi1)/(1-e_2));
+t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+EGF_cos_sin(fi1);
+F_Gauss_glob=F_Gauss;G_Gauss_glob=G_Gauss;dl_par_glob=dl_par;E_Gauss_glob=E_Gauss;dl_mer_glob=dl_mer;cos_om_glob=cos_om;sin_om_glob=sin_om;
+switch(prjName){
+case 10:
+t_2_lambda=Math.cos(fi1)*Math.cos(fi1)*sin_2la*e1_2/(1-e1_2);
+K_scale_view=dl_equator/(dl_par*sin_om);
+K_mer=(dl_par*sin_om)/dl_equator;
+//K_par=Math.sqrt((dl_equator/dl_par)*(dl_equator/dl_par)+(dl_par/dl_equator)*(dl_par/dl_equator)*(cos_om/sin_om)*(cos_om/sin_om));
+///*
+dy_fi=Math.sqrt(E_Gauss_glob*G_Gauss_glob-F_Gauss_glob*F_Gauss_glob)/dl_equator;
+dy_lambda=gaussFnc(12,0,b_1,eps_input);
+if(F_Gauss_glob==0){
+k_gamma_min=Math.sqrt(G_Gauss_glob)/dl_equator;
+k_gamma_max=dl_equator/Math.sqrt(G_Gauss_glob);
+cos_gamma_proj_min=0;
+cos_gamma_proj_max=1;
+}else{
+a_eq=F_Gauss_glob*dy_fi*dy_fi-dy_fi*dy_lambda*E_Gauss_glob;
+b_eq=G_Gauss_glob*dy_fi*dy_fi-E_Gauss_glob*G_0_Gauss-dy_lambda*dy_lambda*E_Gauss_glob;
+c_eq=G_Gauss_glob*dy_lambda*dy_fi-F_Gauss_glob*G_0_Gauss-dy_lambda*dy_lambda*F_Gauss_glob;
+dfi_dlambda_max=(-b_eq+Math.sqrt(b_eq*b_eq-4*a_eq*c_eq))/(2*a_eq);
+dfi_dlambda_min=(-b_eq-Math.sqrt(b_eq*b_eq-4*a_eq*c_eq))/(2*a_eq);
+
+k_gamma_min=Math.sqrt((G_0_Gauss+(dy_fi*dfi_dlambda_max+dy_lambda)*(dy_fi*dfi_dlambda_max+dy_lambda))/((E_Gauss_glob*G_Gauss_glob-F_Gauss_glob*F_Gauss_glob)/E_Gauss_glob+(F_Gauss_glob/dl_mer_glob+dl_mer_glob*dfi_dlambda_max)*(F_Gauss_glob/dl_mer_glob+dl_mer_glob*dfi_dlambda_max)));
+k_gamma_max=Math.sqrt((G_0_Gauss+(dy_fi*dfi_dlambda_min+dy_lambda)*(dy_fi*dfi_dlambda_min+dy_lambda))/((E_Gauss_glob*G_Gauss_glob-F_Gauss_glob*F_Gauss_glob)/E_Gauss_glob+(F_Gauss_glob/dl_mer_glob+dl_mer_glob*dfi_dlambda_min)*(F_Gauss_glob/dl_mer_glob+dl_mer_glob*dfi_dlambda_min)));
+cos_gamma_proj_min=(dy_fi*dfi_dlambda_min+dy_lambda)/Math.sqrt((dy_fi*dfi_dlambda_min+dy_lambda)*(dy_fi*dfi_dlambda_min+dy_lambda)+G_0_Gauss);
+cos_gamma_proj_max=(dy_fi*dfi_dlambda_max+dy_lambda)/Math.sqrt((dy_fi*dfi_dlambda_max+dy_lambda)*(dy_fi*dfi_dlambda_max+dy_lambda)+G_0_Gauss);
+}
+//dfi_dlambda=(G_0_Gauss*Math.cos(gammaR)/Math.sin(gammaR)-dy_lambda*dl_equator)/(dl_par*dl_mer*sin_om);
+K_par=Math.sqrt(dl_equator*dl_equator+dy_lambda*dy_lambda)/dl_par_glob;
+cos_om_proj=dy_lambda/Math.sqrt(dl_equator*dl_equator+dy_lambda*dy_lambda);
+//dl_proj=Math.sqrt((dy_fi*dfi_dlambda+dy_lambda)*(dy_fi*dfi_dlambda+dy_lambda)+G_0_Gauss);
+//cos_gamma_proj=(dy_fi*dfi_dlambda+dy_lambda)/dl_proj;
+//sin_gamma_proj=dl_equator/dl_proj;
+//k_gamma=Math.sqrt((G_0_Gauss+(dy_fi*dfi_dlambda+dy_lambda)*(dy_fi*dfi_dlambda+dy_lambda))/((E_Gauss*G_Gauss-F_Gauss*F_Gauss)/E_Gauss+(F_Gauss/dl_mer+dl_mer*dfi_dlambda)*(F_Gauss/dl_mer+dl_mer*dfi_dlambda)));
+//dx_proj=k_gamma*10*sin_gamma_proj;
+//dy_proj=k_gamma*10*cos_gamma_proj;
+//*/
+theta_max=2*180/Math.PI*Math.asin((k_gamma_max-k_gamma_min)/(k_gamma_max+k_gamma_min));
+
+
+      x=b*gaussFnc(1,0,la,eps_input);
+sin_la_2=Math.sin(la)*Math.sin(la);
+cos_la_2=Math.cos(la)*Math.cos(la);
+sin_2la=Math.sin(2*la);
+t_3=cos_la_2+sin_la_2/(1-e1_2)-1/(1-e_2);
+dl_equator=Math.sqrt( 4*(cos_la_2+sin_la_2/(1-e1_2))*(cos_la_2+sin_la_2/(1-e1_2))+sin_2la*sin_2la*(1-1/(1-e1_2))*(1-1/(1-e1_2)) )/(2*(cos_la_2+sin_la_2/(1-e1_2))*Math.sqrt(cos_la_2+sin_la_2/(1-e1_2)) );
+
+        y=a*gaussFnc(10,0,b_1,eps_input);
+        break;
+case 11:
+//calc ro
+sin_la_2=Math.sin(la)*Math.sin(la);
+cos_la_2=Math.cos(la)*Math.cos(la);
+sin_2la=Math.sin(2*la);
+t_3=cos_la_2+sin_la_2/(1-e1_2)-1/(1-e_2);
+
+if(b_1*fi_centr<Math.PI/2){
+ro=Math.sqrt(2*gaussFnc(11,b_1*fi_centr,Math.PI/2,eps_input));
+dro_fi=-Math.sqrt(E_Gauss_glob*G_Gauss_glob-F_Gauss_glob*F_Gauss_glob)/ro;
+dro_lambda=gaussFnc(13,b_1*fi_centr,Math.PI/2,eps_input)/(2*ro);
+
+if(F_Gauss_glob==0 && dro_lambda==0){
+k_gamma_min=Math.sqrt(G_Gauss_glob)/ro;
+k_gamma_max=ro/Math.sqrt(G_Gauss_glob);
+cos_gamma_proj_min=1;
+cos_gamma_proj_max=0;
+sin_gamma_proj_min=0;
+}else{
+a_eq=F_Gauss_glob*dro_fi*dro_fi-dro_fi*dro_lambda*E_Gauss_glob;
+b_eq=G_Gauss_glob*dro_fi*dro_fi-E_Gauss_glob*ro*ro-dro_lambda*dro_lambda*E_Gauss_glob;
+c_eq=G_Gauss_glob*dro_lambda*dro_fi-F_Gauss_glob*ro*ro-dro_lambda*dro_lambda*F_Gauss_glob;
+dfi_dlambda_max=(-b_eq+Math.sqrt(b_eq*b_eq-4*a_eq*c_eq))/(2*a_eq);
+dfi_dlambda_min=(-b_eq-Math.sqrt(b_eq*b_eq-4*a_eq*c_eq))/(2*a_eq);
+
+//k_gamma_min=Math.sqrt((ro*ro+(dro_fi*dfi_dlambda_max+dro_lambda)*(dro_fi*dfi_dlambda_max+dro_lambda))/((E_Gauss_glob*G_Gauss_glob-F_Gauss_glob*F_Gauss_glob)/E_Gauss_glob+(F_Gauss_glob/dl_mer_glob+dl_mer_glob*dfi_dlambda_max)*(F_Gauss_glob/dl_mer_glob+dl_mer_glob*dfi_dlambda_max)));
+k_gamma_min=Math.sqrt((ro*ro+(dro_fi*dfi_dlambda_max+dro_lambda)*(dro_fi*dfi_dlambda_max+dro_lambda))/(E_Gauss_glob*dfi_dlambda_max*dfi_dlambda_max+2*F_Gauss_glob*dfi_dlambda_max+G_Gauss_glob));
+k_gamma_max=Math.sqrt((ro*ro+(dro_fi*dfi_dlambda_min+dro_lambda)*(dro_fi*dfi_dlambda_min+dro_lambda))/(E_Gauss_glob*dfi_dlambda_min*dfi_dlambda_min+2*F_Gauss_glob*dfi_dlambda_min+G_Gauss_glob));
+//k_gamma_max=Math.sqrt((ro*ro+(dro_fi*dfi_dlambda_min+dro_lambda)*(dro_fi*dfi_dlambda_min+dro_lambda))/((E_Gauss_glob*G_Gauss_glob-F_Gauss_glob*F_Gauss_glob)/E_Gauss_glob+(F_Gauss_glob/dl_mer_glob+dl_mer_glob*dfi_dlambda_min)*(F_Gauss_glob/dl_mer_glob+dl_mer_glob*dfi_dlambda_min)));
+cos_gamma_proj_max=(-dro_fi*dfi_dlambda_min-dro_lambda)/Math.sqrt((-dro_fi*dfi_dlambda_min-dro_lambda)*(-dro_fi*dfi_dlambda_min-dro_lambda)+ro*ro);
+cos_gamma_proj_min=(-dro_fi*dfi_dlambda_max-dro_lambda)/Math.sqrt((-dro_fi*dfi_dlambda_max-dro_lambda)*(-dro_fi*dfi_dlambda_max-dro_lambda)+ro*ro);
+sin_gamma_proj_min=ro/Math.sqrt((-dro_fi*dfi_dlambda_max-dro_lambda)*(-dro_fi*dfi_dlambda_max-dro_lambda)+ro*ro);
+}
+
+K_scale_view=ro/(dl_par_glob*sin_om_glob);
+K_mer=-dro_fi/dl_mer_glob;
+K_par=Math.sqrt(ro*ro+dro_lambda*dro_lambda)/dl_par_glob;
+cos_om_proj=-dro_lambda/Math.sqrt(ro*ro+dro_lambda*dro_lambda);
+theta_max=2*180/Math.PI*Math.asin((k_gamma_max-k_gamma_min)/(k_gamma_max+k_gamma_min));
+}
+else{
+ro=0;
+K_scale_view=1;
+K_mer=1;
+K_par=1;
+cos_om_view=0;
+};
+
+        x=a*ro*Math.sin(la-la0);
+        y=-a*ro*Math.cos(la-la0)*fi_centr;
+        break;
+}
+		//return ([x_shift+x,y_shift+y,cos_om_view,K_scale_view, ro_0, ro]);  
+		return ([x_shift+x,y_shift+y,cos_om_view,K_scale_view,K_mer, K_par,cos_om_proj,theta_max]);
+}
+
+var gauss_const=1e-12;
+var gauss_w1=0.277777778;
+var gauss_w2=0.444444444;
+var gauss_w3=0.118463443;
+var gauss_w4=0.239314335;
+var gauss_w5=0.284444444;
+var gauss_x1=0.112701665;
+var gauss_x2=0.5;
+var gauss_x3=0.046910077;
+var gauss_x4=0.230765345;
+var gauss_x5=0.5;
+
+function gaussFnc(f,gauss_a,gauss_b,eps){
+delta=gauss_const*Math.abs(gauss_a-gauss_b);
+gauss=0;
+y=gauss_b-gauss_a;
+aa=gauss_a;
+do {
+  k=0;
+  ga=0;
+    for(k=0;k<5;k++){
+    y=2.*y;
+    if(Math.abs(y)>Math.abs(gauss_b-aa)){y=gauss_b-aa};
+    if(Math.abs(y)<=delta){return (gauss);};
+//M3:
+do {
+      bb=aa+y;
+      gauss_c=0.5*(aa+bb);
+      if(f==1){
+      s3=gauss_w1*( f_equator(aa+y*gauss_x1)+f_equator(bb-y*gauss_x1))+gauss_w2*f_equator(gauss_c);
+      s5=gauss_w3*( f_equator(aa+y*gauss_x3)+f_equator(bb-y*gauss_x3))+gauss_w4*(f_equator(aa+y*gauss_x4)+f_equator(bb-y*gauss_x4))+gauss_w5*f_equator(gauss_c);
+      }else if(f==10){
+      s3=gauss_w1*(f_equal_area_cyl(aa+y*gauss_x1)+f_equal_area_cyl(bb-y*gauss_x1))+gauss_w2*f_equal_area_cyl(gauss_c);
+      s5=gauss_w3*( f_equal_area_cyl(aa+y*gauss_x3)+f_equal_area_cyl(bb-y*gauss_x3))+gauss_w4*(f_equal_area_cyl(aa+y*gauss_x4)+f_equal_area_cyl(bb-y*gauss_x4))+gauss_w5*f_equal_area_cyl(gauss_c);
+      }else if(f==11){
+      s3=gauss_w1*(f_equal_area_az(aa+y*gauss_x1)+f_equal_area_az(bb-y*gauss_x1))+gauss_w2*f_equal_area_az(gauss_c);
+      s5=gauss_w3*( f_equal_area_az(aa+y*gauss_x3)+f_equal_area_az(bb-y*gauss_x3))+gauss_w4*(f_equal_area_az(aa+y*gauss_x4)+f_equal_area_az(bb-y*gauss_x4))+gauss_w5*f_equal_area_az(gauss_c);
+      }else if(f==12){
+      s3=gauss_w1*(f_equal_area_dy_lambda(aa+y*gauss_x1)+f_equal_area_dy_lambda(bb-y*gauss_x1))+gauss_w2*f_equal_area_dy_lambda(gauss_c);
+      s5=gauss_w3*( f_equal_area_dy_lambda(aa+y*gauss_x3)+f_equal_area_dy_lambda(bb-y*gauss_x3))+gauss_w4*(f_equal_area_dy_lambda(aa+y*gauss_x4)+f_equal_area_dy_lambda(bb-y*gauss_x4))+gauss_w5*f_equal_area_dy_lambda(gauss_c);
+      }else{
+      s3=gauss_w1*(f_equal_area_dro_lambda(aa+y*gauss_x1)+f_equal_area_dro_lambda(bb-y*gauss_x1))+gauss_w2*f_equal_area_dro_lambda(gauss_c);
+      s5=gauss_w3*( f_equal_area_dro_lambda(aa+y*gauss_x3)+f_equal_area_dro_lambda(bb-y*gauss_x3))+gauss_w4*(f_equal_area_dro_lambda(aa+y*gauss_x4)+f_equal_area_dro_lambda(bb-y*gauss_x4))+gauss_w5*f_equal_area_dro_lambda(gauss_c);
+      } 
+
+      s3=s3*y;
+      s5=s5*y;
+      if(Math.abs(s5-s3)>=eps*(gauss_const+Math.abs(s5)) && Math.abs(0.5*y)<=delta){return "NaN";}
+      if(Math.abs(s5-s3)>=eps*(gauss_const+Math.abs(s5))){
+      y=0.5*y;
+      }else{
+      gauss=gauss+s5;
+      aa=bb;
+      ga=ga+s5;
+      break;
+      }
+} while ( Math.abs(y)>delta ) // end block M3
+    } //end for k<5 (M2)
+} while (Math.abs(ga)>=eps*(gauss_const+Math.abs(gauss)))
+return (gauss);
+}
+function f_equator(la1){
+return (  Math.sqrt(1-(2-e_el_2)*e_el_2*Math.cos(la1)*Math.cos(la1))/( (1-e_el_2*Math.cos(la1)*Math.cos(la1))*Math.sqrt(1-e_el_2*Math.cos(la1)*Math.cos(la1)) )  );
+}
+function f_equal_area_cyl(fi1){
+t_2=Math.cos(fi1)*Math.cos(fi1)*cos_la_2+(Math.cos(fi1)*Math.cos(fi1)*sin_la_2/(1-e1_2))+(Math.sin(fi1)*Math.sin(fi1)/(1-e_2));
+t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+EGF_cos_sin(fi1);
+K_scale=dl_equator/(dl_par*sin_om);
+return ( dl_mer/K_scale );
+}
+function f_equal_area_az(fi1){
+t_2=Math.cos(fi1)*Math.cos(fi1)*cos_la_2+(Math.cos(fi1)*Math.cos(fi1)*sin_la_2/(1-e1_2))+(Math.sin(fi1)*Math.sin(fi1)/(1-e_2));
+t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+EGF_cos_sin(fi1);
+return dl_mer*dl_par*sin_om;
+}
+function f_equal_area_dy_lambda(fi1){
+t_2=Math.cos(fi1)*Math.cos(fi1)*cos_la_2+(Math.cos(fi1)*Math.cos(fi1)*sin_la_2/(1-e1_2))+(Math.sin(fi1)*Math.sin(fi1)/(1-e_2));
+t_2_0=cos_la_2+(sin_la_2/(1-e1_2));
+t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+t_2_lambda=Math.cos(fi1)*Math.cos(fi1)*sin_2la*e1_2/(1-e1_2);
+t_2_0_lambda=sin_2la*e1_2/(1-e1_2);
+E_lambda=t_2_lambda*((-4*t_2*t_2+8*t_3*t_2*Math.sin(fi1)*Math.sin(fi1)-3*t_3*Math.sin(2*fi1)*Math.sin(2*fi1)*t_3)/(4*t_2*t_2*t_2*t_2));
+//G_lambda=Math.cos(fi1)*Math.cos(fi1)*t_2_lambda*((-4*t_2*t_2+2*t_2*Math.cos(2*la)*e1_2/(1-e1_2)-3*sin_2la*sin_2la*Math.cos(fi1)*Math.cos(fi1)*e1_2/(1-e1_2)*e1_2/(1-e1_2))/(4*t_2*t_2*t_2*t_2));
+G_lambda=Math.cos(fi1)*Math.cos(fi1)*t_2_lambda*((-4*t_2*t_2+4*t_2*Math.cos(2*la)*e1_2/(1-e1_2)-3*sin_2la*sin_2la*Math.cos(fi1)*Math.cos(fi1)*e1_2/(1-e1_2)*e1_2/(1-e1_2))/(4*t_2*t_2*t_2*t_2));
+//G_0_lambda=t_2_0_lambda*((-4*t_2_0*t_2_0+2*t_2_0*Math.cos(2*la)*e1_2/(1-e1_2)-3*sin_2la*sin_2la*e1_2/(1-e1_2)*e1_2/(1-e1_2))/(4*t_2_0*t_2_0*t_2_0*t_2_0));
+G_0_lambda=t_2_0_lambda*((-4*t_2_0*t_2_0+4*t_2_0*Math.cos(2*la)*e1_2/(1-e1_2)-3*sin_2la*sin_2la*e1_2/(1-e1_2)*e1_2/(1-e1_2))/(4*t_2_0*t_2_0*t_2_0*t_2_0));
+//F_lambda=-e1_2/(1-e1_2)*Math.sin(2*fi1)*Math.cos(fi1)*Math.cos(fi1)*(((2*Math.cos(2*la)*t_3+sin_2la*sin_2la*e1_2/(1-e1_2))*t_2+3*t_2_lambda*sin_2la*t_3)/(4*t_2*t_2*t_2*t_2));
+F_lambda=-e1_2/(1-e1_2)*Math.sin(2*fi1)*Math.cos(fi1)*Math.cos(fi1)*(((2*Math.cos(2*la)*t_3+sin_2la*sin_2la*e1_2/(1-e1_2))*t_2-3*t_2_lambda*sin_2la*t_3)/(4*t_2*t_2*t_2*t_2));
+
+EGF_cos_sin(fi1);
+//K_scale=dl_equator/(dl_par*sin_om);
+return ((E_lambda*G_Gauss+E_Gauss*G_lambda-2*F_Gauss*F_lambda)*G_0_Gauss-(E_Gauss*G_Gauss-F_Gauss*F_Gauss)*G_0_lambda)/(2*G_0_Gauss*dl_equator*Math.sqrt(E_Gauss*G_Gauss-F_Gauss*F_Gauss));
+}
+function f_equal_area_dro_lambda(fi1){
+t_2=Math.cos(fi1)*Math.cos(fi1)*cos_la_2+(Math.cos(fi1)*Math.cos(fi1)*sin_la_2/(1-e1_2))+(Math.sin(fi1)*Math.sin(fi1)/(1-e_2));
+t_2_0=cos_la_2+(sin_la_2/(1-e1_2));
+t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+t_2_lambda=Math.cos(fi1)*Math.cos(fi1)*sin_2la*e1_2/(1-e1_2);
+t_2_0_lambda=sin_2la*e1_2/(1-e1_2);
+E_lambda=t_2_lambda*((-4*t_2*t_2+8*t_3*t_2*Math.sin(fi1)*Math.sin(fi1)-3*t_3*Math.sin(2*fi1)*Math.sin(2*fi1)*t_3)/(4*t_2*t_2*t_2*t_2));
+//G_lambda=Math.cos(fi1)*Math.cos(fi1)*t_2_lambda*((-4*t_2*t_2+2*t_2*Math.cos(2*la)*e1_2/(1-e1_2)-3*sin_2la*sin_2la*Math.cos(fi1)*Math.cos(fi1)*e1_2/(1-e1_2)*e1_2/(1-e1_2))/(4*t_2*t_2*t_2*t_2));
+G_lambda=Math.cos(fi1)*Math.cos(fi1)*t_2_lambda*((-4*t_2*t_2+4*t_2*Math.cos(2*la)*e1_2/(1-e1_2)-3*sin_2la*sin_2la*Math.cos(fi1)*Math.cos(fi1)*e1_2/(1-e1_2)*e1_2/(1-e1_2))/(4*t_2*t_2*t_2*t_2));
+//F_lambda=-e1_2/(1-e1_2)*Math.sin(2*fi1)*Math.cos(fi1)*Math.cos(fi1)*(((2*Math.cos(2*la)*t_3+sin_2la*sin_2la*e1_2/(1-e1_2))*t_2+3*t_2_lambda*sin_2la*t_3)/(4*t_2*t_2*t_2*t_2));
+F_lambda=-e1_2/(1-e1_2)*Math.sin(2*fi1)*Math.cos(fi1)*Math.cos(fi1)*(((2*Math.cos(2*la)*t_3+sin_2la*sin_2la*e1_2/(1-e1_2))*t_2-3*t_2_lambda*sin_2la*t_3)/(4*t_2*t_2*t_2*t_2));
+
+EGF_cos_sin(fi1);
+return (E_lambda*G_Gauss+E_Gauss*G_lambda-2*F_Gauss*F_lambda)/(Math.sqrt(E_Gauss*G_Gauss-F_Gauss*F_Gauss));
+}
+function EGF_cos_sin(fi1){
+F_Gauss=(Math.sin(2*fi1)*sin_2la*Math.cos(fi1)*t_3*t_4)/(4*t_2*t_2*t_2);
+G_Gauss=Math.cos(fi1)*Math.cos(fi1)*(4*t_2*t_2+sin_2la*sin_2la*t_4*t_4)/(4*t_2*t_2*t_2);
+dl_par=Math.sqrt(G_Gauss);
+E_Gauss=(4*t_2*t_2+Math.sin(2*fi1)*Math.sin(2*fi1)*t_3*t_3 )/(4*t_2*t_2*t_2);
+dl_mer=Math.sqrt(E_Gauss);
+cos_om=F_Gauss/(dl_par*dl_mer);
+sin_om=Math.sqrt(1-cos_om*cos_om);
+return false;
+}
+function copyWin(){
+//var doc = document.getElementById('result').innerHTML;
+var w = window.open('');
+with(w.document){open();write(resultStr);close();}
+}
+</script>
+</td>
+</tr>
+<tr>
+<td>М.В.Нырцов, М.Э.Флейс, М.М. Борисов</td>
+</tr>
+</tbody>
+</table>  </div>
+
+  <div class="clear-block clear">
+    <div class="meta">
+        </div>
+
+      </div>
+
+</div>
+<!-- /content ���������� ��������� //-->
+
+<!-- footer ������ ���������� //-->
+<p class="PageFooter"><img src="http://geocnt.geonet.ru/images/line.gif" width="100%"><br>
+<table align="center" width="95%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="40">
+			<a href="#up"><img border=0 src="http://geocnt.geonet.ru/images/go2top.gif" alt="� ������ ��������" title="� ������ ��������"></a>
+		</td>
+		<td width=60% align=center><!-- begin of Top100 logo --><a href="http://top100.rambler.ru/home?id=1591988"><img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-blue.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a><!-- end of Top100 logo --></td>
+		<td>
+			<p class="PageFooter" style="text-align:right">
+				Центр Геоинформационных Исследований Института Географии РАН<br>
+119017, Москва, Старомонетный пер., 29<br>
+телефоны:(495) 959-0017,  (495) 230-8170<br>
+факс:(495) 959-0017<br>
+e-mail:<a href="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a>			</p>
+		</td>
+	</tr>
+</table>
+</p><br>
+<!-- /footer ������ ���������� //-->
+  <!-- begin of Top100 code -->
+<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?1591988"></script><noscript><img src="http://counter.rambler.ru/top100.cnt?1591988" alt="" width="1" height="1" border="0"></noscript>
+<!-- end of Top100 code -->
+</body>
+</html>
+
+

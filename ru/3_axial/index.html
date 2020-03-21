@@ -1,0 +1,911 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Проекции трехосного эллипсоида | Центр геоинформационных исследований</title>
+<META NAME="Author" CONTENT="Mikhail Borisov, borim@yandex.ru">
+<link rel="stylesheet" type="text/css" href="http://geocnt.geonet.ru/sites/all/themes/geocnt_theme/my.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="..." content="..." />
+    <link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/nice_menus/nice_menus.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/nice_menus/nice_menus_default.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views/css/views.css?9" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/geocnt_theme/style.css?9" />
+<link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/geocnt_theme/print.css?9" />
+    <script type="text/javascript" src="/misc/jquery.js?9"></script>
+<script type="text/javascript" src="/misc/drupal.js?9"></script>
+<script type="text/javascript" src="//usr/local/www/data/site/tmp/files/languages/ru_ff9b49225a845d1bc6b43ace5b9c1538.js?9"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/superfish.js?9"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/jquery.bgiframe.min.js?9"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/superfish/js/jquery.hoverIntent.minified.js?9"></script>
+<script type="text/javascript" src="/sites/all/modules/nice_menus/nice_menus.js?9"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "nice_menus_options": { "delay": 800, "speed": 1 } });
+//--><!]]>
+</script>
+    <script type="text/javascript" src="/misc/jquery.js"></script>
+<script type="text/javascript" src="/misc/drupal.js"></script>
+<script type="text/javascript" src="/misc/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="/sites/all/themes/geocnt_theme/common.js"></script>
+<!--<link rel="stylesheet" href="../menu.css" type="text/css"> //-->
+<style type="text/css" media="all">@import "/sites/all/themes/geocnt_theme/body.css";</style>
+    <style type="text/css" media="print">@import "/sites/all/themes/geocnt_theme/print.css";</style>
+    <!--[if lt IE 7]>
+    <style type="text/css" media="all">@import "/sites/all/themes/geocnt_theme/fix-ie.css";</style>
+    <![endif]-->
+<!--[if IE]><script type="text/javascript" src="/sites/all/themes/geocnt_theme/excanvas.js"></script><![endif]-->
+</head>
+<body>
+<!-- header ������� ���������� //-->
+<a name="up"></a>
+<table width="100%" height="65" border="0" bgcolor="#0033CC" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="120" height="90">
+			<a href="http://geocnt.geonet.ru"><img src="http://geocnt.geonet.ru/images/logo.gif" width="120" height="90" border="0" title="http://geocnt.geonet.ru" alt="http://geocnt.geonet.ru"></a>
+		</td>
+		<td>
+			<p class="PageTitleMain">Центр геоинформационных исследований<br>Проекции трехосного эллипсоида</p>
+		</td>
+		<td width="40%" align=right background="http://geocnt.geonet.ru/images/gradient.jpg">
+			<a href="/ru">Russian</a>&nbsp;<a href="/ru"><img src="/sites/all/modules/i18n/flags/ru.png"  class="i18n-icon" width="16" height="12" alt="Russian" /></a>&nbsp;<br>
+			<a href="/en">English</a>&nbsp;<a href="/en"><img src="/sites/all/modules/i18n/flags/en.png"  class="i18n-icon" width="16" height="12" alt="English" /></a>&nbsp;<br>
+			<a href="/es">Espanol</a>&nbsp;<a href="/es"><img src="/sites/all/modules/i18n/flags/es.png"  class="i18n-icon" width="16" height="12" alt="Spanish" /></a>&nbsp;
+		</td>
+	</tr>
+</table>
+<!-- /header ������� ���������� //-->
+<div id="block-nice_menus-1" class="clear-block block block-nice_menus">
+
+
+ <!-- <div class="content"> //--> <ul class="nice-menu nice-menu-down" id="nice-menu-1"><li class="menu-175 menu-path-node-1 first  odd "><a href="/main" title="Главная страница сайта">Главная</a></li>
+<li class="menu-364 menuparent menu-path-news even "><a href="/news" title="Новости сайта">Новости</a><ul><li class="menu-365 menu-path-news first  odd "><a href="/news" title="">Новости</a></li>
+<li class="menu-366 menu-path-news_archive even  last "><a href="/news_archive" title="Архив новостей">Архив новостей</a></li>
+</ul>
+</li>
+<li class="menu-182 menuparent menu-path-node-20 odd "><a href="/soft" title="Продукты и услуги">Продукты и услуги</a><ul><li class="menu-183 menu-path-node-20 first  odd "><a href="/soft" title="Программное обеспечение">Программное обеспечение</a></li>
+<li class="menu-198 menu-path-node-28 even "><a href="/trial" title="Ознакомительные версии">Ознакомительные версии</a></li>
+<li class="menu-199 menu-path-node-29 odd "><a href="/maps" title="Карты">Карты</a></li>
+<li class="menu-200 menu-path-node-10 even "><a href="/snimki" title="Снимки">Снимки</a></li>
+<li class="menu-202 menu-path-node-31 odd  last "><a href="/price" title="Цены">Цены</a></li>
+</ul>
+</li>
+<li class="menu-185 menuparent menu-path-node-32 even "><a href="/supp" title="Техническая поддержка">Техническая поддержка</a><ul><li class="menu-186 menu-path-node-32 first  odd "><a href="/supp" title="Обновление версий">Обновление версий</a></li>
+<li class="menu-196 menu-path-node-33 even "><a href="/hasp" title="Информация о ключах защиты HASP">Информация о ключах защиты HASP</a></li>
+<li class="menu-197 menu-path-node-34 odd  last "><a href="/answer" title="Ответы на вопросы">Ответы на вопросы</a></li>
+</ul>
+</li>
+<li class="menu-187 menuparent menu-path-node-4 active-trail odd "><a href="/projects" title="Проекты и публикации">Проекты и публикации</a><ul><li class="menu-191 menu-path-node-4 first  odd "><a href="/projects" title="Проекты">Проекты</a></li>
+<li class="menu-375 menu-path-node-142 even "><a href="/proj_mollweide" title="Мольвейде и вулканы">Мольвейде и вулканы</a></li>
+<li class="menu-255 menu-path-node-155 odd "><a href="/3_axial_equal_area" title="">Равновеликие проекции трехосного эллипсоида</a></li>
+<li class="menu-374 menu-path-node-5 even "><a href="/public" title="Статьи и обзоры">Статьи и обзоры</a></li>
+<li class="menu-193 menu-path-node-6 odd "><a href="/proj_rus" title="Проекции карт России">Проекции карт России</a></li>
+<li class="menu-194 menu-path-node-7 even "><a href="/conic" title="Параметры конических проекций">Параметры конических проекций</a></li>
+<li class="menu-195 menu-path-node-15 odd "><a href="/proj_astr" title="Проекции малых тел">Проекции малых тел</a></li>
+<li class="menu-238 menu-path-node-82 even "><a href="/proj_world" title="">Проекция карты мира</a></li>
+<li class="menu-208 menu-path-node-91 odd "><a href="/cs" title="">Системы координат и мат. основа ГИС</a></li>
+<li class="menu-246 menu-path-node-95 even "><a href="/web_srv" title="">Сравнение географических основ</a></li>
+<li class="menu-250 menu-path-node-128 active-trail odd "><a href="/3_axial" title="" class="active">Проекции трехосного эллипсоида</a></li>
+<li class="menu-248 menu-path-node-124 even  last "><a href="/soil" title="">Согласование тематических данных</a></li>
+</ul>
+</li>
+<li class="menu-188 menuparent menu-path-node-11 even "><a href="/contacts" title="Контакты">Контакты</a><ul><li class="menu-370 menu-path-node-11 first  odd "><a href="/contacts" title="Как нас найти">Как нас найти</a></li>
+<li class="menu-371 menu-path-node-12 even  last "><a href="/users" title="Пользователи и партнеры">Пользователи и партнеры</a></li>
+</ul>
+</li>
+<li class="menu-367 menu-path-guestbook odd  last "><a href="/guestbook" title="Гостевая">Гостевая</a></li>
+</ul>
+<!-- </div> //-->
+</div>
+
+<hr>
+<!-- content ���������� ��������� //-->
+
+
+<div id="node-128" class="node">
+
+
+
+  
+  <div class="content">
+        <table class="none mollweide" border="0" cellspacing="5" cellpadding="5">
+<tbody>
+<tr>
+<td>
+<h3>Картографические проекции трехосного эллипсоида</h3><br /><br />
+Предлагаются проекции трехосного эллипсоида, получаемые без использования приближенных вычислений с помощью рядов. Вместо этого используется <a href="http://geocnt.geonet.ru/ru/3_axial_program" target="_blank">программа вычисления определенных интегралов</a>, написанная на основе квадратурной формулы Гаусса. В настоящее время можно вычислять равнопромежуточную вдоль меридианов цилиндрическую проекцию и равнопромежуточную вдоль меридианов азимутальную проекцию, цилиндрическую проекцию, сохраняющую угол между меридианом и параллелью и цилиндрическую проекцию Бугаевского, равноугольную проекцию К. Якоби.<br />
+Меридианы в цилиндрических проекциях отображаются при условии сохранения длин вдоль экватора. В равнопромежуточной азимутальной проекции нет искажений в полюсе проекции.<br />
+<br />
+<b>Постоянные параметры проекции: </b><br />
+  <img width="13" height="14" border="0" alt="" src="../images/img3axial/image001.png"> - большая экваториальная полуось (для Эроса принимаем 15000 м)<br />
+  <img width="13" height="18" border="0" alt="" src="../images/img3axial/image003.png"> - малая экваториальная полуось (для Эроса принимаем 7500 м)<br />
+  <img width="11" height="14" border="0" alt="" src="../images/img3axial/image005.png"> - полярная полуось (для Эроса принимаем 7500 м)<br />
+Для азимутальной проекции дополнительно вводятся долгота среднего меридиана и центр карты (северный полюс, южный полюс, пересечение экватора и начального меридиана, пересечение экватора и меридиана 90<sup>0</sup>).<br />
+Для цилиндрической проекции дополнительно вводится линия касания цилиндра(экватор, начальный меридиан, меридиан 90<sup>0</sup>).<br />
+Сдвиг по горизонтали и вертикали вводится в тех же единицах, что и размеры полуосей.<br />
+<br />
+<b>Входные переменные</b><br />
+Широта в соответствии с выбранным способом её задания и долгота от начального меридиана с положительным направлением на восток. В дальнейшем предполагается добавить возможность положительного направления на запад.<br />
+<b>Выходные переменные</b><br />
+ <img width="27" height="17" border="0" alt="" src="../images/img3axial/image007.png"> -  прямоугольные координаты в проекции в единицах размеров полуосей.  <img width="13" height="14" border="0" alt="" src="../images/img3axial/image009.png"> - горизонтально вправо,  <img width="14" height="17" border="0" alt="" src="../images/img3axial/image011.png"> - вертикально вверх<br />
+<br />
+<b>Обозначения, используемые в формулах</b><br />
+В скобках даны имена переменных в программе.<br />
+ <img width="15" height="17" border="0" alt="" src="../images/img3axial/image013.png"> - условно-геодезическая широта, то есть угол между нормалью к эллипсу в плоскости меридианного сечения и линией пересечения этой плоскости с экваториальной плоскостью (y_i – в градусах, b_1 – в радианах)<br />
+ <img width="14" height="17" border="0" alt="" src="../images/img3axial/image015.png"> - геодезическая широта, то есть угол между нормалью к поверхности трехосного эллипсоида и экваториальной плоскостью (y_i – в градусах, b_1 – в радианах).<br />
+ <img width="13" height="21" border="0" alt="" src="../images/img3axial/image017.png"> - планетоцентрическая широта, то есть угол между радиус-вектором из центра эллипсоида на данную точку поверхности эллипсоида и плоскостью экватора (y_i – в градусах, b_1 – в радианах)<br />
+ <img width="14" height="18" border="0" alt="" src="../images/img3axial/image019.png"> - долгота от начального меридиана (x_i – в градусах, la – в радианах)<br />
+ <img width="18" height="21" border="0" alt="" src="../images/img3axial/image021.png"> - квадрат эксцентриситета произвольного эллипса (e_el_2) <br />
+ <img width="18" height="23" border="0" alt="" src="../images/img3axial/image023.png"> - квадрат эксцентриситета экваториального эллипса (e_1_2)<br />
+ <img width="21" height="25" border="0" alt="" src="../images/img3axial/image026.png">  - квадрат эксцентриситета полярного эллипса (сечение начального меридиана) (e_2)<br />
+ <img width="21" height="24" border="0" alt="" src="../images/img3axial/image025.png"> - большая полуось эллипса меридианного сечения (d) <br />
+ <img width="18" height="25" border="0" alt="" src="../images/img3axial/image027.png"> - квадрат эксцентриситета эллипса меридианного сечения (e_d_2) <br />
+<a class="thumbnail" href="javascript:void(0)"><i>x<sub>el</sub> , y<sub>el</sub> , z<sub>el</sub></i><span> <img width="325" height="170" border="0" alt="" src="../images/img3axial/xyz.png"></span></a> - пространственные прямоугольные координаты<br />
+ <a class="thumbnail" href="javascript:void(0)"><i>E, G, F</i><span> <img width="516" height="429" border="0" alt="" src="../images/img3axial/egf.png"></span></a> - коэффициенты Гаусса первой квадратичной формы,  <i class="blackcolor">G<sub>0</sub></i> - коэффициент <i class="blackcolor">G</i> на экваторе<br />
+<i class="blackcolor">&omega;</i> - угол между меридианом и параллелью планетоцентрической широты на эллипсоиде<br />
+<i class="blackcolor">K<sub>scale</sub></i> – для цилиндрических проекций в нормальной ориентировке (и для азимутальных кроме полюса проекции) частный масштаб длин по направлению перпендикулярному меридиану; для цилиндрических проекций в поперечной ориентировке (и для азимутальных кроме полюса проекции) частный масштаб длин по направлению перпендикулярному меридиану поперечной системы координат; для проекции Якоби коэффициент подобия.<br />
+<br />
+<b>Вычисление проекции</b><br />
+<br />
+Вычисление квадрата эксцентриситета экваториального эллипса<br />
+ <img width="120" height="24" border="0" alt="" src="../images/img3axial/image029.png"><br />
+<br />
+Вычисление квадрата эксцентриситета полярного эллипса<br />
+ <img width="122" height="25" border="0" alt="" src="../images/img3axial/image034.png"><br />
+<br />
+<b>При заданном значении долготы </b><img width="43" height="24" border="0" alt="" src="../images/img3axial/image031.png"><br />
+ <img width="133" height="49" border="0" alt="" src="../images/img3axial/image033.png"><br />
+<br />
+ <img width="123" height="25" border="0" alt="" src="../images/img3axial/image035.png"><br />
+<br />
+ <img width="132" height="48" border="0" alt="" src="../images/img3axial/image037.png"><br />
+<br />
+<b>Цилиндрическая проекция равнопромежуточная вдоль меридианов<br />
+Способ задания широты – условно-геодезическая</b><br />
+<br />
+ <img width="210" height="63" border="0" alt="" src="../images/img3axial/image039.png">,  то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f1" target="_blank">номер подынтегральной функции «1»</a> , <img width="50" height="24" border="0" alt="" src="../images/img3axial/image041.png">, нижний предел интегрирования «0»,  верхний предел интегрирования «<img width="17" height="24" border="0" alt="" src="../images/img3axial/image043.png">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+<br />
+ <img width="162" height="61" border="0" alt="" src="../images/img3axial/image047.png"> , то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f2" target="_blank">номер подынтегральной функции «2»</a>, нижний предел интегрирования «0»,  верхний предел интегрирования «<img width="18" height="23" border="0" alt="" src="../images/img3axial/image049.png">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+<br />
+<b>Цилиндрическая проекция равнопромежуточная вдоль меридианов<br />
+Способ задания широты – геодезическая</b><br />
+<br />
+ <img width="210" height="63" border="0" alt="" src="../images/img3axial/image039.png">,  то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f1" target="_blank">номер подынтегральной функции «1»</a>, нижний предел интегрирования «0»,  верхний предел интегрирования «<img width="17" height="24" border="0" alt="" src="../images/img3axial/image043.png">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">», <img width="50" height="24" border="0" alt="" src="../images/img3axial/image041.png"><br />
+ <img width="341" height="61" border="0" alt="" src="../images/img3axial/image052.png">,  то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f3" target="_blank">номер подынтегральной функции «3»</a>, нижний предел интегрирования «0»,  верхний предел интегрирования «<img width="17" height="24" border="0" alt="" src="../images/img3axial/image054.png">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+<br />
+<br />
+<b>Цилиндрическая проекция равнопромежуточная вдоль меридианов<br />
+Способ задания широты – планетоцентрическая</b><br />
+<br />
+ <img width="210" height="63" border="0" alt="" src="../images/img3axial/image039.png">,  то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f1" target="_blank">номер подынтегральной функции «1»</a> , <img width="50" height="24" border="0" alt="" src="../images/img3axial/image041.png">, нижний предел интегрирования «0»,  верхний предел интегрирования «<img width="17" height="24" border="0" alt="" src="../images/img3axial/image043.png">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+ <img width="209" height="63" border="0" alt="" src="../images/img3axial/image058.png">,  то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f1" target="_blank">номер подынтегральной функции «1» </a>,  <img width="50" height="25" border="0" alt="" src="../images/img3axial/image060.png">, нижний предел интегрирования «0»,  верхний предел интегрирования «<img width="17" height="24" border="0" alt="" src="../images/img3axial/image054.png">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+<br />
+Для контроля правильности вычисления  <img width="14" height="17" border="0" src="../images/img3axial/image011.png" alt="">,  можно также задавать планетоцентрическую широту <img width="13" height="21" border="0" src="../images/img3axial/image017.png" alt=""> через условно-геодезическую широту  <img width="15" height="17" border="0" src="../images/img3axial/image013.png" alt="">, используя <a href="http://geocnt.geonet.ru/ru/3_axial_f2" target="_blank">подынтегральную функцию с номером 2</a>, с заменой верхнего предела интегрирования  <img width="72" height="24" border="0" src="../images/img3axial/image067.png" alt="">. При этом условно-геодезическая широта вычисляется из соотношения:<br />
+ <img width="130" height="53" border="0" src="../images/img3axial/image069.png" alt=""><br />
+<br />
+<b>Азимутальная проекция равнопромежуточная вдоль меридианов<br />
+Способ задания широты – планетоцентрическая</b><br />
+<br />
+ <img width="159" height="21" border="0" src="../images/img3axial/image071.png" alt=""> для северного полюса  и  <img width="150" height="21" border="0" src="../images/img3axial/image073.png" alt=""> для южного полюса, где <br />
+ <img width="210" height="72" border="0" src="../images/img3axial/image075.png" alt="">,  то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f1" target="_blank">номер подынтегральной функции «1»</a> , <img width="50" height="25" border="0" src="../images/img3axial/image060.png" alt=""> , нижний предел интегрирования «<img width="17" height="24" border="0" src="../images/img3axial/image054.png" alt="">» для северного полюса и «-<img width="17" height="24" border="0" src="../images/img3axial/image054.png" alt="">» для южного,  верхний предел интегрирования «<img width="17" height="41" border="0" alt="" src="../images/img3axial/image077.png">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">» и  <img width="70" height="24" border="0" alt="" src="../images/img3axial/image079.png">	<br />
+<br />
+<br />
+<b>Цилиндрическая проекция Бугаевского<br />
+Способ задания широты – планетоцентрическая</b><br />
+<br />
+ <img width="210" height="63" border="0" alt="" src="../images/img3axial/image039.png">,  то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f1" target="_blank">номер подынтегральной функции «1»</a> , <img width="50" height="24" border="0" alt="" src="../images/img3axial/image041.png">, нижний предел интегрирования «0»,  верхний предел интегрирования «<img width="17" height="24" border="0" alt="" src="../images/img3axial/image043.png">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+<br />
+<img width="187" height="48" border="0" alt="" src="../images/img3axial/image072.png"><br />
+<br />
+<img width="351" height="110" border="0" alt="" src="../images/img3axial/image074_.png"><br />
+<br />
+ <img width="135" height="50" border="0" alt="" src="../images/img3axial/image076_.png"> , то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f4" target="_blank">номер подынтегральной функции «4»</a>, нижний предел интегрирования «0»,  верхний предел интегрирования «<img width="17" height="24" border="0" alt="" src="../images/img3axial/image054.png">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+<br />
+<br />
+<b>Цилиндрическая проекция, сохраняющая угол между меридианом и параллелью<br />
+Способ задания широты – планетоцентрическая</b><br />
+<br />
+ <img width="210" height="63" border="0" alt="" src="../images/img3axial/image039.png">,  то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f1" target="_blank">номер подынтегральной функции «1»</a> , <img width="50" height="24" border="0" alt="" src="../images/img3axial/image041.png">, нижний предел интегрирования «0»,  верхний предел интегрирования «<img width="17" height="24" border="0" alt="" src="../images/img3axial/image043.png">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+<br />
+На начальном меридиане <img width="210" height="24" border="0" alt="" src="../images/img3axial/image201.png">,  
+<img width="94" height="45" border="0" alt="" src="../images/img3axial/image203.png">,  
+<img width="59" height="46" border="0" alt="" src="../images/img3axial/image205_.png"><br />
+<br />
+ <img width="142" height="50" border="0" alt="" src="../images/img3axial/image207_.png"> , то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f4" target="_blank">номер подынтегральной функции «4»</a>, нижний предел интегрирования «0»,  верхний предел интегрирования «<img width="17" height="24" border="0" alt="" src="../images/img3axial/image054.png">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+<br />
+<img width="138" height="50" border="0" alt="" src="../images/img3axial/image083.png"><br />
+<br />
+ <img width="179" height="51" border="0" alt="" src="../images/img3axial/image085_.png"> , то есть входные параметры для функции вычисления интеграла: <a href="http://geocnt.geonet.ru/ru/3_axial_f5" target="_blank">номер подынтегральной функции «5»</a>, нижний предел интегрирования «0»,  верхний предел интегрирования «<img width="17" height="24" border="0" src="../images/img3axial/image043.png" alt="">», точность в радианах «<img width="59" height="19" border="0" alt="" src="../images/img3axial/image045.png">»<br />
+<br />
+<b>Равноугольная проекция К. Якоби<br />
+Способ задания широты – планетоцентрическая</b><br />
+<br />
+ <img width="221" height="128" border="0" alt="" src="../images/img3axial/image209.png">, где <i class="blackcolor">u, v</i> – эллиптические координаты на трехосном эллипсоиде <br />
+<br />
+Используемая литература.<br />
+1.	Бугаевский Л. М. Теория картографических проекций регулярных поверхностей. – М.: «Златоуст», 1999-144 с.<br />
+2.	Калиткин Н. Н. Численные методы. – М.: Наука, 1978. – 512 с.<br />
+3.	Никольский С. М. Квадратурные формулы. – М.: Наука, 1988.- 256 с.<br />
+4.	Якоби К. Лекции и по динамике. Перевод с немецкого О. А. Полосухиной/Под редакцией проф. Н. С. Кошлякова – Л., Главная редакция общетехнической литературы, 1936. – 271 с.<br />
+5.	Каган В. Ф.. Основы теории поверхностей в тензорном изложении. Часть первая/При редакционном участии Г. Б. Гуревича. – М., ОГИЗ Гостехихдат, 1941. – 512 с.<br />
+6.	Прудников А. П., Брычков Ю. А., Маричев О. И. Интегралы и ряды. Т. 1. Элементарные функции. — 2-е изд., исправ. — М.: ФИЗМАТЛИТ, 2002. - 632 с. <br />
+7.     Нырцов М.В., Флейс М.Э., Борисов М.М.. Картографирование астероида 433 Эрос в равнопромежуточных вдоль меридианов цилиндрической и азимутальной проекциях трёхосного эллипсоида// Изв. Вузов. Геодезия и аэрофотосъемка. – 2012. №1. С. 54-61 <br />
+<br />
+ <strong>Программа пересчета  в прямоугольные координаты</strong><br /><br /> 
+<table style="border: solid 1px black;" border="0" cellspacing="0" cellpadding="5">
+<tbody>
+<tr>
+<td class="label" colspan="4">цилиндрическая проекция равнопромежуточная вдоль меридианов<br /><input onclick="javascript: changeField(1);" name="prjName" type="radio" value="1" />условно-геодезическая<br /><input onclick="javascript: changeField(2);" name="prjName" type="radio" value="2" />геодезическая<br /><input onclick="javascript: changeField(3);" name="prjName" type="radio" value="3" checked />планетоцентрическая<br /><input onclick="javascript: changeField(4);" name="prjName" type="radio" value="4" />планетоцентрическая через условно-геодезическую<br /><br /><input onclick="javascript: changeField(5);" name="prjName" type="radio" value="5" />азимутальная проекция равнопромежуточная вдоль меридианов<br /><input onclick="javascript: changeField(6);" name="prjName" type="radio" value="6" />цилиндрическая проекция, сохраняющая угол между меридианом и параллелью<br /><input onclick="javascript: changeField(7);" name="prjName" type="radio" value="7" />цилиндрическая проекция Бугаевского<br /><input onclick="javascript: changeField(8);" name="prjName" type="radio" value="8" />азимутальная проекция, сохраняющая угол между меридианом и параллелью<br /><input onclick="javascript: changeField(9);" name="prjName" type="radio" value="9" />проекция Якоби</td>
+<td rowspan=12 style="padding-left: 0;"><div id="result" name="result" style="border-left:1px solid black;padding-left:30px;height:500px;width:500px;overflow: auto;"></div></td></tr>
+<tr>
+    <td class="label labelc" colspan="3"><div id="FieldCenter">центр карты</div><div id="FieldType">линия касания</div><div id="FieldGap">линия разрыва</div></td>
+    <td class="input inputc"><select id="fi_centr" size="1">
+	<option value="1">северный полюс</option>
+	<option value="-1">южный полюс</option>
+	<option value="3">экватор, долгота 0</option>
+	<option value="2">экватор, долгота 90</option></select>
+	<select id="cyl_type" size="1">
+	<option value="1">экватор</option>
+	<option value="2">начальный меридиан</option>
+	<option value="3">меридиан 90</option></select>
+	<select id="gap_type" size="1">
+	<option value="1">экватор-круговая точка</option>
+	<option value="2">круговая точка-полюс</option></select></td>
+</tr>
+<tr>
+<td class="label labelc" colspan="3"><div id="Fieldla0">долгота среднего меридиана</div><div id="parallel"><input type="checkbox" id="parallelCheckbox">параллель круговых точек</div></td>
+<td class="input"><input id="la0" size="10" type="text" value="0" /></td>
+</tr>
+<tr>
+<td class="label tabs" colspan="4"><ul><li class="current"><a href="#tr_grid">Построение картографической сетки</a></li><li><a href="#tr_file">Пересчет координат векторного слоя</a></li></ul></td>
+</tr>
+<tr id="tr_grid" class="tr_grid tab-content"><td colspan="4">
+<table>
+<tr>
+<td class="label">долгота</td>
+<td class="input">от  <input id="x0" size="3" type="text" value="-180" /></td>
+<td class="input">до  <input id="x1" size="3" type="text" value="180" /></td>
+<td class="input">шаг  <input id="x_step" size="3" type="text" value="10" /></td>
+</tr>
+<tr>
+<td class="label">широта</td>
+<td class="input">от  <input id="y0" size="3" type="text" value="-90" /></td>
+<td class="input">до  <input id="y1" size="3" type="text" value="90" /></td>
+<td class="input">шаг  <input id="y_step" size="3" type="text" value="10" /></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id="tr_file" class="tr_file tab-content" style="display:none;">
+<td class="label" colspan="4">
+<input type="file" id="files" name="files[]" /><a download="transform.csv" id="downloadlink" style="display: none">Download</a><br><output id="content"></output>
+</td>
+</tr>
+<!--
+<tr id="tr_grid" class="tr_lat tab-content">
+<td class="label">широта</td>
+<td class="input">от  <input id="y0" size="3" type="text" value="-90" /></td>
+<td class="input">до  <input id="y1" size="3" type="text" value="90" /></td>
+<td class="input">шаг  <input id="y_step" size="3" type="text" value="10" /></td>
+</tr>
+//-->
+<tr>
+<td class="label" colspan="3">большая экваториальная полуось</td>
+<td class="input"><input id="a" size="10" type="text" value="15000" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">малая экваториальная полуось</td>
+<td class="input"><input id="b" size="10" type="text" value="7500" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">полярная полуось</td>
+<td class="input"><input id="c" size="10" type="text" value="7500" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">сдвиг по горизонтали</td>
+<td class="input"><input id="x_shift" size="10" type="text" value="0" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">сдвиг по вертикали</td>
+<td class="input"><input id="y_shift" size="10" type="text" value="0" /></td>
+</tr>
+<tr>
+<td class="label" colspan="3">точность</td>
+<td class="input"><input id="eps_input" size="10" type="text" value="0.000001" /></td>
+</tr>
+<tr>
+<td class="label" colspan="4" align="center"><input onclick="result();" type="button" value="result" /></td>
+</tr>
+</tbody>
+</table>
+<canvas  id="can1" width="1020" height="1020"></canvas>
+
+<script src="/javascript/papaparse.min.js"></script>
+<script src="/javascript/terraformer.min.js"></script>
+<script src="/javascript/terraformer-wkt-parser.min.js"></script>
+<script src="/javascript/transform.js"></script>
+<script type="text/javascript">
+var myCanvas, myContext, coord, x, y, R, la0, a, b, c, e_2,e_d_2,e1_2,x_shift, y_shift,t_1, e_el_2,eps_input,fi_centr,cos_la_2, sin_la_2, sin_2la, dl_equator, t_3,t_4,cos_fi_2, sin_fi_2, sin_2fi,a_norm,b_norm,c_norm,cyl_type,k_int_2,nu_int,fi_circle,xp_circle,yp_circle,e_2_norm,e1_2_norm,gap_type;
+var k_del,j_del,x_step_del,y_step_del,str_del;
+var eps1=1e-5;
+var eps2=1e-8;
+var eps3=1e-7;
+var eps4=1e-6;
+
+//var fi_centr = 1;
+var prjName=getPrj(document.getElementsByName("prjName"));
+var prjName_norm=prjName;
+
+window.onload = function() {
+myCanvas = document.getElementById("can1");
+myContext = myCanvas.getContext("2d");
+keyupCentre();
+}
+function changeField(val){
+prjName=val;
+prjName_norm=prjName;
+keyupCentre();
+  //if (val==0){prjName=0;}else{prjName=1;}
+}
+function getPrj(obj){
+for(i=0; i < obj.length; i++){
+  if (obj[i].checked == true){
+    return parseInt(obj[i].value);
+  }
+}
+}
+function keyupCentre(){
+  if(prjName==5 || prjName==8){
+document.getElementById('fi_centr').style.display = "block";
+document.getElementById('FieldCenter').style.display = "block";
+document.getElementById('Fieldla0').style.display = "block";
+document.getElementById('la0').style.display = "block";
+document.getElementById('FieldType').style.display = "none";
+document.getElementById('cyl_type').style.display = "none";
+document.getElementById('FieldGap').style.display = "none";
+document.getElementById('gap_type').style.display = "none";
+document.getElementById('parallel').style.display = "none";
+  }else if(prjName==9){
+document.getElementById('fi_centr').style.display = "none";
+document.getElementById('FieldCenter').style.display = "none";
+document.getElementById('Fieldla0').style.display = "none";
+document.getElementById('la0').style.display = "none";
+document.getElementById('FieldType').style.display = "none";
+document.getElementById('cyl_type').style.display = "none";
+document.getElementById('FieldGap').style.display = "block";
+document.getElementById('gap_type').style.display = "block";
+document.getElementById('parallel').style.display = "block";
+  }else{
+document.getElementById('fi_centr').style.display = "none";
+document.getElementById('FieldCenter').style.display = "none";
+document.getElementById('Fieldla0').style.display = "none";
+document.getElementById('la0').style.display = "none";
+document.getElementById('cyl_type').style.display = "block";
+document.getElementById('FieldType').style.display = "block";
+document.getElementById('FieldGap').style.display = "none";
+document.getElementById('gap_type').style.display = "none";
+document.getElementById('parallel').style.display = "none";
+};
+//if(prjName==9){document.getElementById('parallel').style.display = "block";}else{document.getElementById('parallel').style.display = "none";}
+}
+function result() {
+myContext.clearRect(0,0,1020,1020);
+resultStr="id longitude latitude x y cos_om K_scale<br />";
+resultStrCircle="";
+str_del="";
+
+var i=0, j=0;
+a = parseFloat(document.getElementById("a").value);
+b = parseFloat(document.getElementById("b").value);
+c = parseFloat(document.getElementById("c").value);
+la0 = parseFloat(document.getElementById("la0").value)*Math.PI/180;
+x_shift=parseFloat(document.getElementById("x_shift").value);
+y_shift=parseFloat(document.getElementById("y_shift").value);
+var k_m2s=250/(0.4*Math.PI*Math.max(a,b,c));
+var x_step=parseFloat(document.getElementById("x_step").value);
+var x0=parseFloat(document.getElementById("x0").value);
+var x1=parseFloat(document.getElementById("x1").value)+x_step;
+var y_step=parseFloat(document.getElementById("y_step").value);
+var y0=parseFloat(document.getElementById("y0").value);
+var y1=parseFloat(document.getElementById("y1").value)+y_step;
+eps_input=parseFloat(document.getElementById("eps_input").value);
+fi_centr=parseFloat(document.getElementById("fi_centr").options[document.getElementById("fi_centr").selectedIndex].value);
+cyl_type=parseFloat(document.getElementById("cyl_type").options[document.getElementById("cyl_type").selectedIndex].value);
+gap_type=parseFloat(document.getElementById("gap_type").options[document.getElementById("gap_type").selectedIndex].value);
+if (prjName==5 || prjName==8 ){
+if(fi_centr>1){cyl_type=fi_centr;fi_centr=-1;}else{cyl_type=1;}
+}
+if (prjName==9){cyl_type=1;}
+e_2_norm=(a*a-c*c)/(a*a);
+e1_2_norm=(a*a-b*b)/(a*a);
+//if (!(prjName==5 || prjName==8 )){
+a_norm=a; b_norm=b; c_norm=c;
+//if(cyl_type==2){c=b_norm; a=a_norm; b=c_norm;} //начальный меридиан
+if(cyl_type==3){c=a_norm; a=b_norm; b=c_norm;} //меридиан 90
+if(cyl_type==2){c=b_norm; a=c_norm; b=a_norm;} //начальный меридиан
+//}
+if (y0>90){y0=90;}
+if(y0<-90){y0=-90;}
+e_2=(a*a-c*c)/(a*a);
+e1_2=(a*a-b*b)/(a*a);
+if(prjName==9){fi_circle=180/Math.PI*Math.acos(Math.sqrt(e1_2/(e_2*(1-e_2+e1_2))));}
+//la0=0;
+// for grid
+xp_circle="";yp_circle="";
+maxid=((x1-x0)/x_step)*((y1-y0)/y_step);
+x_step_del=((x1-x0)/x_step)-1;
+y_step_del=((y1-y0)/y_step)-1;
+j_del=0;
+for (var x_i=x0; x_i+x_step*.999<x1; x_i=x_i+x_step){
+j_del++;
+k_del=0;
+  for (var y_i=y0; y_i+y_step*.999<y1; y_i=y_i+y_step){
+    k_del++;
+    i++;
+coord=calc(i,x_i,y_i);
+xp=Math.round((k_m2s*coord[0]+500))+5;
+yp=Math.round(-1*k_m2s*coord[1]+500)+5;
+    //xp=Math.round((k*x+2*250))+5;
+    //yp=Math.round(-1*k*y+250)+5;
+    //resultStr=resultStr+i+" "+x_i+" "+y_i+" "+Math.round(x*10)/10+" "+Math.round(y*10)/10+"<br>";
+    //resultStr=resultStr+i+" "+Math.round(x_i*10000)/10000+" "+Math.round(y_i*10000)/10000+" "+Math.round(coord[0]*1000)/1000+" "+Math.round(coord[1]*1000)/1000+" <span style='color:blue;'>"+Math.round(coord[2]*100000)/100000+"</span> "+Math.round(coord[3]*1000)/1000+"  <b>"+Math.round(coord[4]*1000)/1000+"</b>  "+Math.round(coord[5]*1000)/1000+"<br>";
+    resultStr=resultStr+i+" "+Math.round(x_i*10000)/10000+" "+Math.round(y_i*10000)/10000+" "+Math.round(coord[0]*1000)/1000+" "+Math.round(coord[1]*1000)/1000+" <span style='color:blue;'>"+Math.round(coord[2]*100000)/100000+"</span> "+Math.round(coord[3]*1000)/1000+"<br>";
+    myContext.beginPath();
+    myContext.arc(xp, yp, 3, 0, 2 * Math.PI, false);
+    myContext.fillStyle = "#8ED6FF";
+    myContext.fill();
+  }
+
+if(prjName==9 && document.getElementById("parallelCheckbox").checked){
+maxid++;
+coord=calc(i,x_i,fi_circle);
+xp_circle=Math.round((k_m2s*coord[0]+500))+5;
+yp_circle=Math.round(-1*k_m2s*coord[1]+500)+5;
+ resultStrCircle=resultStrCircle+"<span style='color:red;'>"+maxid+" "+Math.round(x_i*10000)/10000+" "+Math.round(fi_circle*10000)/10000+" "+Math.round(coord[0]*1000)/1000+" "+Math.round(coord[1]*1000)/1000+" <span style='color:blue;'>"+Math.round(coord[2]*100000)/100000+"</span> "+Math.round(coord[3]*1000)/1000+"</span><br>";
+    myContext.beginPath();
+    myContext.arc(xp_circle, yp_circle, 2, 0, 2 * Math.PI, false);
+    myContext.fillStyle = "#FF0000";
+    myContext.fill();
+}
+}
+if(jQuery(".tabs li.current")[0].innerText=="Пересчет координат векторного слоя"){
+        newContent = ReadFileByLine(resultFile);
+        if(newContent){createLink(newContent);}
+}
+document.getElementById("result").innerHTML="<a href='javascript:copyWin();'>copy</a><br /><div>"+resultStr+resultStrCircle+str_del+"</div>";
+}
+function calc(i,x_i,y_i){
+    la=x_i*Math.PI/180;
+    b_1=y_i*Math.PI/180;
+    fi_norm=b_1;
+    la_norm=la;
+    cos_la_norm=Math.cos(la_norm);
+    sin_la_norm=Math.sin(la_norm);
+    d_norm=b_norm/Math.sqrt(1-e1_2_norm*cos_la_norm*cos_la_norm);
+    t_1=e1_2_norm*Math.sin(2*la_norm)/(2*(1-e1_2_norm*cos_la_norm*cos_la_norm));
+      if((90-Math.abs(y_i)>eps3) && prjName_norm==2){
+//fi_norm=Math.asin(Math.sin(b_1)*Math.sqrt(1+t_1*t_1)/Math.sqrt(1+t_1*t_1*Math.sin(b_1)*Math.sin(b_1)));
+fi_norm=Math.atan(Math.tan(b_1)*Math.sqrt(1+t_1*t_1)*c_norm*c_norm/(d_norm*d_norm));
+};
+      if((90-Math.abs(y_i)>eps3) && ( prjName_norm==1)){
+fi_norm=Math.atan(c_norm*c_norm/(d_norm*d_norm)*Math.tan(b_1));
+};
+    sin_fi_norm=Math.sin(fi_norm);
+    cos_fi_norm=Math.cos(fi_norm);
+if (cyl_type==2 || cyl_type==3){
+if (prjName_norm==1 || prjName_norm==2){prjName=3;}
+//cos_z=Math.cos(fi_norm)*Math.cos(la_norm);
+b_1=-Math.asin(cos_fi_norm*cos_la_norm);
+la=Math.atan2(cos_fi_norm*sin_la_norm,sin_fi_norm);
+
+if(la_norm<0 || la_norm>Math.PI+eps3){k_EW=-1}else{k_EW=1}
+if(fi_norm<=-Math.PI/2){b_1=0; la=k_EW*Math.PI;}
+if(la<-Math.PI){la=la+2*Math.PI}
+if(la>Math.PI){la=la-2*Math.PI}
+}
+
+d=b/Math.sqrt(1-e1_2*Math.cos(la)*Math.cos(la));
+e_d_2=(d*d-c*c)/(d*d);
+t_1=e1_2*Math.sin(2*la)/(2*(1-e1_2*Math.cos(la)*Math.cos(la)));
+e_el_2=e1_2;
+cos_om_view=" ";K_scale_view=" ";ro=" ";ro_0=" ";
+sin_la_2=sin_la_norm*sin_la_norm;
+cos_la_2=cos_la_norm*cos_la_norm;
+sin_2la=Math.sin(2*la_norm);
+t_3=cos_la_2+sin_la_2/(1-e1_2_norm)-1/(1-e_2_norm);
+t_2=cos_fi_norm*cos_fi_norm*cos_la_2+(cos_fi_norm*cos_fi_norm*sin_la_2/(1-e1_2_norm))+(sin_fi_norm*sin_fi_norm/(1-e_2_norm));
+t_4=cos_fi_norm*(1-1/(1-e1_2_norm));
+cos_om_view=( Math.sin(2*fi_norm)*sin_2la*t_3*t_4 )/(Math.sqrt(4*t_2*t_2+sin_2la*sin_2la*t_4*t_4)*Math.sqrt(4*t_2*t_2+Math.sin(2*fi_norm)*Math.sin(2*fi_norm)*t_3*t_3 ));
+
+sin_la_2=Math.sin(la)*Math.sin(la);
+cos_la_2=Math.cos(la)*Math.cos(la);
+sin_2la=Math.sin(2*la);
+t_3=cos_la_2+sin_la_2/(1-e1_2)-1/(1-e_2);
+dl_equator=Math.sqrt( 4*(cos_la_2+sin_la_2/(1-e1_2))*(cos_la_2+sin_la_2/(1-e1_2))+sin_2la*sin_2la*(1-1/(1-e1_2))*(1-1/(1-e1_2)) )/(2*(cos_la_2+sin_la_2/(1-e1_2))*Math.sqrt(cos_la_2+sin_la_2/(1-e1_2)) );
+fi1=b_1;
+      if((90-Math.abs(y_i)>eps3) && prjName_norm==2 && cyl_type==1){
+fi1=Math.atan(Math.tan(b_1)*Math.sqrt(1+t_1*t_1)*c_norm*c_norm/(d_norm*d_norm));
+};
+      if((90-Math.abs(y_i)>eps3) && (prjName_norm==1) && cyl_type==1){fi1=Math.atan(c_norm*c_norm/(d_norm*d_norm)*Math.tan(b_1))};
+t_2=Math.cos(fi1)*Math.cos(fi1)*cos_la_2+(Math.cos(fi1)*Math.cos(fi1)*sin_la_2/(1-e1_2))+(Math.sin(fi1)*Math.sin(fi1)/(1-e_2));
+t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+cos_om=( Math.sin(2*fi1)*sin_2la*t_3*t_4 )/(Math.sqrt(4*t_2*t_2+sin_2la*sin_2la*t_4*t_4)*Math.sqrt(4*t_2*t_2+Math.sin(2*fi1)*Math.sin(2*fi1)*t_3*t_3 ));
+sin_om=Math.sqrt(1-cos_om*cos_om);
+dl_par=Math.cos(fi1)*Math.sqrt(4*t_2*t_2+sin_2la*sin_2la*t_4*t_4)/(2*t_2*Math.sqrt(t_2));
+K_scale_view=dl_equator/(dl_par*sin_om);
+
+switch(prjName){
+case 1:
+        x=b*gaussFnc(1,0,la,eps_input);
+        y=d*(1-e_d_2)*gaussFnc(2,0,b_1,eps_input);
+        break;
+case 2:
+        x=b*gaussFnc(1,0,la,eps_input);
+        y=d*(1-e_d_2)*gaussFnc(3,0,b_1,eps_input);
+        break;
+case 3:
+        x=b*gaussFnc(1,0,la,eps_input);
+e_el_2=e_d_2; 
+        y=c*gaussFnc(1,0,b_1,eps_input);
+        break;
+case 4:
+        if(90-Math.abs(y_i)>eps3){b_1=Math.atan(d*d/(c*c)*Math.tan(b_1))};
+        x=b*gaussFnc(1,0,la,eps_input);
+        y=d*(1-e_d_2)*gaussFnc(2,0,b_1,eps_input);
+        break;
+case 5:
+e_el_2=e_d_2;
+ro=c*gaussFnc(1,b_1*fi_centr,Math.PI/2,eps_input);
+if((b_1*fi_centr)<Math.PI/2){K_scale_view=ro/(dl_par*sin_om*a);}else{K_scale_view=1;}
+        x=ro*Math.sin(la-la0);
+        y=-ro*Math.cos(la-la0)*fi_centr;
+        break;
+case 6:
+        x=b*gaussFnc(1,0,la,eps_input);
+//calc y_0
+sin_la_2=0;
+cos_la_2=1;
+sin_2la=0;
+t_3=1-1/(1-e_2);
+dl_equator=1;
+
+y_0=a*gaussFnc(4,0,b_1,eps_input);
+//end calc y_0
+
+fi1=b_1;
+t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+sin_fi_2=Math.sin(fi1)*Math.sin(fi1);
+cos_fi_2=Math.cos(fi1)*Math.cos(fi1);
+sin_2fi=Math.sin(2*fi1);
+        y=y_0+a*gaussFnc(5,0,la,eps_input); 
+        break;
+case 7:
+        x=b*gaussFnc(1,0,la,eps_input);
+sin_la_2=Math.sin(la)*Math.sin(la);
+cos_la_2=Math.cos(la)*Math.cos(la);
+sin_2la=Math.sin(2*la);
+t_3=cos_la_2+sin_la_2/(1-e1_2)-1/(1-e_2);
+dl_equator=Math.sqrt( 4*(cos_la_2+sin_la_2/(1-e1_2))*(cos_la_2+sin_la_2/(1-e1_2))+sin_2la*sin_2la*(1-1/(1-e1_2))*(1-1/(1-e1_2)) )/(2*(cos_la_2+sin_la_2/(1-e1_2))*Math.sqrt(cos_la_2+sin_la_2/(1-e1_2)) );
+
+        y=a*gaussFnc(4,0,b_1,eps_input);
+        break;
+case 8:
+//calc ro_0
+sin_la_2=0;
+cos_la_2=1;
+sin_2la=0;
+t_3=1-1/(1-e_2);
+if(b_1*fi_centr<Math.PI/2){ro_0=a*Math.exp(-gaussFnc(6,0,b_1*fi_centr,eps_input));}
+else{ro_0=0;};
+/*
+fi1=b_1;
+if(90-Math.abs(y_i)>eps3){fi1=Math.atan(a*a/(c*c)*Math.tan(b_1))};
+e_a_c=Math.sqrt(e_2);
+psi=Math.asin(e_a_c*Math.sin(fi1));
+ro_0=a*Math.tan(Math.PI/4-fi1/2)*Math.pow(Math.tan(Math.PI/4+psi/2),e_a_c); 
+*/
+
+fi1=b_1;
+sin_fi_2=Math.sin(fi1)*Math.sin(fi1);
+cos_fi_2=Math.cos(fi1)*Math.cos(fi1);
+sin_2fi=Math.sin(2*fi1);
+
+t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+ro=ro_0/Math.exp(gaussFnc(7,0,la,eps_input));
+/*
+sin_la_2=Math.sin(la)*Math.sin(la);
+cos_la_2=Math.cos(la)*Math.cos(la);
+sin_2la=Math.sin(2*la);
+t_3=cos_la_2+sin_la_2/(1-e1_2)-1/(1-e_2);
+ro=a*Math.exp(-gaussFnc(6,0,b_1*fi_centr,eps_input));
+*/
+K_scale_view=ro/(dl_par*sin_om*a);
+        x=ro*Math.sin(la-la0);
+        y=-ro*Math.cos(la-la0)*fi_centr;
+        break;
+case 9:
+if(a>b && b>c){
+k_sc=0.3;
+fi1=b_1;
+sin_la_2=Math.sin(la)*Math.sin(la);
+cos_la_2=Math.cos(la)*Math.cos(la);
+t_2=Math.cos(fi1)*Math.cos(fi1)*cos_la_2+(Math.cos(fi1)*Math.cos(fi1)*sin_la_2/(1-e1_2))+(Math.sin(fi1)*Math.sin(fi1)/(1-e_2));
+x_el_2=Math.cos(fi1)*Math.cos(fi1)*cos_la_2/t_2;
+y_el_2=Math.cos(fi1)*Math.cos(fi1)*sin_la_2/t_2;
+z_el_2=Math.sin(fi1)*Math.sin(fi1)/t_2;
+p_sq_eq=x_el_2+y_el_2+z_el_2-1-(1-e1_2)-(1-e_2);
+q_sq_eq=-(x_el_2*(1-e_2)+x_el_2*(1-e1_2)+y_el_2*(1-e_2)+y_el_2+z_el_2*(1-e1_2)+z_el_2-(1-e1_2)-(1-e1_2)*(1-e_2)-(1-e_2));
+d_sq_eq=p_sq_eq*p_sq_eq-4*q_sq_eq;
+if(d_sq_eq<0){d_sq_eq=0};
+u_i=(-p_sq_eq+Math.sqrt(d_sq_eq))/2;
+v_i=(-p_sq_eq-Math.sqrt(d_sq_eq))/2;
+//u_i=1-e1_2+e1_2*(j_del-1)/x_step_del;
+//v_i=1-e_2+(e_2-e1_2)*(k_del-1)/y_step_del;
+//str_del=str_del+j_del+" "+k_del+" "+u_i+" "+v_i+"<br>";
+K_scale_view=2/Math.sqrt(u_i-v_i);
+//x=a*gaussFnc(8,(1-e1_2),u_i,eps_input)/2;
+//y=a*gaussFnc(9,(1-e_2),v_i,eps_input)/2;
+if ( e_2*(u_i-(1-e1_2))/(e1_2*(u_i-(1-e_2)))<=0){x=0;}
+else{
+if(Math.sqrt( e_2*(u_i-(1-e1_2))/(e1_2*(u_i-(1-e_2))) )>=1){fi_int_i=Math.PI/2;}
+else{fi_int_i=Math.asin(Math.sqrt( e_2*(u_i-(1-e1_2))/(e1_2*(u_i-(1-e_2))) ));}
+k_int_2=e1_2*(1-e_2)/(e_2*(1-e1_2));
+nu_int=e1_2/e_2;
+x_0=k_sc*a*2/Math.sqrt( e_2*(1-e1_2) )*( (e_2-e1_2)*gaussFnc(9,0,Math.PI/2,eps_input)+(1-e_2)*gaussFnc(8,0,Math.PI/2,eps_input) );
+x=k_sc*a*2/Math.sqrt( e_2*(1-e1_2) )*( (e_2-e1_2)*gaussFnc(9,0,fi_int_i,eps_input)+(1-e_2)*gaussFnc(8,0,fi_int_i,eps_input) );
+}
+
+k_int_2=(e_2-e1_2)/(e_2*(1-e1_2));
+nu_int=(e_2-e1_2)/e_2;
+y_0=k_sc*a*2/Math.sqrt( e_2*(1-e1_2) )*( -e1_2*gaussFnc(9,0,Math.PI/2,eps_input)+gaussFnc(8,0,Math.PI/2,eps_input) );
+if( ( e_2*((1-e1_2)-v_i)/((e_2-e1_2)*(1-v_i)) )<=0 ){y=y_0;}
+else{
+if(Math.sqrt( e_2*((1-e1_2)-v_i)/((e_2-e1_2)*(1-v_i)) )>=1){fi_int_i=Math.PI/2;}
+else{fi_int_i=Math.asin(Math.sqrt( e_2*((1-e1_2)-v_i)/((e_2-e1_2)*(1-v_i)) ));}
+y=y_0-k_sc*a*2/Math.sqrt( e_2*(1-e1_2) )*( -e1_2*gaussFnc(9,0,fi_int_i,eps_input)+gaussFnc(8,0,fi_int_i,eps_input) );
+}
+
+if(Math.abs(la)>Math.PI/2){x=-x+2*x_0;}
+if(b_1<0){y=-y;}
+if(gap_type==1){
+if(la<0){y=2*y_0-y;}
+}else{
+if(la<0){x=-x;}
+}
+
+}
+        break;
+}
+		//return ([x_shift+x,y_shift+y,cos_om_view,K_scale_view, ro_0, ro]);
+		return ([x_shift+x,y_shift+y,cos_om_view,K_scale_view]);
+}
+
+var gauss_const=1e-12;
+var gauss_w1=0.277777778;
+var gauss_w2=0.444444444;
+var gauss_w3=0.118463443;
+var gauss_w4=0.239314335;
+var gauss_w5=0.284444444;
+var gauss_x1=0.112701665;
+var gauss_x2=0.5;
+var gauss_x3=0.046910077;
+var gauss_x4=0.230765345;
+var gauss_x5=0.5;
+
+function gaussFnc(f,gauss_a,gauss_b,eps){
+delta=gauss_const*Math.abs(gauss_a-gauss_b);
+gauss=0;
+y=gauss_b-gauss_a;
+aa=gauss_a;
+do {
+  k=0;
+  ga=0;
+    for(k=0;k<5;k++){
+    y=2.*y;
+    if(Math.abs(y)>Math.abs(gauss_b-aa)){y=gauss_b-aa};
+    if(Math.abs(y)<=delta){return (gauss);};
+//M3:
+do {
+      bb=aa+y;
+      gauss_c=0.5*(aa+bb);
+      if(f==1){
+      s3=gauss_w1*( f_equator(aa+y*gauss_x1)+f_equator(bb-y*gauss_x1))+gauss_w2*f_equator(gauss_c);
+      s5=gauss_w3*( f_equator(aa+y*gauss_x3)+f_equator(bb-y*gauss_x3))+gauss_w4*(f_equator(aa+y*gauss_x4)+f_equator(bb-y*gauss_x4))+gauss_w5*f_equator(gauss_c);
+      }else if(f==2) {
+      s3=gauss_w1*( f_meridian(aa+y*gauss_x1)+f_meridian(bb-y*gauss_x1))+gauss_w2*f_meridian(gauss_c);
+      s5=gauss_w3*( f_meridian(aa+y*gauss_x3)+f_meridian(bb-y*gauss_x3))+gauss_w4*(f_meridian(aa+y*gauss_x4)+f_meridian(bb-y*gauss_x4))+gauss_w5*f_meridian(gauss_c);
+      }else if(f==3){
+      s3=gauss_w1*( f_geod(aa+y*gauss_x1)+f_geod(bb-y*gauss_x1))+gauss_w2*f_geod(gauss_c);
+      s5=gauss_w3*( f_geod(aa+y*gauss_x3)+f_geod(bb-y*gauss_x3))+gauss_w4*(f_geod(aa+y*gauss_x4)+f_geod(bb-y*gauss_x4))+gauss_w5*f_geod(gauss_c);
+      }else if(f==4){
+      s3=gauss_w1*( f_conf(aa+y*gauss_x1)+f_conf(bb-y*gauss_x1))+gauss_w2*f_conf(gauss_c);
+      s5=gauss_w3*( f_conf(aa+y*gauss_x3)+f_conf(bb-y*gauss_x3))+gauss_w4*(f_conf(aa+y*gauss_x4)+f_conf(bb-y*gauss_x4))+gauss_w5*f_conf(gauss_c);
+      }else if(f==5){
+      s3=gauss_w1*( f_conf_la(aa+y*gauss_x1)+f_conf_la(bb-y*gauss_x1))+gauss_w2*f_conf_la(gauss_c);
+      s5=gauss_w3*( f_conf_la(aa+y*gauss_x3)+f_conf_la(bb-y*gauss_x3))+gauss_w4*(f_conf_la(aa+y*gauss_x4)+f_conf_la(bb-y*gauss_x4))+gauss_w5*f_conf_la(gauss_c);
+      }else if(f==6){
+      s3=gauss_w1*( f_conf_az(aa+y*gauss_x1)+f_conf_az(bb-y*gauss_x1))+gauss_w2*f_conf_az(gauss_c);
+      s5=gauss_w3*( f_conf_az(aa+y*gauss_x3)+f_conf_az(bb-y*gauss_x3))+gauss_w4*(f_conf_az(aa+y*gauss_x4)+f_conf_az(bb-y*gauss_x4))+gauss_w5*f_conf_az(gauss_c);
+      }else if(f==7){
+      s3=gauss_w1*( f_conf_az_la(aa+y*gauss_x1)+f_conf_az_la(bb-y*gauss_x1))+gauss_w2*f_conf_az_la(gauss_c);
+      s5=gauss_w3*( f_conf_az_la(aa+y*gauss_x3)+f_conf_az_la(bb-y*gauss_x3))+gauss_w4*(f_conf_az_la(aa+y*gauss_x4)+f_conf_az_la(bb-y*gauss_x4))+gauss_w5*f_conf_az_la(gauss_c);
+      }else if(f==8){
+      s3=gauss_w1*( f_elliptic_x(aa+y*gauss_x1)+f_elliptic_x(bb-y*gauss_x1))+gauss_w2*f_elliptic_x(gauss_c);
+      s5=gauss_w3*(f_elliptic_x(aa+y*gauss_x3)+f_elliptic_x(bb-y*gauss_x3))+gauss_w4*(f_elliptic_x(aa+y*gauss_x4)+f_elliptic_x(bb-y*gauss_x4))+gauss_w5*f_elliptic_x(gauss_c);
+      }else{
+      s3=gauss_w1*(f_elliptic_y(aa+y*gauss_x1)+f_elliptic_y(bb-y*gauss_x1))+gauss_w2*f_elliptic_y(gauss_c);
+      s5=gauss_w3*( f_elliptic_y(aa+y*gauss_x3)+f_elliptic_y(bb-y*gauss_x3))+gauss_w4*(f_elliptic_y(aa+y*gauss_x4)+f_elliptic_y(bb-y*gauss_x4))+gauss_w5*f_elliptic_y(gauss_c);
+      }
+      s3=s3*y;
+      s5=s5*y;
+      if(Math.abs(s5-s3)>=eps*(gauss_const+Math.abs(s5)) && Math.abs(0.5*y)<=delta){return "NaN";}
+      if(Math.abs(s5-s3)>=eps*(gauss_const+Math.abs(s5))){
+      y=0.5*y;
+      }else{
+      gauss=gauss+s5;
+      aa=bb;
+      ga=ga+s5;
+      break;
+      }
+} while ( Math.abs(y)>delta ) // end block M3
+    } //end for k<5 (M2)
+} while (Math.abs(ga)>=eps*(gauss_const+Math.abs(gauss)))
+return (gauss);
+}
+function f_equator(la1){
+return (  Math.sqrt(1-(2-e_el_2)*e_el_2*Math.cos(la1)*Math.cos(la1))/( (1-e_el_2*Math.cos(la1)*Math.cos(la1))*Math.sqrt(1-e_el_2*Math.cos(la1)*Math.cos(la1)) )  );
+}
+function f_geod(fi1){
+sin_2=Math.sin(fi1)*Math.sin(fi1);
+z_2=t_1*t_1;
+return ( Math.sqrt((1+z_2*sin_2)*(1+z_2))/((1-e_d_2*sin_2+z_2*sin_2*(1-e_d_2))*Math.sqrt(1-e_d_2*sin_2+z_2*sin_2*(1-e_d_2))) );
+}
+function f_meridian(fi1){
+return ( 1/( (1-e_d_2*Math.sin(fi1)*Math.sin(fi1))*Math.sqrt(1-e_d_2*Math.sin(fi1)*Math.sin(fi1)) ) );
+}
+function f_conf(fi1){
+t_2=Math.cos(fi1)*Math.cos(fi1)*cos_la_2+(Math.cos(fi1)*Math.cos(fi1)*sin_la_2/(1-e1_2))+(Math.sin(fi1)*Math.sin(fi1)/(1-e_2));
+t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+cos_om=( Math.sin(2*fi1)*sin_2la*t_3*t_4 )/(Math.sqrt(4*t_2*t_2+sin_2la*sin_2la*t_4*t_4)*Math.sqrt(4*t_2*t_2+Math.sin(2*fi1)*Math.sin(2*fi1)*t_3*t_3 ));
+sin_om=Math.sqrt(1-cos_om*cos_om);
+dl_par=Math.cos(fi1)*Math.sqrt(4*t_2*t_2+sin_2la*sin_2la*t_4*t_4)/(2*t_2*Math.sqrt(t_2));
+K_scale=dl_equator/(dl_par*sin_om);
+return ( K_scale*Math.sqrt(4*t_2*t_2+Math.sin(2*fi1)*Math.sin(2*fi1)*t_3*t_3)/(2*t_2*Math.sqrt(t_2)) );
+//t_3=cos_la_2+sin_la_2/(1-e1_2)-1/(1-e2);
+}
+function f_conf_la(la1){ 
+cos_la_2=Math.cos(la1)*Math.cos(la1);
+sin_la_2=Math.sin(la1)*Math.sin(la1);
+sin_2la=Math.sin(2*la1);
+t_2=cos_fi_2*cos_la_2+(cos_fi_2*sin_la_2/(1-e1_2))+sin_fi_2/(1-e_2);
+t_3=cos_la_2+sin_la_2/(1-e1_2)-1/(1-e_2);
+//t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+cos_om=( sin_2fi*sin_2la*t_3*t_4 )/(Math.sqrt(4*t_2*t_2+sin_2la*sin_2la*t_4*t_4)*Math.sqrt(4*t_2*t_2+sin_2fi*sin_2fi*t_3*t_3 ));
+sin_om=Math.sqrt(1-cos_om*cos_om);
+dl_equator=Math.sqrt( 4*(cos_la_2+sin_la_2/(1-e1_2))*(cos_la_2+sin_la_2/(1-e1_2))+sin_2la*sin_2la*(1-1/(1-e1_2))*(1-1/(1-e1_2)) )/(2*(cos_la_2+sin_la_2/(1-e1_2))*Math.sqrt(cos_la_2+sin_la_2/(1-e1_2)) );
+return ( dl_equator*cos_om/sin_om );
+}
+function f_conf_az(fi1){
+t_2=Math.cos(fi1)*Math.cos(fi1)*cos_la_2+(Math.cos(fi1)*Math.cos(fi1)*sin_la_2/(1-e1_2))+(Math.sin(fi1)*Math.sin(fi1)/(1-e_2));
+t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+dl_par_=Math.cos(fi1)*Math.sqrt(4*t_2*t_2+sin_2la*sin_2la*t_4*t_4);
+dl_mer_=Math.sqrt(4*t_2*t_2+Math.sin(2*fi1)*Math.sin(2*fi1)*t_3*t_3 );
+/*return (dl_mer_/dl_par_); */
+
+cos_om=( Math.sin(2*fi1)*sin_2la*t_3*t_4 )/(Math.sqrt(4*t_2*t_2+sin_2la*sin_2la*t_4*t_4)*Math.sqrt(4*t_2*t_2+Math.sin(2*fi1)*Math.sin(2*fi1)*t_3*t_3 ));
+sin_om=Math.sqrt(1-cos_om*cos_om);
+
+return (dl_mer_/(dl_par_*sin_om));
+//t_3=cos_la_2+sin_la_2/(1-e1_2)-1/(1-e2);
+}
+function f_conf_az_la(la1){ 
+cos_la_2=Math.cos(la1)*Math.cos(la1);
+sin_la_2=Math.sin(la1)*Math.sin(la1);
+sin_2la=Math.sin(2*la1);
+t_2=cos_fi_2*cos_la_2+(cos_fi_2*sin_la_2/(1-e1_2))+sin_fi_2/(1-e_2);
+t_3=cos_la_2+sin_la_2/(1-e1_2)-1/(1-e_2);
+//t_4=Math.cos(fi1)*(1-1/(1-e1_2));
+cos_om=( sin_2fi*sin_2la*t_3*t_4 )/(Math.sqrt(4*t_2*t_2+sin_2la*sin_2la*t_4*t_4)*Math.sqrt(4*t_2*t_2+sin_2fi*sin_2fi*t_3*t_3 ));
+sin_om=Math.sqrt(1-cos_om*cos_om);
+return ( cos_om/sin_om );
+}
+function f1_elliptic_x(u){
+return Math.sqrt(u/((1-u)*((1-e1_2)-u)*((1-e_2)-u)));
+}
+function f1_elliptic_y(v){
+return Math.sqrt(-v/((1-v)*((1-e1_2)-v)*((1-e_2)-v)));
+}
+function f_elliptic_x(u){
+return ( 1/Math.sqrt(1-k_int_2*Math.sin(u)*Math.sin(u) ) );
+}
+function f_elliptic_y(v){
+return (1/((1-nu_int*Math.sin(v)*Math.sin(v))*Math.sqrt(1-k_int_2*Math.sin(v)*Math.sin(v))));
+}
+function copyWin(){
+//var doc = document.getElementById('result').innerHTML;
+var w = window.open('');
+with(w.document){open();write(resultStr);close();}
+}
+
+jQuery(document).ready(function() {
+    jQuery(".tabs li a").click(function(event) {
+        event.preventDefault();
+        jQuery(this).parent().addClass("current");
+        jQuery(this).parent().siblings().removeClass("current");
+        var tab = jQuery(this).attr("href");
+        jQuery(".tab-content").not(tab).css("display", "none");
+        jQuery(tab).toggle();
+        //jQuery(tab).fadeIn();
+    });
+});
+
+// load file
+if (window.File && window.FileReader) {
+  jQuery("#content").html('Файл csv в кодировке UTF8. В первом столбце координаты объектов в формате WKT.');
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+} else {
+  //alert('The File APIs are not fully supported in this browser.');
+  jQuery("#content").html('The File APIs are not fully supported in this browser.');
+}
+  
+</script>
+</td>
+</tr>
+<tr>
+<td>М.В.Нырцов, М.Э.Флейс, М.М. Борисов</td>
+</tr>
+</tbody>
+</table>  </div>
+
+  <div class="clear-block clear">
+    <div class="meta">
+        </div>
+
+      </div>
+
+</div>
+<!-- /content ���������� ��������� //-->
+
+<!-- footer ������ ���������� //-->
+<p class="PageFooter"><img src="http://geocnt.geonet.ru/images/line.gif" width="100%"><br>
+<table align="center" width="95%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="40">
+			<a href="#up"><img border=0 src="http://geocnt.geonet.ru/images/go2top.gif" alt="� ������ ��������" title="� ������ ��������"></a>
+		</td>
+		<td width=60% align=center><!-- begin of Top100 code -->
+
+<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?1591988"></script>
+<noscript>
+<img src="http://counter.rambler.ru/top100.cnt?1591988" alt="" width="1" height="1" border="0" />
+
+</noscript>
+<!-- end of Top100 code --></td>
+		<td>
+			<p class="PageFooter" style="text-align:right">
+				Центр Геоинформационных Исследований Института Географии РАН<br>
+119017, Москва, Старомонетный пер., 29<br>
+телефоны:(495) 959-0017,  (495) 230-8170<br>
+факс:(495) 959-0017<br>
+e-mail:<a href="mailto:supp@geocnt.geonet.ru">supp@geocnt.geonet.ru</a>			</p>
+		</td>
+	</tr>
+</table>
+</p><br>
+<!-- /footer ������ ���������� //-->
+  <!-- begin of Top100 code -->
+
+<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?1591988"></script>
+<noscript>
+<img src="http://counter.rambler.ru/top100.cnt?1591988" alt="" width="1" height="1" border="0" />
+
+</noscript>
+<!-- end of Top100 code -->
+</body>
+</html>
+
+
