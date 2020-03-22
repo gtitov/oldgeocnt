@@ -10,7 +10,7 @@ var g_Browser;
 var g_Version; 
 
 function GoToBadBrowserPage(){
-  document.location.replace("http://geocnt.geonet.ru/index0.html");
+  document.location.replace("/index0.html");
 }
 
 if(!grcCheckBrowser()) GoToBadBrowserPage();

@@ -256,7 +256,7 @@ function show(id){
 	var el=$('#'+id);
 	el.toggle();
 	var el1=$('#'+id+'Folder');
-	el1.attr("src", (el1.src() == 'http://geocnt.geonet.ru/googlemap/images/folder.gif')?f_open.src:f_close.src);
+	el1.attr("src", (el1.src() == '/googlemap/images/folder.gif')?f_open.src:f_close.src);
 }
 
 function ToolOnOver(type){

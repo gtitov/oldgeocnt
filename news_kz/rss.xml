@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="http://geocnt.geonet.ru/news_kz/rss.xml" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="/news_kz/rss.xml" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>GeoNews.kz</title>
-    <link>http://geocnt.geonet.ru/news_kz/rss.xml</link>
+    <link>/news_kz/rss.xml</link>
     <description></description>
     <language>ru</language>
           <item>
     <title>Дневная сессия KASE: USDKZT TOD - 146,01/146,04, USDKZT 0 001 = 0,00, USDKZT 0 002 = -0,01, RUBKZT TOD = 5,0386</title>
-    <link>http://geocnt.geonet.ru/news_kz/ekonomika/2011/02/25/dnevnaya-sessiya-kase-usdkzt-tod-1460114604-usdkzt-0-001-000-usdkzt-0-002-001-r</link>
+    <link>/news_kz/ekonomika/2011/02/25/dnevnaya-sessiya-kase-usdkzt-tod-1460114604-usdkzt-0-001-000-usdkzt-0-002-001-r</link>
     <description>&lt;div class=&quot;field field-type-text field-field-main&quot;&gt;
     &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
@@ -43,18 +43,18 @@
         &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://geocnt.geonet.ru/news_kz/ekonomika/2011/02/25/dnevnaya-sessiya-kase-usdkzt-tod-1460114604-usdkzt-0-001-000-usdkzt-0-002-001-r&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
-     <comments>http://geocnt.geonet.ru/news_kz/ekonomika/2011/02/25/dnevnaya-sessiya-kase-usdkzt-tod-1460114604-usdkzt-0-001-000-usdkzt-0-002-001-r#comments</comments>
- <category domain="http://geocnt.geonet.ru/news_kz/razdel/ekonomika">Экономика</category>
- <category domain="http://geocnt.geonet.ru/news_kz/taxonomy/term/14">Казахстан</category>
- <category domain="http://geocnt.geonet.ru/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
+&lt;p&gt;&lt;a href=&quot;/news_kz/ekonomika/2011/02/25/dnevnaya-sessiya-kase-usdkzt-tod-1460114604-usdkzt-0-001-000-usdkzt-0-002-001-r&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
+     <comments>/news_kz/ekonomika/2011/02/25/dnevnaya-sessiya-kase-usdkzt-tod-1460114604-usdkzt-0-001-000-usdkzt-0-002-001-r#comments</comments>
+ <category domain="/news_kz/razdel/ekonomika">Экономика</category>
+ <category domain="/news_kz/taxonomy/term/14">Казахстан</category>
+ <category domain="/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
  <pubDate>Fri, 25 Feb 2011 11:05:06 +0000</pubDate>
  <dc:creator>svetlana</dc:creator>
- <guid isPermaLink="false">145 at http://geocnt.geonet.ru/news_kz</guid>
+ <guid isPermaLink="false">145 at /news_kz</guid>
   </item>
   <item>
     <title>Потепление обещают синоптики в Казахстане на следующей неделе</title>
-    <link>http://geocnt.geonet.ru/news_kz/sobytiya/2011/02/25/poteplenie-obeshchayut-sinoptiki-v-kazakhstane-na-sleduyushchei-nedele.html</link>
+    <link>/news_kz/sobytiya/2011/02/25/poteplenie-obeshchayut-sinoptiki-v-kazakhstane-na-sleduyushchei-nedele.html</link>
     <description>&lt;div class=&quot;field field-type-text field-field-main&quot;&gt;
     &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
@@ -87,18 +87,18 @@
         &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://geocnt.geonet.ru/news_kz/sobytiya/2011/02/25/poteplenie-obeshchayut-sinoptiki-v-kazakhstane-na-sleduyushchei-nedele.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
-     <comments>http://geocnt.geonet.ru/news_kz/sobytiya/2011/02/25/poteplenie-obeshchayut-sinoptiki-v-kazakhstane-na-sleduyushchei-nedele.html#comments</comments>
- <category domain="http://geocnt.geonet.ru/news_kz/razdel/sobytiya">События</category>
- <category domain="http://geocnt.geonet.ru/news_kz/taxonomy/term/14">Казахстан</category>
- <category domain="http://geocnt.geonet.ru/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
+&lt;p&gt;&lt;a href=&quot;/news_kz/sobytiya/2011/02/25/poteplenie-obeshchayut-sinoptiki-v-kazakhstane-na-sleduyushchei-nedele.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
+     <comments>/news_kz/sobytiya/2011/02/25/poteplenie-obeshchayut-sinoptiki-v-kazakhstane-na-sleduyushchei-nedele.html#comments</comments>
+ <category domain="/news_kz/razdel/sobytiya">События</category>
+ <category domain="/news_kz/taxonomy/term/14">Казахстан</category>
+ <category domain="/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
  <pubDate>Fri, 25 Feb 2011 10:57:03 +0000</pubDate>
  <dc:creator>svetlana</dc:creator>
- <guid isPermaLink="false">144 at http://geocnt.geonet.ru/news_kz</guid>
+ <guid isPermaLink="false">144 at /news_kz</guid>
   </item>
   <item>
     <title>Ювенальные суды должны создаваться по всему Казахстану, уверены в Верховном Суде</title>
-    <link>http://geocnt.geonet.ru/news_kz/sobytiya/2011/02/25/yuvenalnye-sudy-dolzhny-sozdavatsya-po-vsemu-kazakhstanu-uvereny-v-verkhovnom-su</link>
+    <link>/news_kz/sobytiya/2011/02/25/yuvenalnye-sudy-dolzhny-sozdavatsya-po-vsemu-kazakhstanu-uvereny-v-verkhovnom-su</link>
     <description>&lt;div class=&quot;field field-type-text field-field-main&quot;&gt;
     &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
@@ -131,18 +131,18 @@
         &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://geocnt.geonet.ru/news_kz/sobytiya/2011/02/25/yuvenalnye-sudy-dolzhny-sozdavatsya-po-vsemu-kazakhstanu-uvereny-v-verkhovnom-su&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
-     <comments>http://geocnt.geonet.ru/news_kz/sobytiya/2011/02/25/yuvenalnye-sudy-dolzhny-sozdavatsya-po-vsemu-kazakhstanu-uvereny-v-verkhovnom-su#comments</comments>
- <category domain="http://geocnt.geonet.ru/news_kz/razdel/sobytiya">События</category>
- <category domain="http://geocnt.geonet.ru/news_kz/taxonomy/term/14">Казахстан</category>
- <category domain="http://geocnt.geonet.ru/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
+&lt;p&gt;&lt;a href=&quot;/news_kz/sobytiya/2011/02/25/yuvenalnye-sudy-dolzhny-sozdavatsya-po-vsemu-kazakhstanu-uvereny-v-verkhovnom-su&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
+     <comments>/news_kz/sobytiya/2011/02/25/yuvenalnye-sudy-dolzhny-sozdavatsya-po-vsemu-kazakhstanu-uvereny-v-verkhovnom-su#comments</comments>
+ <category domain="/news_kz/razdel/sobytiya">События</category>
+ <category domain="/news_kz/taxonomy/term/14">Казахстан</category>
+ <category domain="/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
  <pubDate>Fri, 25 Feb 2011 10:49:09 +0000</pubDate>
  <dc:creator>svetlana</dc:creator>
- <guid isPermaLink="false">143 at http://geocnt.geonet.ru/news_kz</guid>
+ <guid isPermaLink="false">143 at /news_kz</guid>
   </item>
   <item>
     <title>Вакцинация детей от пневмококковой инфекции будет введена в Казахстане к 2015 году</title>
-    <link>http://geocnt.geonet.ru/news_kz/sobytiya/2011/02/25/vaktsinatsiya-detei-ot-pnevmokokkovoi-infektsii-budet-vvedena-v-kazakhstane-k-20</link>
+    <link>/news_kz/sobytiya/2011/02/25/vaktsinatsiya-detei-ot-pnevmokokkovoi-infektsii-budet-vvedena-v-kazakhstane-k-20</link>
     <description>&lt;div class=&quot;field field-type-text field-field-main&quot;&gt;
     &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
@@ -173,18 +173,18 @@
         &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://geocnt.geonet.ru/news_kz/sobytiya/2011/02/25/vaktsinatsiya-detei-ot-pnevmokokkovoi-infektsii-budet-vvedena-v-kazakhstane-k-20&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
-     <comments>http://geocnt.geonet.ru/news_kz/sobytiya/2011/02/25/vaktsinatsiya-detei-ot-pnevmokokkovoi-infektsii-budet-vvedena-v-kazakhstane-k-20#comments</comments>
- <category domain="http://geocnt.geonet.ru/news_kz/razdel/sobytiya">События</category>
- <category domain="http://geocnt.geonet.ru/news_kz/taxonomy/term/14">Казахстан</category>
- <category domain="http://geocnt.geonet.ru/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
+&lt;p&gt;&lt;a href=&quot;/news_kz/sobytiya/2011/02/25/vaktsinatsiya-detei-ot-pnevmokokkovoi-infektsii-budet-vvedena-v-kazakhstane-k-20&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
+     <comments>/news_kz/sobytiya/2011/02/25/vaktsinatsiya-detei-ot-pnevmokokkovoi-infektsii-budet-vvedena-v-kazakhstane-k-20#comments</comments>
+ <category domain="/news_kz/razdel/sobytiya">События</category>
+ <category domain="/news_kz/taxonomy/term/14">Казахстан</category>
+ <category domain="/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
  <pubDate>Fri, 25 Feb 2011 10:35:31 +0000</pubDate>
  <dc:creator>svetlana</dc:creator>
- <guid isPermaLink="false">142 at http://geocnt.geonet.ru/news_kz</guid>
+ <guid isPermaLink="false">142 at /news_kz</guid>
   </item>
   <item>
     <title> В этой игре есть все – и азарт, и битва </title>
-    <link>http://geocnt.geonet.ru/news_kz/sport/2011/02/25/v-etoi-igre-est-vse-i-azart-i-bitva.html</link>
+    <link>/news_kz/sport/2011/02/25/v-etoi-igre-est-vse-i-azart-i-bitva.html</link>
     <description>&lt;div class=&quot;field field-type-text field-field-main&quot;&gt;
     &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
@@ -215,18 +215,18 @@
         &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://geocnt.geonet.ru/news_kz/sport/2011/02/25/v-etoi-igre-est-vse-i-azart-i-bitva.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
-     <comments>http://geocnt.geonet.ru/news_kz/sport/2011/02/25/v-etoi-igre-est-vse-i-azart-i-bitva.html#comments</comments>
- <category domain="http://geocnt.geonet.ru/news_kz/razdel/sport">Спорт</category>
- <category domain="http://geocnt.geonet.ru/news_kz/taxonomy/term/25">Жамбылская область</category>
- <category domain="http://geocnt.geonet.ru/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
+&lt;p&gt;&lt;a href=&quot;/news_kz/sport/2011/02/25/v-etoi-igre-est-vse-i-azart-i-bitva.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
+     <comments>/news_kz/sport/2011/02/25/v-etoi-igre-est-vse-i-azart-i-bitva.html#comments</comments>
+ <category domain="/news_kz/razdel/sport">Спорт</category>
+ <category domain="/news_kz/taxonomy/term/25">Жамбылская область</category>
+ <category domain="/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
  <pubDate>Fri, 25 Feb 2011 10:01:28 +0000</pubDate>
  <dc:creator>svetlana</dc:creator>
- <guid isPermaLink="false">141 at http://geocnt.geonet.ru/news_kz</guid>
+ <guid isPermaLink="false">141 at /news_kz</guid>
   </item>
   <item>
     <title>Единая культура – единая нация. Единство и согласие нашего многонационального народа являются главными условиями успеха Казахстана</title>
-    <link>http://geocnt.geonet.ru/news_kz/kultura/2011/02/25/edinaya-kultura-edinaya-natsiya-edinstvo-i-soglasie-nashego-mnogonatsionalnogo-na</link>
+    <link>/news_kz/kultura/2011/02/25/edinaya-kultura-edinaya-natsiya-edinstvo-i-soglasie-nashego-mnogonatsionalnogo-na</link>
     <description>&lt;div class=&quot;field field-type-text field-field-main&quot;&gt;
     &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
@@ -257,18 +257,18 @@
         &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://geocnt.geonet.ru/news_kz/kultura/2011/02/25/edinaya-kultura-edinaya-natsiya-edinstvo-i-soglasie-nashego-mnogonatsionalnogo-na&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
-     <comments>http://geocnt.geonet.ru/news_kz/kultura/2011/02/25/edinaya-kultura-edinaya-natsiya-edinstvo-i-soglasie-nashego-mnogonatsionalnogo-na#comments</comments>
- <category domain="http://geocnt.geonet.ru/news_kz/razdel/kultura">Культура</category>
- <category domain="http://geocnt.geonet.ru/news_kz/taxonomy/term/14">Казахстан</category>
- <category domain="http://geocnt.geonet.ru/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
+&lt;p&gt;&lt;a href=&quot;/news_kz/kultura/2011/02/25/edinaya-kultura-edinaya-natsiya-edinstvo-i-soglasie-nashego-mnogonatsionalnogo-na&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
+     <comments>/news_kz/kultura/2011/02/25/edinaya-kultura-edinaya-natsiya-edinstvo-i-soglasie-nashego-mnogonatsionalnogo-na#comments</comments>
+ <category domain="/news_kz/razdel/kultura">Культура</category>
+ <category domain="/news_kz/taxonomy/term/14">Казахстан</category>
+ <category domain="/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
  <pubDate>Fri, 25 Feb 2011 09:58:53 +0000</pubDate>
  <dc:creator>svetlana</dc:creator>
- <guid isPermaLink="false">140 at http://geocnt.geonet.ru/news_kz</guid>
+ <guid isPermaLink="false">140 at /news_kz</guid>
   </item>
   <item>
     <title>Союз мусульман призвал посла Ливии покинуть Казахстан</title>
-    <link>http://geocnt.geonet.ru/news_kz/gosudarstvo/2011/02/25/soyuz-musulman-prizval-posla-livii-pokinut-kazakhstan.html</link>
+    <link>/news_kz/gosudarstvo/2011/02/25/soyuz-musulman-prizval-posla-livii-pokinut-kazakhstan.html</link>
     <description>&lt;div class=&quot;field field-type-text field-field-main&quot;&gt;
     &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
@@ -288,7 +288,7 @@
 &lt;div class=&quot;field field-type-filefield field-field-image&quot;&gt;
   &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
-                    &lt;img  class=&quot;imagefield imagefield-field_image&quot; width=&quot;460&quot; height=&quot;197&quot; alt=&quot;&quot; src=&quot;http://geocnt.geonet.ru/news_kz/sites/default/files/123e76d0512b5f0e164e9b6e0ef23a53.jpg?1298626314&quot; /&gt;        &lt;/div&gt;
+                    &lt;img  class=&quot;imagefield imagefield-field_image&quot; width=&quot;460&quot; height=&quot;197&quot; alt=&quot;&quot; src=&quot;/news_kz/sites/default/files/123e76d0512b5f0e164e9b6e0ef23a53.jpg?1298626314&quot; /&gt;        &lt;/div&gt;
         &lt;/div&gt;
 &lt;/div&gt;
 
@@ -306,18 +306,18 @@
         &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://geocnt.geonet.ru/news_kz/gosudarstvo/2011/02/25/soyuz-musulman-prizval-posla-livii-pokinut-kazakhstan.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
-     <comments>http://geocnt.geonet.ru/news_kz/gosudarstvo/2011/02/25/soyuz-musulman-prizval-posla-livii-pokinut-kazakhstan.html#comments</comments>
- <category domain="http://geocnt.geonet.ru/news_kz/razdel/gosudarstvo">Государство</category>
- <category domain="http://geocnt.geonet.ru/news_kz/taxonomy/term/14">Казахстан</category>
- <category domain="http://geocnt.geonet.ru/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
+&lt;p&gt;&lt;a href=&quot;/news_kz/gosudarstvo/2011/02/25/soyuz-musulman-prizval-posla-livii-pokinut-kazakhstan.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
+     <comments>/news_kz/gosudarstvo/2011/02/25/soyuz-musulman-prizval-posla-livii-pokinut-kazakhstan.html#comments</comments>
+ <category domain="/news_kz/razdel/gosudarstvo">Государство</category>
+ <category domain="/news_kz/taxonomy/term/14">Казахстан</category>
+ <category domain="/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
  <pubDate>Fri, 25 Feb 2011 09:31:54 +0000</pubDate>
  <dc:creator>svetlana</dc:creator>
- <guid isPermaLink="false">139 at http://geocnt.geonet.ru/news_kz</guid>
+ <guid isPermaLink="false">139 at /news_kz</guid>
   </item>
   <item>
     <title>Казахстан договорился с Чехией об отмене виз</title>
-    <link>http://geocnt.geonet.ru/news_kz/gosudarstvo/2011/02/25/kazakhstan-dogovorilsya-s-chekhiei-ob-otmene-viz.html</link>
+    <link>/news_kz/gosudarstvo/2011/02/25/kazakhstan-dogovorilsya-s-chekhiei-ob-otmene-viz.html</link>
     <description>&lt;div class=&quot;field field-type-text field-field-main&quot;&gt;
     &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
@@ -337,7 +337,7 @@
 &lt;div class=&quot;field field-type-filefield field-field-image&quot;&gt;
   &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
-                    &lt;img  class=&quot;imagefield imagefield-field_image&quot; width=&quot;460&quot; height=&quot;316&quot; alt=&quot;&quot; src=&quot;http://geocnt.geonet.ru/news_kz/sites/default/files/6e49d98bcb59bf6400ca7f0c711e5793.jpg?1298625761&quot; /&gt;        &lt;/div&gt;
+                    &lt;img  class=&quot;imagefield imagefield-field_image&quot; width=&quot;460&quot; height=&quot;316&quot; alt=&quot;&quot; src=&quot;/news_kz/sites/default/files/6e49d98bcb59bf6400ca7f0c711e5793.jpg?1298625761&quot; /&gt;        &lt;/div&gt;
         &lt;/div&gt;
 &lt;/div&gt;
 
@@ -355,18 +355,18 @@
         &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://geocnt.geonet.ru/news_kz/gosudarstvo/2011/02/25/kazakhstan-dogovorilsya-s-chekhiei-ob-otmene-viz.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
-     <comments>http://geocnt.geonet.ru/news_kz/gosudarstvo/2011/02/25/kazakhstan-dogovorilsya-s-chekhiei-ob-otmene-viz.html#comments</comments>
- <category domain="http://geocnt.geonet.ru/news_kz/razdel/gosudarstvo">Государство</category>
- <category domain="http://geocnt.geonet.ru/news_kz/taxonomy/term/14">Казахстан</category>
- <category domain="http://geocnt.geonet.ru/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
+&lt;p&gt;&lt;a href=&quot;/news_kz/gosudarstvo/2011/02/25/kazakhstan-dogovorilsya-s-chekhiei-ob-otmene-viz.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
+     <comments>/news_kz/gosudarstvo/2011/02/25/kazakhstan-dogovorilsya-s-chekhiei-ob-otmene-viz.html#comments</comments>
+ <category domain="/news_kz/razdel/gosudarstvo">Государство</category>
+ <category domain="/news_kz/taxonomy/term/14">Казахстан</category>
+ <category domain="/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
  <pubDate>Fri, 25 Feb 2011 09:22:41 +0000</pubDate>
  <dc:creator>svetlana</dc:creator>
- <guid isPermaLink="false">138 at http://geocnt.geonet.ru/news_kz</guid>
+ <guid isPermaLink="false">138 at /news_kz</guid>
   </item>
   <item>
     <title>350 сельчан Жамбылской области остались без газа из-за ДТП</title>
-    <link>http://geocnt.geonet.ru/news_kz/proisshestviya/2011/02/25/350-selchan-zhambylskoi-oblasti-ostalis-bez-gaza-iz-za-dtp.html</link>
+    <link>/news_kz/proisshestviya/2011/02/25/350-selchan-zhambylskoi-oblasti-ostalis-bez-gaza-iz-za-dtp.html</link>
     <description>&lt;div class=&quot;field field-type-text field-field-main&quot;&gt;
     &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
@@ -386,7 +386,7 @@
 &lt;div class=&quot;field field-type-filefield field-field-image&quot;&gt;
   &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
-                    &lt;img  class=&quot;imagefield imagefield-field_image&quot; width=&quot;460&quot; height=&quot;316&quot; alt=&quot;&quot; src=&quot;http://geocnt.geonet.ru/news_kz/sites/default/files/55a4d498c35e332ce4d6bfc4ab56494e.jpg?1298625171&quot; /&gt;        &lt;/div&gt;
+                    &lt;img  class=&quot;imagefield imagefield-field_image&quot; width=&quot;460&quot; height=&quot;316&quot; alt=&quot;&quot; src=&quot;/news_kz/sites/default/files/55a4d498c35e332ce4d6bfc4ab56494e.jpg?1298625171&quot; /&gt;        &lt;/div&gt;
         &lt;/div&gt;
 &lt;/div&gt;
 
@@ -404,18 +404,18 @@
         &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://geocnt.geonet.ru/news_kz/proisshestviya/2011/02/25/350-selchan-zhambylskoi-oblasti-ostalis-bez-gaza-iz-za-dtp.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
-     <comments>http://geocnt.geonet.ru/news_kz/proisshestviya/2011/02/25/350-selchan-zhambylskoi-oblasti-ostalis-bez-gaza-iz-za-dtp.html#comments</comments>
- <category domain="http://geocnt.geonet.ru/news_kz/razdel/proisshestviya">Происшествия</category>
- <category domain="http://geocnt.geonet.ru/news_kz/taxonomy/term/25">Жамбылская область</category>
- <category domain="http://geocnt.geonet.ru/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
+&lt;p&gt;&lt;a href=&quot;/news_kz/proisshestviya/2011/02/25/350-selchan-zhambylskoi-oblasti-ostalis-bez-gaza-iz-za-dtp.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
+     <comments>/news_kz/proisshestviya/2011/02/25/350-selchan-zhambylskoi-oblasti-ostalis-bez-gaza-iz-za-dtp.html#comments</comments>
+ <category domain="/news_kz/razdel/proisshestviya">Происшествия</category>
+ <category domain="/news_kz/taxonomy/term/25">Жамбылская область</category>
+ <category domain="/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
  <pubDate>Fri, 25 Feb 2011 09:12:51 +0000</pubDate>
  <dc:creator>svetlana</dc:creator>
- <guid isPermaLink="false">137 at http://geocnt.geonet.ru/news_kz</guid>
+ <guid isPermaLink="false">137 at /news_kz</guid>
   </item>
   <item>
     <title>Уральск признан самым благоустроенным городом в СНГ</title>
-    <link>http://geocnt.geonet.ru/news_kz/gosudarstvo/2011/02/25/uralsk-priznan-samym-blagoustroennym-gorodom-v-sng.html</link>
+    <link>/news_kz/gosudarstvo/2011/02/25/uralsk-priznan-samym-blagoustroennym-gorodom-v-sng.html</link>
     <description>&lt;div class=&quot;field field-type-text field-field-main&quot;&gt;
     &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
@@ -435,7 +435,7 @@
 &lt;div class=&quot;field field-type-filefield field-field-image&quot;&gt;
   &lt;div class=&quot;field-items&quot;&gt;
             &lt;div class=&quot;field-item odd&quot;&gt;
-                    &lt;img  class=&quot;imagefield imagefield-field_image&quot; width=&quot;460&quot; height=&quot;316&quot; alt=&quot;&quot; src=&quot;http://geocnt.geonet.ru/news_kz/sites/default/files/50763f9089c27d416e951122163eff6b.jpg?1298623865&quot; /&gt;        &lt;/div&gt;
+                    &lt;img  class=&quot;imagefield imagefield-field_image&quot; width=&quot;460&quot; height=&quot;316&quot; alt=&quot;&quot; src=&quot;/news_kz/sites/default/files/50763f9089c27d416e951122163eff6b.jpg?1298623865&quot; /&gt;        &lt;/div&gt;
         &lt;/div&gt;
 &lt;/div&gt;
 
@@ -453,14 +453,14 @@
         &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://geocnt.geonet.ru/news_kz/gosudarstvo/2011/02/25/uralsk-priznan-samym-blagoustroennym-gorodom-v-sng.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
-     <comments>http://geocnt.geonet.ru/news_kz/gosudarstvo/2011/02/25/uralsk-priznan-samym-blagoustroennym-gorodom-v-sng.html#comments</comments>
- <category domain="http://geocnt.geonet.ru/news_kz/razdel/gosudarstvo">Государство</category>
- <category domain="http://geocnt.geonet.ru/news_kz/taxonomy/term/19">Западно-Казахстанская область</category>
- <category domain="http://geocnt.geonet.ru/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
+&lt;p&gt;&lt;a href=&quot;/news_kz/gosudarstvo/2011/02/25/uralsk-priznan-samym-blagoustroennym-gorodom-v-sng.html&quot; target=&quot;_blank&quot;&gt;читать далее&lt;/a&gt;&lt;/p&gt;</description>
+     <comments>/news_kz/gosudarstvo/2011/02/25/uralsk-priznan-samym-blagoustroennym-gorodom-v-sng.html#comments</comments>
+ <category domain="/news_kz/razdel/gosudarstvo">Государство</category>
+ <category domain="/news_kz/taxonomy/term/19">Западно-Казахстанская область</category>
+ <category domain="/news_kz/newsletter/novostnoi-daidzhest-newsletter">Новостной дайджест newsletter</category>
  <pubDate>Fri, 25 Feb 2011 08:51:05 +0000</pubDate>
  <dc:creator>svetlana</dc:creator>
- <guid isPermaLink="false">136 at http://geocnt.geonet.ru/news_kz</guid>
+ <guid isPermaLink="false">136 at /news_kz</guid>
   </item>
   </channel>
 </rss>
